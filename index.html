@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Piano Alimentare">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Piano Alimentare Estivo 2026</title>
+<style>
+:root{
+  --g:#2d6a4f;--gl:#52b788;--gll:#b7e4c7;
+  --o:#e07a2f;--y:#f4c842;--cr:#fdf6ec;
+  --br:#5c3d2e;--gr:#6b7280;--lui:#2d6a4f;--lei:#c05299;
+  --w:white;--sh:0 2px 10px rgba(0,0,0,0.07);
+  --font-body: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-serif: Georgia, 'Times New Roman', serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font-body);background:var(--cr);color:var(--br);min-height:100vh;padding-bottom:72px}
+header{background:linear-gradient(135deg,#2d6a4f,#1b4332);color:white;padding:2rem 1.2rem 1.6rem;text-align:center;position:relative;overflow:hidden}
+header::before{content:'';position:absolute;top:-40%;left:-10%;width:50%;height:180%;background:radial-gradient(ellipse,rgba(82,183,136,.18) 0%,transparent 70%)}
+.badge{display:inline-block;background:var(--y);color:var(--br);font-size:.68rem;font-weight:600;padding:.18rem .75rem;border-radius:20px;margin-bottom:.6rem;letter-spacing:.04em}
+header h1{font-family:var(--font-serif);font-size:clamp(1.4rem,5vw,2rem);margin-bottom:.25rem;position:relative}
+header p{font-size:.82rem;opacity:.8;position:relative}
+
+/* NAV */
+.nav{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #e5e7eb;display:flex;padding:.35rem .2rem;z-index:100;box-shadow:0 -2px 12px rgba(0,0,0,.06)}
+.nav-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:.1rem;padding:.4rem .2rem;border:none;background:transparent;cursor:pointer;border-radius:10px;font-family:var(--font-body);transition:all .15s}
+.nav-btn:hover,.nav-btn.active{background:#f0fdf4}
+.nav-btn .ni{font-size:1.1rem}
+.nav-btn .nl{font-size:.6rem;color:var(--gr);font-weight:500}
+.nav-btn.active .nl{color:var(--g);font-weight:600}
+
+/* PAGES */
+.page{display:none}.page.active{display:block}
+.section{max-width:700px;margin:0 auto;padding:.8rem 1rem 1.5rem}
+
+/* CARDS */
+.card{background:white;border-radius:14px;margin-bottom:.75rem;overflow:hidden;box-shadow:var(--sh)}
+.card-hd{display:flex;align-items:center;gap:.6rem;padding:.7rem .9rem;border-bottom:1px solid #f0f0f0;background:#fafafa}
+.card-hd .ci{font-size:1.1rem}
+.card-hd .cn{font-weight:500;font-size:.87rem;flex:1}
+.card-hd .ck{font-size:.72rem;color:var(--gr)}
+.portions{display:grid;grid-template-columns:1fr 1fr}
+.por{padding:.7rem .9rem;border-right:1px solid #f0f0f0;font-size:.79rem;line-height:1.6;color:#374151}
+.por:last-child{border-right:none}
+.por-lbl{font-size:.66rem;font-weight:600;letter-spacing:.04em;margin-bottom:.28rem;display:flex;align-items:center;gap:.25rem}
+.por-lbl.lui{color:var(--lui)}.por-lbl.lei{color:var(--lei)}
+.dot{width:7px;height:7px;border-radius:50%;display:inline-block}
+.alt-btn{display:flex;align-items:center;gap:.35rem;margin:.4rem .9rem .6rem;background:#f0fdf4;border:1.5px dashed var(--gl);color:var(--g);border-radius:8px;padding:.36rem .75rem;font-size:.74rem;font-weight:500;cursor:pointer;width:calc(100% - 1.8rem);font-family:var(--font-body);transition:all .15s}
+.alt-btn.on{background:#fff3cd;border-color:var(--o);color:var(--o)}
+.alt-panel{display:none;background:#fffbeb;border-top:1px solid #fde68a;padding:.6rem .9rem .7rem}
+.alt-panel.visible{display:block}
+.alt-lbl{font-size:.66rem;font-weight:600;color:var(--o);letter-spacing:.04em;margin-bottom:.28rem}
+.alt-panel .por{border-right:1px solid #fde68a}
+
+/* TABS */
+.tab-bar{display:flex;max-width:700px;margin:0 auto;padding:0 1rem;overflow-x:auto;scrollbar-width:none}
+.tab-bar::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;padding:.6rem .85rem;font-size:.8rem;font-weight:500;border:none;background:transparent;color:var(--gr);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;font-family:var(--font-body);transition:all .2s}
+.tab.active{color:var(--g);border-bottom-color:var(--g)}
+
+/* TIP BOX */
+.tip-box{background:white;border-radius:14px;padding:1rem;box-shadow:var(--sh);margin-bottom:.75rem}
+.tip-box h4{font-weight:500;margin-bottom:.55rem;font-size:.85rem;color:var(--g)}
+.tip-item{display:flex;gap:.5rem;margin-bottom:.4rem;font-size:.79rem;line-height:1.5}
+.smoke-card{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-radius:14px;padding:1rem;border-left:4px solid var(--gl);margin-bottom:.75rem}
+.smoke-card h3{font-family:var(--font-serif);color:var(--g);margin-bottom:.35rem;font-size:1rem}
+.smoke-card p{font-size:.81rem;color:#374151;line-height:1.6}
+.warn-box{background:#fff8e1;border-radius:12px;padding:.8rem .9rem;font-size:.75rem;color:#78550a;line-height:1.5;border-left:3px solid var(--y);margin-bottom:.75rem}
+.info-card{border-radius:14px;padding:1rem;margin-bottom:.75rem}
+
+/* PROFILES */
+.profiles{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;padding:.9rem 1rem .5rem;max-width:700px;margin:0 auto}
+.prof{border-radius:14px;padding:1rem;color:white}
+.prof.lui{background:linear-gradient(135deg,#2d6a4f,#1b4332)}
+.prof.lei{background:linear-gradient(135deg,#c05299,#7b2d5e)}
+.prof .pn{font-family:var(--font-serif);font-size:.95rem;margin-bottom:.4rem}
+.prof .ps{font-size:.75rem;opacity:.9;line-height:1.6}
+.prof .pk{font-size:1.1rem;font-weight:500;margin-top:.4rem}
+
+/* SWEET */
+.sweet-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.sweet-card{background:white;border-radius:14px;padding:.85rem;box-shadow:var(--sh)}
+.sweet-card .se{font-size:1.3rem;margin-bottom:.22rem}
+.sweet-card h4{font-size:.84rem;font-weight:500;margin-bottom:.2rem}
+.sweet-card .sd{font-size:.74rem;color:var(--gr);line-height:1.5;margin-bottom:.38rem}
+.gbadge{display:inline-block;padding:.1rem .4rem;border-radius:20px;font-size:.68rem;font-weight:500;margin-right:.22rem;margin-top:.12rem}
+.gbadge.lui{background:#e8f5ee;color:var(--lui)}
+.gbadge.lei{background:#fce8f3;color:var(--lei)}
+
+/* WATER */
+.glass{font-size:1.2rem;cursor:pointer;transition:transform .15s;display:inline-block}
+.glass:hover{transform:scale(1.2)}
+
+/* SPESA */
+.shop-cat{background:white;border-radius:14px;padding:.9rem;margin-bottom:.75rem;box-shadow:var(--sh)}
+.shop-cat h4{font-weight:500;font-size:.83rem;color:var(--g);margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.shop-cat h4 span{font-size:.67rem;font-weight:400;color:var(--gr)}
+.shop-row{display:flex;align-items:center;gap:.6rem;padding:.38rem 0;border-bottom:1px solid #f5f5f5;font-size:.79rem;cursor:pointer}
+.shop-row:last-child{border-bottom:none}
+.shop-row input{accent-color:var(--g);width:15px;height:15px;flex-shrink:0;cursor:pointer}
+.shop-row .sn{flex:1}
+.shop-row .sq{font-size:.76rem;color:var(--g);font-weight:500;white-space:nowrap}
+.shop-row.done .sn{text-decoration:line-through;opacity:.45}
+.shop-row.done .sq{opacity:.45}
+.alt-tag{display:inline-block;background:#fff3cd;color:#b45309;font-size:.66rem;padding:.08rem .35rem;border-radius:10px;margin-left:.3rem;font-weight:500}
+
+/* PROGRESS */
+.prog-box{background:white;border-radius:14px;padding:1rem;box-shadow:var(--sh);margin-bottom:.75rem}
+.prog-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem}
+.prog-bar-bg{background:#f0f0f0;border-radius:20px;height:7px;overflow:hidden;margin-bottom:.6rem}
+.prog-bar{background:var(--gl);height:100%;border-radius:20px;transition:width .3s}
+.prog-btns{display:flex;gap:.5rem}
+.prog-btn{flex:1;padding:.38rem;border:none;border-radius:8px;font-size:.74rem;font-weight:500;cursor:pointer;font-family:var(--font-body)}
+.prog-btn.ca{background:#f0fdf4;color:var(--g)}
+.prog-btn.ua{background:#fef2f2;color:#dc2626}
+
+/* DAY SELECTOR */
+.day-selector{background:white;border-radius:14px;padding:.9rem;margin-bottom:.75rem;box-shadow:var(--sh)}
+.day-selector h4{font-weight:500;font-size:.83rem;color:var(--g);margin-bottom:.6rem}
+.day-chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.day-chip{padding:.32rem .7rem;border-radius:20px;border:1.5px solid #e5e7eb;font-size:.76rem;cursor:pointer;font-family:var(--font-body);background:white;color:var(--br);transition:all .15s}
+.day-chip.active{background:var(--g);color:white;border-color:var(--g)}
+.alt-chip{padding:.32rem .7rem;border-radius:20px;border:1.5px solid var(--gl);font-size:.76rem;cursor:pointer;font-family:var(--font-body);background:white;color:var(--g);transition:all .15s;margin-top:.4rem}
+.alt-chip.active{background:var(--gl);color:white}
+
+/* MEAL SELECTOR */
+.meal-day-block{margin-bottom:.9rem}
+.meal-day-hd{display:flex;align-items:center;gap:.5rem;font-weight:600;font-size:.85rem;color:var(--g);margin-bottom:.4rem;padding:.3rem 0}
+.meal-check-row{display:flex;align-items:flex-start;gap:.6rem;padding:.38rem .5rem;border-radius:8px;cursor:pointer;transition:background .12s;margin-bottom:.2rem}
+.meal-check-row:hover{background:#f0fdf4}
+.meal-check-row input{accent-color:var(--g);width:16px;height:16px;flex-shrink:0;margin-top:.1rem;cursor:pointer}
+.meal-check-row .mcn{font-size:.8rem;font-weight:500;color:var(--br);flex-shrink:0;width:72px}
+.meal-check-row .mcd{font-size:.77rem;color:var(--gr);flex:1;line-height:1.5}
+.meal-check-row.on{background:#f0fdf4}
+.meal-check-row .alt-ind{font-size:.68rem;background:#fff3cd;color:#b45309;padding:.08rem .32rem;border-radius:8px;margin-left:.3rem;flex-shrink:0}
+.dolci-check-row{display:flex;align-items:center;gap:.6rem;padding:.38rem .5rem;border-radius:8px;cursor:pointer;transition:background .12s;margin-bottom:.2rem}
+.dolci-check-row:hover{background:#fffbeb}
+.dolci-check-row input{accent-color:var(--lei);width:16px;height:16px;flex-shrink:0;cursor:pointer}
+.dolci-check-row .dcn{font-size:.8rem;flex:1}
+.dolci-check-row.on{background:#fffbeb}
+.day-sel-hd{display:flex;align-items:center;justify-content:space-between}
+.day-sel-toggle{font-size:.72rem;color:var(--g);background:none;border:none;cursor:pointer;font-family:var(--font-body);font-weight:500}
+
+/* SPESA TABS */
+.spesa-tabs{display:flex;gap:.5rem;margin-bottom:.9rem}
+.spesa-tab{flex:1;padding:.5rem;border:2px solid #e5e7eb;border-radius:10px;font-size:.78rem;font-weight:500;cursor:pointer;font-family:var(--font-body);background:white;color:var(--gr);transition:all .15s;text-align:center}
+.spesa-tab.active{border-color:var(--g);color:var(--g);background:#f0fdf4}
+
+/* STAMPA */
+@media print{
+  .nav,.no-print{display:none!important}
+  body{padding-bottom:0;background:white}
+  .page{display:block!important}
+  .card,.shop-cat,.tip-box,.smoke-card,.info-card,.warn-box,.prog-box,.day-selector{box-shadow:none!important;border:1px solid #e5e7eb}
+}
+.print-btn{width:100%;padding:.85rem;background:var(--g);color:white;border:none;border-radius:12px;font-size:.95rem;font-weight:600;cursor:pointer;font-family:var(--font-body);margin-bottom:.8rem}
+</style>
+</head>
+<body>
+
+<!-- ═══ PAGE: PIANO ═══ -->
+<div class="page active" id="page-piano">
+  <header>
+    <div class="badge">🌞 ESTATE 2026 · TOSCANA KM 0</div>
+    <h1>Piano Alimentare<br><em>Effetto GLP-1</em></h1>
+    <p>7 giorni · grammature per due</p>
+  </header>
+  <div class="profiles">
+    <div class="prof lui"><div class="pn">👨 Lui</div><div class="ps">87kg · 179cm · BMI 27.1<br>Fianchi 105cm</div><div class="pk">1.550 kcal/die</div></div>
+    <div class="prof lei"><div class="pn">👩 Lei</div><div class="ps">75kg · 170cm · BMI 26.0<br>Eritritolo nel caffè</div><div class="pk">1.350 kcal/die</div></div>
+  </div>
+  <div class="tab-bar" id="day-tabs"></div>
+  <div id="day-container"><div style="padding:1rem;text-align:center;color:#888;font-size:.85rem">Caricamento in corso...</div></div>
+</div>
+
+<!-- ═══ PAGE: DOLCI ═══ -->
+<div class="page" id="page-dolci">
+  <header>
+    <div class="badge">🌙 SERALE</div>
+    <h1>Dolci Serali<br><em>Senza Sensi di Colpa</em></h1>
+    <p>Alternative che non alzano la glicemia notturna</p>
+  </header>
+  <div class="section">
+    <div class="info-card" style="background:linear-gradient(135deg,#fff8e7,#fff3cd);border-left:4px solid var(--y)">
+      <div style="font-family:var(--font-serif);margin-bottom:.3rem">🍫 La strategia giusta</div>
+      <p style="font-size:.82rem;color:var(--gr);line-height:1.6">Non eliminiamo il momento dolce - lo <strong>trasformiamo</strong>. L'obiettivo è evitare il picco glicemico notturno che blocca il dimagrimento.</p>
+    </div>
+    <div class="sweet-grid" id="sweet-grid"></div>
+    <div class="info-card" style="background:linear-gradient(135deg,#fff5f0,#fde8d8);border-left:4px solid var(--o);margin-top:.75rem">
+      <div style="font-family:var(--font-serif);margin-bottom:.3rem">⏰ Timing importante</div>
+      <p style="font-size:.82rem;color:var(--gr);line-height:1.6">Mangiate il dolce <strong>almeno 30 min prima di coricarvi</strong> e dopo una <strong>camminata di 10 minuti</strong> - riduce il picco glicemico del 30%.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PAGE: SALUTE ═══ -->
+<div class="page" id="page-salute">
+  <header>
+    <div class="badge">💚 STILE DI VITA</div>
+    <h1>Idratazione, Aceto<br><em>&amp; Fumo</em></h1>
+    <p>Tre abitudini da trasformare gradualmente</p>
+  </header>
+  <div class="section">
+    <div style="font-family:var(--font-serif);font-size:1.1rem;color:var(--g);margin-bottom:.6rem">💧 Piano Idratazione</div>
+    <div class="tip-box">
+      <h4>Obiettivo quotidiano - clicca i bicchieri!</h4>
+      <div style="margin-bottom:.5rem">
+        <div style="font-size:.72rem;font-weight:600;color:var(--lui);margin-bottom:.28rem">👨 Lui - 2L (8 bicchieri)</div>
+        <div id="glasses-lui" style="display:flex;gap:.3rem;flex-wrap:wrap"></div>
+      </div>
+      <div>
+        <div style="font-size:.72rem;font-weight:600;color:var(--lei);margin-bottom:.28rem">👩 Lei - 1.8L (7 bicchieri)</div>
+        <div id="glasses-lei" style="display:flex;gap:.3rem;flex-wrap:wrap"></div>
+      </div>
+    </div>
+    <div class="tip-box">
+      <h4>🕐 Schema giornaliero</h4>
+      <div class="tip-item"><span>🌅</span><span><strong>Sveglia</strong>: acqua + limone (250ml) → lei: 3 mandorle → caffè</span></div>
+      <div class="tip-item"><span>🥗</span><span><strong>20 min prima pranzo</strong>: 1 bicchiere - riduce fame del 15-20%</span></div>
+      <div class="tip-item"><span>🌿</span><span><strong>Pomeriggio</strong>: acqua aromatizzata (cetriolo+menta, fragola+basilico)</span></div>
+      <div class="tip-item"><span>🍽️</span><span><strong>20 min prima cena</strong>: 1 bicchiere</span></div>
+      <div class="tip-item"><span>🌙</span><span><strong>Sera</strong>: tisana fredda non zuccherata (ibisco, camomilla, menta)</span></div>
+    </div>
+
+    <div style="font-family:var(--font-serif);font-size:1.1rem;color:var(--g);margin-bottom:.6rem">🍎 Aceto di Mele</div>
+    <div class="smoke-card">
+      <h3>🍶 Come e quando usarlo</h3>
+      <p>Riduce il picco glicemico post-pasto del <strong>20–30%</strong> e stimola GLP-1 naturale. Uno degli strumenti più potenti del piano.</p>
+    </div>
+    <div class="tip-box">
+      <h4>📋 Protocollo quotidiano</h4>
+      <div class="tip-item"><span>🌅</span><span><strong>Mattina (opzionale)</strong>: 1 cucchiaino in 200ml acqua tiepida</span></div>
+      <div class="tip-item"><span>🥗</span><span><strong>10 min prima pranzo</strong>: 1 cucchiaino diluito - obbligatorio</span></div>
+      <div class="tip-item"><span>🍽️</span><span><strong>10 min prima cena</strong>: 1 cucchiaino diluito - obbligatorio</span></div>
+      <div class="tip-item"><span>🍕</span><span><strong>Prima di pizzeria/ristorante</strong>: dose doppia (2 cucchiaini)</span></div>
+    </div>
+    <div class="warn-box">⚠️ Mai puro - sempre diluito in 150-200ml d'acqua. Preferire aceto <strong>non filtrato con "madre"</strong> (torbido sul fondo).</div>
+
+    <div style="font-family:var(--font-serif);font-size:1.1rem;color:var(--g);margin-bottom:.6rem">🚬 Fumo &amp; Alimentazione</div>
+    <div class="smoke-card">
+      <h3>⚠️ Come il fumo impatta la glicemia</h3>
+      <p>La nicotina alza la glicemia a digiuno e riduce la sensibilità all insulina del 15-20%. Questi alimenti contrastano lo stress ossidativo.</p>
+    </div>
+    <div class="smoke-card" style="background:linear-gradient(135deg,#f0f9ff,#dbeafe);border-left-color:#3b82f6">
+      <h3 style="color:#1d4ed8">🥦 Antiossidanti anti-fumo quotidiani</h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-top:.5rem">
+        <div style="background:white;border-radius:10px;padding:.55rem;text-align:center;font-size:.74rem"><div style="font-size:1.1rem">🍅</div><strong>Pomodori</strong><br>Licopene</div>
+        <div style="background:white;border-radius:10px;padding:.55rem;text-align:center;font-size:.74rem"><div style="font-size:1.1rem">🫑</div><strong>Peperoni</strong><br>Vit. C ×3</div>
+        <div style="background:white;border-radius:10px;padding:.55rem;text-align:center;font-size:.74rem"><div style="font-size:1.1rem">🫐</div><strong>Mirtilli</strong><br>Polifenoli</div>
+        <div style="background:white;border-radius:10px;padding:.55rem;text-align:center;font-size:.74rem"><div style="font-size:1.1rem">🥦</div><strong>Broccoli</strong><br>Sulforafano</div>
+        <div style="background:white;border-radius:10px;padding:.55rem;text-align:center;font-size:.74rem"><div style="font-size:1.1rem">🧄</div><strong>Aglio</strong><br>Allicina</div>
+        <div style="background:white;border-radius:10px;padding:.55rem;text-align:center;font-size:.74rem"><div style="font-size:1.1rem">💊</div><strong>Multicentrum</strong><br>+Vit.C 500mg</div>
+      </div>
+    </div>
+    <div class="tip-box">
+      <h4>💡 Trick pratici per fumatori</h4>
+      <div class="tip-item"><span>🍊</span><span>Dopo ogni sigaretta: 1 bicchiere d'acqua + 2-3 mandorle</span></div>
+      <div class="tip-item"><span>🌿</span><span>Tenete stick di cetriolo o sedano vicino dove fumate</span></div>
+      <div class="tip-item"><span>💊</span><span>Multicentrum + Vitamina C 500mg (es. Cebion) per i fumatori</span></div>
+      <div class="tip-item"><span>🚶</span><span>Camminata 10 min post-pasto riduce voglia di sigaretta del 40%</span></div>
+    </div>
+    <div class="warn-box">⚕️ Scarsa diuresi + poca acqua: verificate la funzionalità renale con il medico prima di iniziare.</div>
+  </div>
+</div>
+
+<!-- ═══ PAGE: SPESA ═══ -->
+<div class="page" id="page-spesa">
+  <header>
+    <div class="badge">🛒 MERCATO KM 0 · DAL 4 MAGGIO</div>
+    <h1>Lista della Spesa<br><em>Personalizzata</em></h1>
+    <p>Seleziona i pasti · la lista si aggiorna in tempo reale</p>
+  </header>
+  <div class="section">
+
+
+    <!-- PANNELLO SELEZIONE PASTI -->
+    <div id="meal-selector-panel">
+      <div class="day-selector">
+        <h4>🍽️ Seleziona i pasti da includere nella spesa</h4>
+        <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.7rem">
+          <button class="alt-chip" onclick="selectAllMeals()">✅ Tutti</button>
+          <button class="alt-chip" onclick="clearAllMeals()">✖ Nessuno</button>
+          <button class="alt-chip" onclick="selectDayMeals([0,1,2])">Lun-Mer</button>
+          <button class="alt-chip" onclick="selectDayMeals([3,4,5,6])">Gio-Dom</button>
+        </div>
+        <div id="meal-selector-list"></div>
+      </div>
+    </div>
+
+    <!-- Progress -->
+    <div class="prog-box">
+      <div class="prog-row">
+        <span style="font-size:.82rem;font-weight:500">Spuntati al mercato</span>
+        <span id="prog-label" style="font-size:.82rem;color:var(--g);font-weight:500">0 / 0</span>
+      </div>
+      <div class="prog-bar-bg"><div class="prog-bar" id="prog-bar" style="width:0%"></div></div>
+      <div class="prog-btns">
+        <button class="prog-btn ca" onclick="checkAll()">✅ Seleziona tutto</button>
+        <button class="prog-btn ua" onclick="uncheckAll()">🔄 Azzera</button>
+      </div>
+    </div>
+
+    <div id="shop-lists"></div>
+    <div class="warn-box">🌿 Olio EVO, aglio, basilico, sale, pepe già in dispensa. Caffè non incluso (lui senza zucchero, lei con eritritolo).</div>
+  </div>
+</div>
+
+<!-- ═══ PAGE: STAMPA ═══ -->
+<div class="page" id="page-stampa">
+  <header>
+    <div class="badge">🖨️ STAMPA</div>
+    <h1>Stampa il Piano</h1>
+    <p>Apri in nuova finestra e salva come PDF</p>
+  </header>
+  <div class="section">
+    <button class="print-btn no-print" onclick="doPrint()">🖨️ Stampa / Salva PDF</button>
+    <div class="warn-box no-print">💡 Si apre una nuova finestra - scegliete "Salva come PDF" dal browser per averlo sul telefono o stamparlo su carta.</div>
+    <div id="print-preview"></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+  <button class="nav-btn active" onclick="showPage('piano',this)"><span class="ni">🥗</span><span class="nl">Piano</span></button>
+  <button class="nav-btn" onclick="showPage('dolci',this)"><span class="ni">🍫</span><span class="nl">Dolci</span></button>
+  <button class="nav-btn" onclick="showPage('salute',this)"><span class="ni">💧</span><span class="nl">Salute</span></button>
+  <button class="nav-btn" onclick="showPage('spesa',this)"><span class="ni">🛒</span><span class="nl">Spesa</span></button>
+  <button class="nav-btn" onclick="showPage('stampa',this)"><span class="ni">🖨️</span><span class="nl">Stampa</span></button>
+</div>
+
+<script>
+// ════════════════════════════════════════
+// DATA
+// ════════════════════════════════════════
+const CAT={
+  CARNE:'🥩 Carni & Pesce',
+  LATT:'🥚 Uova & Latticini',
+  V1:'🥬 Verdure fresche (Lun-Mer)',
+  V2:'🥬 Verdure fresche (Gio-Dom)',
+  FRUTTA:'🍓 Frutta di stagione',
+  CER:'🌾 Cereali & Legumi',
+  DISP:'🫙 Dispensa & Secchi',
+  DISP2:'🫙 Gia in dispensa - verifica!',
+  DOLCI:'🍫 Dolci Serali'
+};
+const CW={
+  [CAT.CARNE]:'🗓 oggi',[CAT.LATT]:'🗓 oggi',
+  [CAT.V1]:'oggi (Lun-Mer)',[CAT.V2]:'🗓 mercoledi (Gio-Dom)',
+  [CAT.FRUTTA]:'🗓 oggi + mercoledi',[CAT.CER]:'🗓 oggi',
+  [CAT.DISP]:'🗓 oggi',[CAT.DISP2]:'',[CAT.DOLCI]:'🗓 oggi'
+};
+const CO=[CAT.CARNE,CAT.LATT,CAT.V1,CAT.V2,CAT.FRUTTA,CAT.CER,CAT.DOLCI,CAT.DISP,CAT.DISP2];
+
+function i(n,ql,ll,u,c){return{n,ql,ll,u,c}}
+
+const DOLCI_FIXED=[
+  i('Cioccolato fondente >=85%',200,0,'g',CAT.DOLCI),
+  i('Datteri (dolce serale)',8,0,'pz',CAT.DOLCI),
+  i('Mandorle (dolci serali)',100,0,'g',CAT.DOLCI),
+  i('Yogurt greco 0% (dolce serale)',500,0,'g',CAT.DOLCI),
+  i('Frutti di bosco/fragole (dolce serale)',300,0,'g',CAT.DOLCI),
+];
+
+const FIXED=[
+  i('Aceto di mele (bottiglia 500ml)',1,0,'bottiglia',CAT.DISP),
+  i('Cannella in polvere',1,0,'barattolino',CAT.DISP),
+  i('Tahini (pasta sesamo per hummus)',1,0,'barattolo',CAT.DISP),
+  i('Granola integrale artigianale',100,0,'g',CAT.DISP),
+  i('Miele',50,0,'g',CAT.DISP),
+  i('Pinoli',30,0,'g',CAT.DISP),
+  i('Olive in salamoia',80,0,'g',CAT.DISP),
+  i('Capperi sotto sale',40,0,'g',CAT.DISP),
+  i('Avocado',1,0,'pz',CAT.FRUTTA),
+  i('Limoni',8,0,'pz',CAT.FRUTTA),
+  i('Banane verdi/gialle',4,0,'pz',CAT.FRUTTA),
+  i('Mele (sostituto frutta estiva)',8,0,'pz',CAT.FRUTTA),
+  i('Pere',5,0,'pz',CAT.FRUTTA),
+  i('Ciliegie - da meta maggio',300,0,'g',CAT.FRUTTA),
+  i('Kiwi',6,0,'pz',CAT.FRUTTA),
+  i('Fagioli cannellini (latta)',2,0,'latte',CAT.CER),
+  i('Lenticchie secche (riserva)',200,0,'g',CAT.CER),
+  i('Carote (extra)',200,0,'g',CAT.V2),
+  i('Latte p.s. (extra)',300,0,'ml',CAT.LATT),
+  i('Pane di segale confezionato (es. Wasa)',2,0,'confezioni',CAT.CER),
+  i('Olio EVO',0,0,'abbondante',CAT.DISP2),
+  i('Sale, pepe, peperoncino',0,0,'-',CAT.DISP2),
+  i('Aglio',0,0,'1 testa',CAT.DISP2),
+  i('Basilico fresco',0,0,'1 pianta',CAT.DISP2),
+  i('Menta fresca',0,0,'rametti',CAT.DISP2),
+  i('Eritritolo (per lei)',0,0,'gia in casa',CAT.DISP2),
+  i('Multicentrum + Vitamina C 500mg',0,0,'in farmacia',CAT.DISP2),
+];
+
+const DAYS=[
+ {name:'Lunedi',e:'🌱',meals:[
+  {icon:'☀️',name:'Colazione',kl:'~320',kle:'~280',
+   dl:'Yogurt greco 0% 150g + semi di chia 10g + fragole 100g',
+   dle:'Yogurt greco 0% 125g + semi di chia 8g + fragole 80g',
+   ing:[i('Yogurt greco 0%',150,125,'g',CAT.LATT),i('Semi di chia',10,8,'g',CAT.DISP),i('Fragole',100,80,'g',CAT.FRUTTA)],
+   adl:'Ricotta magra 120g + miele 8g + mele a fette 120g + noci 10g',
+   adle:'Ricotta magra 100g + miele 6g + mele 100g + noci 8g',
+   aing:[i('Ricotta magra',120,100,'g',CAT.LATT),i('Mele',120,100,'g',CAT.FRUTTA),i('Noci',10,8,'g',CAT.DISP)]},
+  {icon:'🍎',name:'Spuntino',kl:'~110',kle:'~90',
+   dl:'Mandorle 20g + 1 mela 150g',dle:'Mandorle 15g + 1 mela 120g',
+   ing:[i('Mandorle',20,15,'g',CAT.DISP),i('Mele',150,120,'g',CAT.FRUTTA)],
+   adl:'Cetriolo 150g + hummus 35g',adle:'Cetriolo 120g + hummus 25g',
+   aing:[i('Cetrioli',150,120,'g',CAT.V1),i('Ceci (hummus)',35,25,'g',CAT.CER)]},
+  {icon:'🥗',name:'Pranzo',kl:'~520',kle:'~440',
+   dl:'Petto di pollo 180g + fagiolini 200g + farro 60g secco',
+   dle:'Petto di pollo 150g + fagiolini 180g + farro 50g secco',
+   ing:[i('Petto di pollo',180,150,'g',CAT.CARNE),i('Fagiolini freschi',200,180,'g',CAT.V1),i('Farro perlato',60,50,'g',CAT.CER)],
+   adl:'Tonno 130g + zucchine grigliate 200g + farro 60g',
+   adle:'Tonno 100g + zucchine 170g + farro 50g',
+   aing:[i('Tonno al naturale',130,100,'g',CAT.CARNE),i('Zucchine',200,170,'g',CAT.V1),i('Farro perlato',60,50,'g',CAT.CER)]},
+  {icon:'🌙',name:'Cena',kl:'~420',kle:'~360',
+   dl:'Zuppa fredda zucchine e menta 350g + ricotta 80g + pane segale 30g',
+   dle:'Zuppa zucchine 300g + ricotta 60g + pane segale 25g',
+   ing:[i('Zucchine',350,300,'g',CAT.V1),i('Ricotta magra',80,60,'g',CAT.LATT),i('Pane integrale/segale',30,25,'g',CAT.CER)],
+   adl:'Insalata pomodori e cetrioli 300g + 2 uova sode + feta 40g',
+   adle:'Insalata pomodori 250g + 2 uova sode + feta 30g',
+   aing:[i('Pomodori',300,250,'g',CAT.V1),i('Cetrioli',100,80,'g',CAT.V1),i('Uova fresche',2,2,'pz',CAT.LATT),i('Feta',40,30,'g',CAT.LATT)]}
+ ]},
+ {name:'Martedi',e:'🐟',meals:[
+  {icon:'☀️',name:'Colazione',kl:'~310',kle:'~270',
+   dl:'2 uova sode + pomodorini 100g + pane integrale 40g',
+   dle:'2 uova sode + pomodorini 80g + pane integrale 30g',
+   ing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Pomodorini',100,80,'g',CAT.V1),i('Pane integrale/segale',40,30,'g',CAT.CER)],
+   adl:'Overnight oats: avena 50g + yogurt greco 100g + mirtilli 80g',
+   adle:'Avena 40g + yogurt 80g + mirtilli 60g',
+   aing:[i('Fiocchi di avena',50,40,'g',CAT.CER),i('Yogurt greco 0%',100,80,'g',CAT.LATT),i('Mirtilli',80,60,'g',CAT.FRUTTA)]},
+  {icon:'🍅',name:'Spuntino',kl:'~90',kle:'~70',
+   dl:'Cetrioli 150g + hummus 40g',dle:'Cetrioli 120g + hummus 30g',
+   ing:[i('Cetrioli',150,120,'g',CAT.V1),i('Ceci (hummus)',40,30,'g',CAT.CER)],
+   adl:'1 pera + noci 10g',adle:'1 pera + noci 8g',
+   aing:[i('Pere',160,140,'g',CAT.FRUTTA),i('Noci',10,8,'g',CAT.DISP)]},
+  {icon:'🥗',name:'Pranzo',kl:'~530',kle:'~450',
+   dl:'Salmone al forno 160g + melanzane grigliate 200g + riso integrale 60g',
+   dle:'Salmone 130g + melanzane 180g + riso 50g',
+   ing:[i('Salmone',160,130,'g',CAT.CARNE),i('Melanzane',200,180,'g',CAT.V1),i('Riso integrale',60,50,'g',CAT.CER)],
+   adl:'Petto di tacchino 170g + peperoni arrostiti 200g + riso 60g',
+   adle:'Tacchino 140g + peperoni 170g + riso 50g',
+   aing:[i('Petto di tacchino',170,140,'g',CAT.CARNE),i('Peperoni',200,170,'g',CAT.V2),i('Riso integrale',60,50,'g',CAT.CER)]},
+  {icon:'🌙',name:'Cena',kl:'~400',kle:'~340',
+   dl:'Fave fresche sgranate 150g + pecorino 30g + insalata mista 80g',
+   dle:'Fave 120g + pecorino 20g + insalata 60g',
+   ing:[i('Fave fresche (con baccello)',450,360,'g',CAT.V2),i('Pecorino stagionato',30,20,'g',CAT.LATT),i('Insalata mista/songino',80,60,'g',CAT.V1)],
+   adl:'Zuppa piselli freschi e menta 350g + pane integrale 35g',
+   adle:'Zuppa piselli 300g + pane 25g',
+   aing:[i('Piselli freschi (con baccello)',875,750,'g',CAT.V2),i('Pane integrale/segale',35,25,'g',CAT.CER)]}
+ ]},
+ {name:'Mercoledi',e:'🌿',meals:[
+  {icon:'☀️',name:'Colazione',kl:'~300',kle:'~260',
+   dl:'Overnight oats: avena 50g + latte p.s. 150ml + mirtilli 80g + cannella',
+   dle:'Avena 40g + latte 120ml + mirtilli 60g',
+   ing:[i('Fiocchi di avena',50,40,'g',CAT.CER),i('Latte p.s.',150,120,'ml',CAT.LATT),i('Mirtilli',80,60,'g',CAT.FRUTTA)],
+   adl:'Frullato verde: spinaci 50g + cetriolo 100g + yogurt greco 150g + limone',
+   adle:'Spinaci 40g + cetriolo 80g + yogurt 120g',
+   aing:[i('Spinaci freschi',50,40,'g',CAT.V1),i('Cetrioli',100,80,'g',CAT.V1),i('Yogurt greco 0%',150,120,'g',CAT.LATT)]},
+  {icon:'🌰',name:'Spuntino',kl:'~110',kle:'~90',
+   dl:'1 kiwi + noci 15g',dle:'1 kiwi + noci 12g',
+   ing:[i('Kiwi',100,100,'g',CAT.FRUTTA),i('Noci',15,12,'g',CAT.DISP)],
+   adl:'Mandorle 20g + 1 pera a fette',adle:'Mandorle 15g + 1 pera',
+   aing:[i('Mandorle',20,15,'g',CAT.DISP),i('Pere',140,120,'g',CAT.FRUTTA)]},
+  {icon:'🥗',name:'Pranzo',kl:'~500',kle:'~420',
+   dl:'Pasta integrale 70g + pesto songino (songino 40g + pinoli 10g) + fagiolini 100g',
+   dle:'Pasta 60g + pesto songino + fagiolini 80g',
+   ing:[i('Pasta integrale',70,60,'g',CAT.CER),i('Insalata mista/songino',40,30,'g',CAT.V1),i('Fagiolini freschi',100,80,'g',CAT.V1)],
+   adl:'Farro 70g + zucchine trifolate 200g + pollo a pezzetti 120g',
+   adle:'Farro 60g + zucchine 170g + pollo 100g',
+   aing:[i('Farro perlato',70,60,'g',CAT.CER),i('Zucchine',200,170,'g',CAT.V1),i('Petto di pollo',120,100,'g',CAT.CARNE)]},
+  {icon:'🌙',name:'Cena',kl:'~430',kle:'~360',
+   dl:'Merluzzo al vapore 200g + peperonata 250g + cicoria 100g',
+   dle:'Merluzzo 160g + peperonata 200g + cicoria 80g',
+   ing:[i('Merluzzo',200,160,'g',CAT.CARNE),i('Peperoni',250,200,'g',CAT.V2),i('Cicoria/radicchio',100,80,'g',CAT.V1)],
+   adl:'Frittata peperoni (2 uova + peperoni 200g) + insalata mista 120g',
+   adle:'Frittata (2 uova + peperoni 160g) + insalata 100g',
+   aing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Peperoni',200,160,'g',CAT.V2),i('Insalata mista/songino',120,100,'g',CAT.V1)]}
+ ]},
+ {name:'Giovedi',e:'🥚',meals:[
+  {icon:'☀️',name:'Colazione',kl:'~290',kle:'~250',
+   dl:'Yogurt greco 150g + kiwi 2pz + semi di lino 10g',
+   dle:'Yogurt 120g + kiwi 2pz + semi lino 8g',
+   ing:[i('Yogurt greco 0%',150,120,'g',CAT.LATT),i('Kiwi',200,200,'g',CAT.FRUTTA),i('Semi di lino',10,8,'g',CAT.DISP)],
+   adl:'2 uova strapazzate + spinaci saltati 80g + pomodorini 80g + pane 30g',
+   adle:'2 uova + spinaci 60g + pomodorini 60g + pane 25g',
+   aing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Spinaci freschi',80,60,'g',CAT.V2),i('Pomodorini',80,60,'g',CAT.V2),i('Pane integrale/segale',30,25,'g',CAT.CER)]},
+  {icon:'🥚',name:'Spuntino',kl:'~80',kle:'~70',
+   dl:'1 uovo sodo + cetriolo 100g',dle:'1 uovo sodo + cetriolo 80g',
+   ing:[i('Uova fresche',1,1,'pz',CAT.LATT),i('Cetrioli',100,80,'g',CAT.V2)],
+   adl:'Fragole fresche 150g + noci 12g',adle:'Fragole 120g + noci 10g',
+   aing:[i('Fragole',150,120,'g',CAT.FRUTTA),i('Noci',12,10,'g',CAT.DISP)]},
+  {icon:'🥗',name:'Pranzo',kl:'~510',kle:'~430',
+   dl:'Bowl: riso integrale 60g + tonno 120g + pomodori 120g + olive 20g',
+   dle:'Riso 50g + tonno 100g + pomodori 100g + olive 15g',
+   ing:[i('Riso integrale',60,50,'g',CAT.CER),i('Tonno al naturale',120,100,'g',CAT.CARNE),i('Pomodori',120,100,'g',CAT.V2),i('Olive in salamoia',20,15,'g',CAT.DISP)],
+   adl:'Farro 60g + ceci 100g cotti + cetriolo 100g + pomodorini 100g',
+   adle:'Farro 50g + ceci 80g + cetriolo 80g + pomodorini 80g',
+   aing:[i('Farro perlato',60,50,'g',CAT.CER),i('Ceci (hummus)',100,80,'g',CAT.CER),i('Cetrioli',100,80,'g',CAT.V2),i('Pomodorini',100,80,'g',CAT.V2)]},
+  {icon:'🌙',name:'Cena',kl:'~380',kle:'~320',
+   dl:'Zuppa piselli freschi e menta 400g + pane integrale tostato 40g',
+   dle:'Zuppa piselli 350g + pane 30g',
+   ing:[i('Piselli freschi (con baccello)',1000,900,'g',CAT.V2),i('Pane integrale/segale',40,30,'g',CAT.CER)],
+   adl:'Salmone al vapore 150g + bietole saltate 200g + limone',
+   adle:'Salmone 120g + bietole 170g',
+   aing:[i('Salmone',150,120,'g',CAT.CARNE),i('Bietole',200,170,'g',CAT.V2)]}
+ ]},
+ {name:'Venerdi',e:'🥑',meals:[
+  {icon:'☀️',name:'Colazione',kl:'~350',kle:'~300',
+   dl:'Frullato verde: spinaci 50g + cetriolo 100g + yogurt greco 150g + limone',
+   dle:'Spinaci 40g + cetriolo 80g + yogurt 120g',
+   ing:[i('Spinaci freschi',50,40,'g',CAT.V2),i('Cetrioli',100,80,'g',CAT.V2),i('Yogurt greco 0%',150,120,'g',CAT.LATT)],
+   adl:'Pancake avena (avena 45g + 1 uovo + latte 80ml) + fragole 100g',
+   adle:'Pancake (avena 35g + 1 uovo + latte 60ml) + fragole 80g',
+   aing:[i('Fiocchi di avena',45,35,'g',CAT.CER),i('Uova fresche',1,1,'pz',CAT.LATT),i('Latte p.s.',80,60,'ml',CAT.LATT),i('Fragole',100,80,'g',CAT.FRUTTA)]},
+  {icon:'🍏',name:'Spuntino',kl:'~70',kle:'~60',
+   dl:'1 mela verde + 5 mandorle',dle:'1 mela + 5 mandorle',
+   ing:[i('Mele',160,140,'g',CAT.FRUTTA),i('Mandorle',15,15,'g',CAT.DISP)],
+   adl:'Fragole 200g + yogurt greco 80g',adle:'Fragole 150g + yogurt 60g',
+   aing:[i('Fragole',200,150,'g',CAT.FRUTTA),i('Yogurt greco 0%',80,60,'g',CAT.LATT)]},
+  {icon:'🥗',name:'Pranzo',kl:'~490',kle:'~410',
+   dl:'Frittata zucchine (2 uova + zucchine 150g) + ceci 120g + insalata 100g',
+   dle:'Frittata (2 uova + zucchine 120g) + ceci 100g + insalata 80g',
+   ing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Zucchine',150,120,'g',CAT.V2),i('Ceci (hummus)',120,100,'g',CAT.CER),i('Insalata mista/songino',100,80,'g',CAT.V2)],
+   adl:'Pasta integrale 70g + tonno 100g + pomodorini 150g + capperi',
+   adle:'Pasta 60g + tonno 80g + pomodorini 120g',
+   aing:[i('Pasta integrale',70,60,'g',CAT.CER),i('Tonno al naturale',100,80,'g',CAT.CARNE),i('Pomodorini',150,120,'g',CAT.V2)]},
+  {icon:'🌙',name:'Cena',kl:'~440',kle:'~380',
+   dl:'Petto di tacchino al forno 180g + melanzane 200g + pomodori gratinati 150g',
+   dle:'Tacchino 150g + melanzane 170g + pomodori 120g',
+   ing:[i('Petto di tacchino',180,150,'g',CAT.CARNE),i('Melanzane',200,170,'g',CAT.V2),i('Pomodori',150,120,'g',CAT.V2)],
+   adl:'Merluzzo al cartoccio 200g + zucchine 180g + pomodorini',
+   adle:'Merluzzo 160g + zucchine 150g + pomodorini',
+   aing:[i('Merluzzo',200,160,'g',CAT.CARNE),i('Zucchine',180,150,'g',CAT.V2),i('Pomodorini',80,60,'g',CAT.V2)]}
+ ]},
+ {name:'Sabato',e:'🥩',meals:[
+  {icon:'☀️',name:'Colazione',kl:'~370',kle:'~320',
+   dl:'2 uova strapazzate + avocado 50g + pomodorini 100g + pane segale 40g',
+   dle:'2 uova + avocado 40g + pomodorini 80g + pane 30g',
+   ing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Avocado',50,40,'g',CAT.FRUTTA),i('Pomodorini',100,80,'g',CAT.V2),i('Pane integrale/segale',40,30,'g',CAT.CER)],
+   adl:'Yogurt greco 150g + granola integrale 30g + fragole 120g',
+   adle:'Yogurt 120g + granola 25g + fragole 100g',
+   aing:[i('Yogurt greco 0%',150,120,'g',CAT.LATT),i('Granola integrale artigianale',30,25,'g',CAT.DISP),i('Fragole',120,100,'g',CAT.FRUTTA)]},
+  {icon:'🍐',name:'Spuntino',kl:'~130',kle:'~105',
+   dl:'1 pera + mandorle 15g',dle:'1 pera + mandorle 12g',
+   ing:[i('Pere',180,150,'g',CAT.FRUTTA),i('Mandorle',15,12,'g',CAT.DISP)],
+   adl:'Ciliegie fresche 150g + noci 15g',adle:'Ciliegie 120g + noci 12g',
+   aing:[i('Ciliegie',150,120,'g',CAT.FRUTTA),i('Noci',15,12,'g',CAT.DISP)]},
+  {icon:'🥗',name:'Pranzo',kl:'~540',kle:'~450',
+   dl:'Bistecca magra 180g + peperoni arrostiti 200g + insalata mista 80g',
+   dle:'Bistecca 150g + peperoni 180g + insalata 60g',
+   ing:[i('Bistecca magra (fesa/girello)',180,150,'g',CAT.CARNE),i('Peperoni',200,180,'g',CAT.V2),i('Insalata mista/songino',80,60,'g',CAT.V2)],
+   adl:'Pollo alla griglia 180g + caprese: pomodori 150g + mozzarella light 60g',
+   adle:'Pollo 150g + pomodori 120g + mozzarella light 50g',
+   aing:[i('Petto di pollo',180,150,'g',CAT.CARNE),i('Pomodori',150,120,'g',CAT.V2),i('Mozzarella light',60,50,'g',CAT.LATT)]},
+  {icon:'🌙',name:'Cena',kl:'~380',kle:'~320',
+   dl:'Gazpacho toscano: pomodori 300g + cetriolo 100g + pane raffermo 30g + ricotta 60g',
+   dle:'Pomodori 250g + cetriolo 80g + pane 20g + ricotta 50g',
+   ing:[i('Pomodori',300,250,'g',CAT.V2),i('Cetrioli',100,80,'g',CAT.V2),i('Pane integrale/segale',30,20,'g',CAT.CER),i('Ricotta magra',60,50,'g',CAT.LATT)],
+   adl:'Uova in purgatorio (2 uova + sugo pomodoro 200g) + pane 35g',
+   adle:'2 uova + sugo pomodoro 160g + pane 25g',
+   aing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Pomodori',200,160,'g',CAT.V2),i('Pane integrale/segale',35,25,'g',CAT.CER)]}
+ ]},
+ {name:'Domenica',e:'🍳',meals:[
+  {icon:'☀️',name:'Colazione',kl:'~380',kle:'~320',
+   dl:'Pancake avena (avena 50g + 1 uovo + banana 60g) + yogurt 100g + fragole 100g',
+   dle:'Avena 40g + 1 uovo + banana 50g + yogurt 80g + fragole 80g',
+   ing:[i('Fiocchi di avena',50,40,'g',CAT.CER),i('Uova fresche',1,1,'pz',CAT.LATT),i('Banane',60,50,'g',CAT.FRUTTA),i('Yogurt greco 0%',100,80,'g',CAT.LATT),i('Fragole',100,80,'g',CAT.FRUTTA)],
+   adl:'Frittata dolce: 2 uova + ricotta 60g + miele 8g + mirtilli 80g',
+   adle:'2 uova + ricotta 50g + miele 6g + mirtilli 60g',
+   aing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Ricotta magra',60,50,'g',CAT.LATT),i('Mirtilli',80,60,'g',CAT.FRUTTA)]},
+  {icon:'🥕',name:'Spuntino',kl:'~90',kle:'~70',
+   dl:'Carote 120g + cetrioli + hummus 40g',dle:'Carote 100g + cetrioli + hummus 30g',
+   ing:[i('Carote',120,100,'g',CAT.V2),i('Cetrioli',80,60,'g',CAT.V2),i('Ceci (hummus)',40,30,'g',CAT.CER)],
+   adl:'1 uovo sodo + 1 mela',adle:'1 uovo sodo + 1 mela',
+   aing:[i('Uova fresche',1,1,'pz',CAT.LATT),i('Mele',150,130,'g',CAT.FRUTTA)]},
+  {icon:'🥗',name:'Pranzo',kl:'~510',kle:'~430',
+   dl:'Baccala al pomodoro 180g + fagiolini 150g + farro 60g secco',
+   dle:'Baccala 150g + fagiolini 120g + farro 50g',
+   ing:[i('Baccala dissalato',180,150,'g',CAT.CARNE),i('Fagiolini freschi',150,120,'g',CAT.V2),i('Farro perlato',60,50,'g',CAT.CER),i('Pomodori',120,100,'g',CAT.V2)],
+   adl:'Ribollita estiva: fagioli cannellini 100g + verdure 200g + pane 30g',
+   adle:'Fagioli 80g + verdure 170g + pane 25g',
+   aing:[i('Fagioli cannellini',100,80,'g',CAT.CER),i('Zucchine',100,80,'g',CAT.V2),i('Pomodori',100,80,'g',CAT.V2),i('Pane integrale/segale',30,25,'g',CAT.CER)]},
+  {icon:'🌙',name:'Cena',kl:'~390',kle:'~330',
+   dl:'Minestrone estivo freddo (zucchine 100g + piselli 80g + pomodori 100g + farro 30g) + uovo in camicia',
+   dle:'Zucchine 80g + piselli 60g + pomodori 80g + farro 25g + uovo',
+   ing:[i('Zucchine',100,80,'g',CAT.V2),i('Piselli freschi (con baccello)',200,150,'g',CAT.V2),i('Pomodori',100,80,'g',CAT.V2),i('Farro perlato',30,25,'g',CAT.CER),i('Uova fresche',1,1,'pz',CAT.LATT)],
+   adl:'Vellutata di piselli 400g + ricotta 60g + crostini integrali 25g',
+   adle:'Piselli 350g + ricotta 50g + crostini 20g',
+   aing:[i('Piselli freschi (con baccello)',1000,900,'g',CAT.V2),i('Ricotta magra',60,50,'g',CAT.LATT),i('Pane integrale/segale',25,20,'g',CAT.CER)]}
+ ]}
+];
+
+const DOLCI_DATA=[
+  {e:'🍫',t:'Cioccolato fondente >=85%',d:'Basso IG, magnesio, antiossidanti. Il migliore per fumatori.',l:'25g',le:'20g'},
+  {e:'🍓',t:'Yogurt greco + frutti rossi',d:'Proteine che stabilizzano la glicemia notturna.',l:'150g+80g',le:'120g+60g'},
+  {e:'🥜',t:'Mandorle + 1 dattero',d:'Il dattero soddisfa il dolce, le mandorle rallentano l\'assorbimento.',l:'15g+1',le:'10g+1'},
+  {e:'🍎',t:'Frutta + cannella',d:'Mela, pera o fragole. La cannella riduce il picco del 20%.',l:'200g',le:'150g'},
+  {e:'🍦',t:'Gelato artigianale frutta',d:'Max 2x/settimana. Sorbetto preferibile al cremoso.',l:'80g',le:'60g'},
+  {e:'🍪',t:'Biscotti avena casalinghi',d:'Avena + banana + cannella, senza zucchero aggiunto.',l:'2 biscotti',le:'2 biscotti'},
+];
+
+// ════════════════════════════════════════
+// STATE
+// ════════════════════════════════════════
+let altShowing={};
+let selectedMeals=new Set();
+let spesaTab='sett';
+let checked={};
+
+// ════════════════════════════════════════
+// NAVIGATION
+// ════════════════════════════════════════
+function showPage(name,btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('page-'+name).classList.add('active');
+  btn.classList.add('active');
+  if(name==='spesa'){renderSpesa();}
+  if(name==='stampa'){renderPrint();}
+}
+
+// ════════════════════════════════════════
+// PIANO PAGE
+// ════════════════════════════════════════
+let currentDay=0;
+
+function initPiano(){
+  const tb=document.getElementById('day-tabs');
+  DAYS.forEach((d,i)=>{
+    const b=document.createElement('button');
+    b.className='tab'+(i===0?' active':'');
+    b.textContent=d.name.slice(0,3);
+    b.onclick=()=>showDay(i);
+    tb.appendChild(b);
+  });
+  renderDay(0);
+}
+
+function showDay(idx){
+  currentDay=idx;
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',i===idx));
+  renderDay(idx);
+}
+
+function renderDay(idx){
+  const day=DAYS[idx];
+  let h=`<div class="section"><div style="font-family:var(--font-serif);font-size:1.2rem;color:var(--g);margin-bottom:.8rem">${day.e} ${day.name}</div>`;
+  day.meals.forEach((m,mi)=>{
+    const key=`${idx}_${mi}`;
+    const on=!!altShowing[key];
+    h+=`<div class="card">
+      <div class="card-hd"><span class="ci">${m.icon}</span><span class="cn">${m.name}</span><span class="ck">👨${m.kl} · 👩${m.kle} kcal</span></div>
+      <div class="portions">
+        <div class="por"><div class="por-lbl lui"><span class="dot" style="background:var(--lui)"></span>LUI</div>${m.dl}</div>
+        <div class="por"><div class="por-lbl lei"><span class="dot" style="background:var(--lei)"></span>LEI</div>${m.dle}</div>
+      </div>
+      <button class="alt-btn${on?' on':''}" onclick="toggleAlt('${key}',${idx},${mi})">
+        ${on?'<< Torna al piatto principale':'🔄 Vedi alternativa'}
+      </button>
+      <div class="alt-panel${on?' visible':''}">
+        <div class="alt-lbl">✨ ALTERNATIVA</div>
+        <div class="portions">
+          <div class="por"><div class="por-lbl lui"><span class="dot" style="background:var(--lui)"></span>LUI</div>${m.adl}</div>
+          <div class="por"><div class="por-lbl lei"><span class="dot" style="background:var(--lei)"></span>LEI</div>${m.adle}</div>
+        </div>
+      </div>
+    </div>`;
+  });
+  h+=`</div>`;
+  document.getElementById('day-container').innerHTML=h;
+}
+
+function toggleAlt(key,di,mi){
+  altShowing[key]=!altShowing[key];
+  renderDay(di);
+}
+
+// ════════════════════════════════════════
+// DOLCI PAGE
+// ════════════════════════════════════════
+function initDolci(){
+  const g=document.getElementById('sweet-grid');
+  DOLCI_DATA.forEach(d=>{
+    g.innerHTML+=`<div class="sweet-card">
+      <div class="se">${d.e}</div>
+      <h4>${d.t}</h4>
+      <div class="sd">${d.d}</div>
+      <span class="gbadge lui">👨 ${d.l}</span>
+      <span class="gbadge lei">👩 ${d.le}</span>
+    </div>`;
+  });
+}
+
+// ════════════════════════════════════════
+// WATER
+// ════════════════════════════════════════
+function initWater(){
+  [['lui',8],['lei',7]].forEach(([who,cnt])=>{
+    const c=document.getElementById('glasses-'+who);
+    let filled=0;
+    for(let i=0;i<cnt;i++){
+      const s=document.createElement('span');
+      s.className='glass';s.textContent='🥛';s.dataset.i=i;s.dataset.w=who;
+      s.onclick=function(){
+        const idx=parseInt(this.dataset.i);
+        const w=this.dataset.w;
+        filled=idx+1;
+        document.querySelectorAll(`.glass[data-w="${w}"]`).forEach((el,j)=>{
+          el.textContent=j<filled?'💧':'🥛';
+        });
+      };
+      c.appendChild(s);
+    }
+  });
+}
+
+
+// ════════════════════════════════════════
+// SPESA - MEAL SELECTOR SYSTEM
+// ════════════════════════════════════════
+function initMealSelector(){
+  DAYS.forEach((d,di)=>d.meals.forEach((_,mi)=>selectedMeals.add(`${di}_${mi}`)));
+  DOLCI_DATA.forEach((_,idx)=>selectedMeals.add(`dolci_${idx}`));
+  renderMealSelectorList();
+}
+
+function renderMealSelectorList(){
+  const el=document.getElementById('meal-selector-list');
+  if(!el)return;
+  let h='';
+  DAYS.forEach((day,di)=>{
+    const dayAllOn=day.meals.every((_,mi)=>selectedMeals.has(`${di}_${mi}`));
+    h+=`<div class="meal-day-block">
+      <div class="meal-day-hd">
+        <span>${day.e} ${day.name}</span>
+        <button class="day-sel-toggle" onclick="toggleDayMeals(${di})">${dayAllOn?'✖ Deseleziona':'✅ Seleziona'} tutti</button>
+      </div>`;
+    day.meals.forEach((m,mi)=>{
+      const key=`${di}_${mi}`;
+      const on=selectedMeals.has(key);
+      const isAlt=!!altShowing[key];
+      const txt=isAlt?m.adl:m.dl;
+      h+=`<label class="meal-check-row${on?' on':''}">
+        <input type="checkbox" ${on?'checked':''} onchange="toggleMeal('${key}',this.checked)">
+        <span class="mcn">${m.icon} ${m.name}</span>
+        <span class="mcd">${txt}${isAlt?'<span class="alt-ind">alt</span>':''}</span>
+      </label>`;
+    });
+    h+=`</div>`;
+  });
+  // Dolci
+  const dolciAllOn=DOLCI_DATA.every((_,idx)=>selectedMeals.has(`dolci_${idx}`));
+  h+=`<div class="meal-day-block">
+    <div class="meal-day-hd">
+      <span>🍫 Dolci Serali</span>
+      <button class="day-sel-toggle" onclick="toggleDolciAll()">${dolciAllOn?'✖ Deseleziona':'✅ Seleziona'} tutti</button>
+    </div>`;
+  DOLCI_DATA.forEach((d,idx)=>{
+    const key=`dolci_${idx}`;
+    const on=selectedMeals.has(key);
+    h+=`<label class="dolci-check-row${on?' on':''}">
+      <input type="checkbox" ${on?'checked':''} onchange="toggleMeal('${key}',this.checked)">
+      <span class="dcn">${d.e} ${d.t} <span style="font-size:.72rem;color:var(--gr)">· lui ${d.l} · lei ${d.le}</span></span>
+    </label>`;
+  });
+  h+=`</div>`;
+  el.innerHTML=h;
+}
+
+function toggleMeal(key,val){
+  if(val)selectedMeals.add(key);else selectedMeals.delete(key);
+  renderMealSelectorList();
+  renderSpesa();
+}
+function toggleDayMeals(di){
+  const allOn=DAYS[di].meals.every((_,mi)=>selectedMeals.has(`${di}_${mi}`));
+  DAYS[di].meals.forEach((_,mi)=>{
+    if(allOn)selectedMeals.delete(`${di}_${mi}`);
+    else selectedMeals.add(`${di}_${mi}`);
+  });
+  renderMealSelectorList();renderSpesa();
+}
+function toggleDolciAll(){
+  const allOn=DOLCI_DATA.every((_,idx)=>selectedMeals.has(`dolci_${idx}`));
+  DOLCI_DATA.forEach((_,idx)=>{
+    if(allOn)selectedMeals.delete(`dolci_${idx}`);
+    else selectedMeals.add(`dolci_${idx}`);
+  });
+  renderMealSelectorList();renderSpesa();
+}
+function selectAllMeals(){
+  DAYS.forEach((d,di)=>d.meals.forEach((_,mi)=>selectedMeals.add(`${di}_${mi}`)));
+  DOLCI_DATA.forEach((_,idx)=>selectedMeals.add(`dolci_${idx}`));
+  renderMealSelectorList();renderSpesa();
+}
+function clearAllMeals(){
+  selectedMeals.clear();renderMealSelectorList();renderSpesa();
+}
+function selectDayMeals(arr){
+  selectedMeals.clear();
+  arr.forEach(di=>DAYS[di].meals.forEach((_,mi)=>selectedMeals.add(`${di}_${mi}`)));
+  DOLCI_DATA.forEach((_,idx)=>selectedMeals.add(`dolci_${idx}`));
+  renderMealSelectorList();renderSpesa();
+}
+
+function setSpesaTab(t){ /* rimosso */ }
+
+function renderSpesa(){
+  const totals = aggregateSel();
+  if(totals===null){
+    document.getElementById('shop-lists').innerHTML=`
+      <div style="text-align:center;padding:2rem 1rem;color:var(--gr)">
+        <div style="font-size:2rem;margin-bottom:.5rem">🛒</div>
+        <div style="font-size:.85rem">Seleziona almeno un pasto sopra<br>per generare la lista</div>
+      </div>`;
+    updateProgress();
+    return;
+  }
+  const byCat={};
+  Object.entries(totals).forEach(([name,data])=>{
+    if(!byCat[data.c])byCat[data.c]=[];
+    byCat[data.c].push({name,...data});
+  });
+  let html='';
+  CO.forEach(cat=>{
+    const items=(byCat[cat]||[]).filter(it=>typeof it.ql!=='number'||(it.ql+it.ll)>0);
+    if(!items.length)return;
+    html+=`<div class="shop-cat"><h4>${cat}</h4>`;
+    items.forEach(it=>{
+      const qty=typeof it.ql==='number'?fmtQty(it.ql,it.ll,it.u):it.u;
+      const altTag=it.alt?'<span class="alt-tag">alt</span>':'';
+      const done=checked[it.name]?'done':'';
+      html+=`<label class="shop-row ${done}">
+        <input type="checkbox" ${checked[it.name]?'checked':''} onchange="toggleCheck(this,'${it.name.replace(/'/g,"\\'")}',this.checked)">
+        <span class="sn">${it.name}${altTag}</span>
+        <span class="sq">${qty}</span>
+      </label>`;
+    });
+    html+=`</div>`;
+  });
+  document.getElementById('shop-lists').innerHTML=html;
+  updateProgress();
+}
+
+function fmtQty(ql,ll,u){
+  if(u==='pz'){const t=ql+ll;return t>0?t+' pz':'-';}
+  if(u==='ml'){const t=ql+ll;return t>=1000?(t/1000).toFixed(1).replace('.0','')+' L':t+' ml';}
+  if(u==='g'){const t=ql+ll;return t>=1000?(t/1000).toFixed(1).replace('.0','')+' kg':t+'g';}
+  return u||'-';
+}
+
+function aggregateSel(){
+  // SOLO gli ingredienti dei pasti flaggati - nessuna dispensa fissa
+  if(selectedMeals.size===0)return null;
+  const t={};
+  const add=(list,isAlt)=>{
+    list.forEach(x=>{
+      if(!t[x.n])t[x.n]={ql:0,ll:0,u:x.u,c:x.c,alt:false};
+      if(typeof x.ql==='number')t[x.n].ql+=x.ql;
+      if(typeof x.ll==='number')t[x.n].ll+=x.ll;
+      if(isAlt)t[x.n].alt=true;
+    });
+  };
+  DAYS.forEach((day,di)=>day.meals.forEach((m,mi)=>{
+    const key=`${di}_${mi}`;
+    if(!selectedMeals.has(key))return;
+    const ua=!!altShowing[key];
+    add(ua?m.aing:m.ing,ua);
+  }));
+  // Dolci solo se selezionati
+  DOLCI_DATA.forEach((d,idx)=>{
+    if(!selectedMeals.has(`dolci_${idx}`))return;
+    // aggiungi ingrediente specifico del dolce selezionato
+    const dolciMap=[
+      [i('Cioccolato fondente >=85%',200,0,'g',CAT.DOLCI)],
+      [i('Yogurt greco 0% (dolce serale)',300,0,'g',CAT.DOLCI),i('Frutti di bosco/fragole (dolce serale)',200,0,'g',CAT.DOLCI)],
+      [i('Mandorle (dolci serali)',70,0,'g',CAT.DOLCI),i('Datteri (dolce serale)',4,0,'pz',CAT.DOLCI)],
+      [i('Frutta fresca + cannella',700,0,'g',CAT.DOLCI)],
+      [i('Gelato artigianale alla frutta',0,0,'al bar/gelateria',CAT.DOLCI)],
+      [i('Avena (biscotti serali)',100,0,'g',CAT.DOLCI),i('Banane mature (biscotti)',2,0,'pz',CAT.DOLCI)],
+    ];
+    (dolciMap[idx]||[]).forEach(x=>{
+      if(!t[x.n])t[x.n]={ql:0,ll:0,u:x.u,c:x.c,alt:false};
+      if(typeof x.ql==='number')t[x.n].ql+=x.ql;
+    });
+  });
+  return Object.keys(t).length>0?t:null;
+}
+
+function renderSpesa(){
+  const totals = aggregateSel();
+
+  if(totals===null){
+    document.getElementById('shop-lists').innerHTML=`
+      <div style="text-align:center;padding:2rem 1rem;color:var(--gr)">
+        <div style="font-size:2rem;margin-bottom:.5rem">🛒</div>
+        <div style="font-size:.85rem">Seleziona almeno un pasto sopra<br>per generare la lista</div>
+      </div>`;
+    updateProgress();
+    return;
+  }
+
+  const byCat={};
+  Object.entries(totals).forEach(([name,data])=>{
+    if(!byCat[data.c])byCat[data.c]=[];
+    byCat[data.c].push({name,...data});
+  });
+
+  let html='';
+  CO.forEach(cat=>{
+    const items=(byCat[cat]||[]).filter(it=>typeof it.ql!=='number'||(it.ql+it.ll)>0);
+    if(!items.length)return;
+    html+=`<div class="shop-cat"><h4>${cat}${CW[cat]?`<span>${CW[cat]}</span>`:''}</h4>`;
+    items.forEach(it=>{
+      const qty=typeof it.ql==='number'?fmtQty(it.ql,it.ll,it.u):it.u;
+      const altTag=it.alt?'<span class="alt-tag">alt</span>':'';
+      const done=checked[it.name]?'done':'';
+      html+=`<label class="shop-row ${done}">
+        <input type="checkbox" ${checked[it.name]?'checked':''} onchange="toggleCheck(this,'${it.name.replace(/'/g,"\\'")}',this.checked)">
+        <span class="sn">${it.name}${altTag}</span>
+        <span class="sq">${qty}</span>
+      </label>`;
+    });
+    html+=`</div>`;
+  });
+  document.getElementById('shop-lists').innerHTML=html;
+  updateProgress();
+}
+
+function toggleCheck(el,name,val){
+  checked[name]=val;
+  el.closest('.shop-row').classList.toggle('done',val);
+  updateProgress();
+}
+
+function updateProgress(){
+  const all=document.querySelectorAll('.shop-row input');
+  const chk=document.querySelectorAll('.shop-row input:checked');
+  const pct=all.length?Math.round(chk.length/all.length*100):0;
+  document.getElementById('prog-bar').style.width=pct+'%';
+  document.getElementById('prog-label').textContent=all.length?`${chk.length} / ${all.length}`:'0 / 0';
+}
+function checkAll(){
+  document.querySelectorAll('.shop-row input').forEach(el=>{el.checked=true;el.closest('.shop-row').classList.add('done');});
+  updateProgress();
+}
+function uncheckAll(){
+  checked={};
+  document.querySelectorAll('.shop-row input').forEach(el=>{el.checked=false;el.closest('.shop-row').classList.remove('done');});
+  updateProgress();
+}
+
+// ════════════════════════════════════════
+// STAMPA
+// ════════════════════════════════════════
+function renderPrint(){
+  const el=document.getElementById('print-preview');
+  let h=`<div style="font-family:Arial,sans-serif;font-size:13px;color:#333">
+  <h2 style="color:#2d6a4f;margin-bottom:.3rem">🌞 Piano Alimentare Estivo 2026 - Effetto GLP-1</h2>
+  <p style="color:#666;margin-bottom:.8rem;font-size:12px">Toscana · Maggio 2026 · Per 2 persone</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:.8rem">
+    <div style="background:#e8f5ee;border-radius:8px;padding:.6rem;font-size:12px"><strong style="color:#2d6a4f">👨 Lui</strong><br>87kg · 179cm · BMI 27.1 · 1.550 kcal/die</div>
+    <div style="background:#fce8f3;border-radius:8px;padding:.6rem;font-size:12px"><strong style="color:#c05299">👩 Lei</strong><br>75kg · 170cm · BMI 26.0 · 1.350 kcal/die</div>
+  </div>
+  <div style="background:#f0fdf4;border-left:3px solid #52b788;padding:.5rem .8rem;margin-bottom:.8rem;font-size:11px;line-height:1.7">
+    <strong>Schema orario:</strong> Sveglia → acqua+limone → lei: 3 mandorle → caffè · Colazione 10:00 · Pranzo 13:00 · Spuntino 17:30 · Cena 20:00<br>
+    <strong>Aceto di mele:</strong> 1 cucchiaino diluito 10 min prima pranzo e cena · Doppio prima di uscite<br>
+    <strong>Regola piatto:</strong> verdure → proteine → carboidrati · Camminata 10 min post-pasto
+  </div>`;
+
+  DAYS.forEach((day,di)=>{
+    h+=`<h3 style="color:#2d6a4f;margin:.8rem 0 .3rem;font-size:13px">${day.e} ${day.name}</h3>
+    <table style="width:100%;border-collapse:collapse;margin-bottom:.5rem;font-size:11px">
+      <thead><tr>
+        <th style="background:#2d6a4f;color:white;padding:.3rem .4rem;text-align:left;width:12%">Pasto</th>
+        <th style="background:#2d6a4f;color:white;padding:.3rem .4rem;text-align:left;width:44%">👨 Lui</th>
+        <th style="background:#2d6a4f;color:white;padding:.3rem .4rem;text-align:left;width:44%">👩 Lei</th>
+      </tr></thead><tbody>`;
+    day.meals.forEach((m,mi)=>{
+      const key=`${di}_${mi}`;
+      const ua=!!altShowing[key];
+      h+=`<tr>
+        <td style="padding:.28rem .4rem;border-bottom:1px solid #e5e7eb;font-weight:600;color:#2d6a4f">${m.icon} ${m.name}</td>
+        <td style="padding:.28rem .4rem;border-bottom:1px solid #e5e7eb">${ua?m.adl:m.dl} <span style="color:#999;font-size:.9em">(${m.kl} kcal)</span></td>
+        <td style="padding:.28rem .4rem;border-bottom:1px solid #e5e7eb">${ua?m.adle:m.dle} <span style="color:#999;font-size:.9em">(${m.kle} kcal)</span></td>
+      </tr>`;
+      if(!ua){
+        h+=`<tr>
+          <td style="padding:.22rem .4rem;border-bottom:1px solid #e5e7eb;font-size:.9em;color:#b45309">ALT.</td>
+          <td style="padding:.22rem .4rem;border-bottom:1px solid #e5e7eb;font-size:.9em;color:#b45309;background:#fffbeb">${m.adl}</td>
+          <td style="padding:.22rem .4rem;border-bottom:1px solid #e5e7eb;font-size:.9em;color:#b45309;background:#fffbeb">${m.adle}</td>
+        </tr>`;
+      }
+    });
+    h+=`</tbody></table>`;
+  });
+
+  h+=`<h3 style="color:#2d6a4f;margin:.8rem 0 .3rem;font-size:13px">🍫 Dolci Serali</h3>
+  <table style="width:100%;border-collapse:collapse;margin-bottom:.8rem;font-size:11px">
+    <thead><tr>
+      <th style="background:#2d6a4f;color:white;padding:.3rem .4rem;text-align:left">Opzione</th>
+      <th style="background:#2d6a4f;color:white;padding:.3rem .4rem;text-align:left">👨 Lui</th>
+      <th style="background:#2d6a4f;color:white;padding:.3rem .4rem;text-align:left">👩 Lei</th>
+    </tr></thead><tbody>
+    ${DOLCI_DATA.map(d=>`<tr>
+      <td style="padding:.25rem .4rem;border-bottom:1px solid #e5e7eb">${d.e} ${d.t}</td>
+      <td style="padding:.25rem .4rem;border-bottom:1px solid #e5e7eb">${d.l}</td>
+      <td style="padding:.25rem .4rem;border-bottom:1px solid #e5e7eb">${d.le}</td>
+    </tr>`).join('')}
+    </tbody></table>
+
+  <div style="background:#fff8e1;border-left:3px solid #f4c842;padding:.5rem .8rem;font-size:11px;line-height:1.6">
+    ⚕️ Piano informativo - non sostituisce il parere medico.<br>
+    📊 Risultati attesi (con regolarità): <strong>Lui ~2-4 kg/mese · Lei ~1.7-3 kg/mese</strong><br>
+    💧 Idratazione: Lui 2L/die · Lei 1.8L/die · Aceto di mele 1 cucchiaino diluito prima di pranzo e cena<br>
+    💊 Integratori consigliati: Multicentrum + Vitamina C 500mg (es. Cebion) per i fumatori
+  </div></div>`;
+
+  el.innerHTML=h;
+}
+
+function doPrint(){
+  const w=window.open('','_blank');
+  const content=document.getElementById('print-preview').innerHTML;
+  w.document.write(`<!DOCTYPE html><html><head><title>Piano Alimentare Estivo 2026</title>
+  <style>body{font-family:Arial,sans-serif;color:#333;padding:1.5rem;font-size:13px}
+  h2,h3{color:#2d6a4f}table{width:100%;border-collapse:collapse}
+  th{background:#2d6a4f;color:white;padding:.3rem .4rem;text-align:left}
+  td{padding:.28rem .4rem;border-bottom:1px solid #e5e7eb;font-size:12px}
+  @media print{body{padding:.5rem}}
+  </style></head><body>${content}</body></html>`);
+  w.document.close();
+  w.focus();
+  setTimeout(()=>w.print(),500);
+}
+
+// ════════════════════════════════════════
+// INIT
+// ════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', function(){
+  try { initPiano(); } catch(e){ console.error('initPiano',e); }
+  try { initDolci(); } catch(e){ console.error('initDolci',e); }
+  try { initWater(); } catch(e){ console.error('initWater',e); }
+  try { initMealSelector(); } catch(e){ console.error('initMealSelector',e); }
+});
+</script>
+</body>
+</html>
