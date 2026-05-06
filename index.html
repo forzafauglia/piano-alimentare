@@ -807,7 +807,49 @@ function selectDayMeals(arr){
   renderMealSelectorList();renderSpesa();
 }
 
-function setSpesaTab(t){ /* rimosso */ }
+function setSpesaTab(t){ /* unused */ }
+
+function fmtQty(ql,ll,u){
+  if(u==='pz'){const t=ql+ll;return t>0?t+' pz':'-';}
+  if(u==='ml'){const t=ql+ll;return t>=1000?(t/1000).toFixed(1).replace('.0','')+' L':t+' ml';}
+  if(u==='g'){const t=ql+ll;return t>=1000?(t/1000).toFixed(1).replace('.0','')+' kg':t+'g';}
+  return u||'-';
+}
+
+function aggregateSel(){
+  if(selectedMeals.size===0)return null;
+  const t={};
+  const add=(list,isAlt)=>{
+    list.forEach(x=>{
+      if(!t[x.n])t[x.n]={ql:0,ll:0,u:x.u,c:x.c,alt:false};
+      if(typeof x.ql==='number')t[x.n].ql+=x.ql;
+      if(typeof x.ll==='number')t[x.n].ll+=x.ll;
+      if(isAlt)t[x.n].alt=true;
+    });
+  };
+  DAYS.forEach((day,di)=>day.meals.forEach((m,mi)=>{
+    const key=`${di}_${mi}`;
+    if(!selectedMeals.has(key))return;
+    const ua=!!altShowing[key];
+    add(ua?m.aing:m.ing,ua);
+  }));
+  const dolciMap=[
+    [i('Cioccolato fondente >=85%',200,0,'g',CAT.DOLCI)],
+    [i('Yogurt greco 0% (dolce serale)',300,0,'g',CAT.DOLCI),i('Frutti di bosco/fragole (dolce serale)',200,0,'g',CAT.DOLCI)],
+    [i('Mandorle (dolci serali)',70,0,'g',CAT.DOLCI),i('Datteri (dolce serale)',4,0,'pz',CAT.DOLCI)],
+    [i('Frutta fresca + cannella',700,0,'g',CAT.DOLCI)],
+    [i('Gelato artigianale alla frutta',0,0,'al bar/gelateria',CAT.DOLCI)],
+    [i('Avena (biscotti serali)',100,0,'g',CAT.DOLCI),i('Banane mature (biscotti)',2,0,'pz',CAT.DOLCI)],
+  ];
+  DOLCI_DATA.forEach((d,idx)=>{
+    if(!selectedMeals.has(`dolci_${idx}`))return;
+    (dolciMap[idx]||[]).forEach(x=>{
+      if(!t[x.n])t[x.n]={ql:0,ll:0,u:x.u,c:x.c,alt:false};
+      if(typeof x.ql==='number')t[x.n].ql+=x.ql;
+    });
+  });
+  return Object.keys(t).length>0?t:null;
+}
 
 function renderSpesa(){
   const totals = aggregateSel();
