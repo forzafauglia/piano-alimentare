@@ -733,21 +733,30 @@ function renderMealSelectorList(){
   if(!el)return;
   let h='';
   DAYS.forEach((day,di)=>{
-    const dayAllOn=day.meals.every((_,mi)=>selectedMeals.has(`${di}_${mi}`));
+    const dayAllOn=day.meals.every((_,mi)=>selectedMeals.has(`${di}_${mi}`)||selectedMeals.has(`${di}_${mi}_alt`));
     h+=`<div class="meal-day-block">
       <div class="meal-day-hd">
         <span>${day.e} ${day.name}</span>
         <button class="day-sel-toggle" onclick="toggleDayMeals(${di})">${dayAllOn?'✖ Deseleziona':'✅ Seleziona'} tutti</button>
       </div>`;
     day.meals.forEach((m,mi)=>{
-      const key=`${di}_${mi}`;
-      const on=selectedMeals.has(key);
-      const isAlt=!!altShowing[key];
-      const txt=isAlt?m.adl:m.dl;
-      h+=`<label class="meal-check-row${on?' on':''}">
-        <input type="checkbox" ${on?'checked':''} onchange="toggleMeal('${key}',this.checked)">
-        <span class="mcn">${m.icon} ${m.name}</span>
-        <span class="mcd">${txt}${isAlt?'<span class="alt-ind">alt</span>':''}</span>
+      const keyMain=`${di}_${mi}`;
+      const keyAlt=`${di}_${mi}_alt`;
+      const onMain=selectedMeals.has(keyMain);
+      const onAlt=selectedMeals.has(keyAlt);
+      // Header del pasto
+      h+=`<div style="font-size:.78rem;font-weight:600;color:var(--br);margin:.5rem 0 .2rem;padding-left:.3rem">${m.icon} ${m.name}</div>`;
+      // Piatto principale
+      h+=`<label class="meal-check-row${onMain?' on':''}">
+        <input type="checkbox" ${onMain?'checked':''} onchange="toggleMealOpt('${keyMain}','${keyAlt}','main',this.checked)">
+        <span class="mcn" style="color:var(--g)">PRINCIPALE</span>
+        <span class="mcd">${m.dl}</span>
+      </label>`;
+      // Alternativa
+      h+=`<label class="meal-check-row${onAlt?' on':''}" style="background:${onAlt?'#fff3cd':''};border-left:3px solid var(--o);padding-left:.5rem">
+        <input type="checkbox" ${onAlt?'checked':''} onchange="toggleMealOpt('${keyMain}','${keyAlt}','alt',this.checked)">
+        <span class="mcn" style="color:var(--o)">ALTERNATIVA</span>
+        <span class="mcd">${m.adl}</span>
       </label>`;
     });
     h+=`</div>`;
@@ -771,16 +780,46 @@ function renderMealSelectorList(){
   el.innerHTML=h;
 }
 
+// Quando spunti "principale" o "alternativa": sono mutuamente esclusivi
+function toggleMealOpt(keyMain, keyAlt, which, val){
+  if(which==='main'){
+    if(val){
+      selectedMeals.add(keyMain);
+      selectedMeals.delete(keyAlt);
+      altShowing[keyMain]=false; // disattiva alt nel piano
+    } else {
+      selectedMeals.delete(keyMain);
+    }
+  } else {
+    if(val){
+      selectedMeals.add(keyAlt);
+      selectedMeals.delete(keyMain);
+      altShowing[keyMain]=true; // attiva alt nel piano
+    } else {
+      selectedMeals.delete(keyAlt);
+    }
+  }
+  renderMealSelectorList();
+  renderSpesa();
+}
+
 function toggleMeal(key,val){
   if(val)selectedMeals.add(key);else selectedMeals.delete(key);
   renderMealSelectorList();
   renderSpesa();
 }
 function toggleDayMeals(di){
-  const allOn=DAYS[di].meals.every((_,mi)=>selectedMeals.has(`${di}_${mi}`));
+  const allOn=DAYS[di].meals.every((_,mi)=>selectedMeals.has(`${di}_${mi}`)||selectedMeals.has(`${di}_${mi}_alt`));
   DAYS[di].meals.forEach((_,mi)=>{
-    if(allOn)selectedMeals.delete(`${di}_${mi}`);
-    else selectedMeals.add(`${di}_${mi}`);
+    if(allOn){
+      selectedMeals.delete(`${di}_${mi}`);
+      selectedMeals.delete(`${di}_${mi}_alt`);
+    } else {
+      // Add main only if neither is selected
+      if(!selectedMeals.has(`${di}_${mi}`)&&!selectedMeals.has(`${di}_${mi}_alt`)){
+        selectedMeals.add(`${di}_${mi}`);
+      }
+    }
   });
   renderMealSelectorList();renderSpesa();
 }
@@ -793,7 +832,11 @@ function toggleDolciAll(){
   renderMealSelectorList();renderSpesa();
 }
 function selectAllMeals(){
-  DAYS.forEach((d,di)=>d.meals.forEach((_,mi)=>selectedMeals.add(`${di}_${mi}`)));
+  DAYS.forEach((d,di)=>d.meals.forEach((_,mi)=>{
+    if(!selectedMeals.has(`${di}_${mi}`)&&!selectedMeals.has(`${di}_${mi}_alt`)){
+      selectedMeals.add(`${di}_${mi}`);
+    }
+  }));
   DOLCI_DATA.forEach((_,idx)=>selectedMeals.add(`dolci_${idx}`));
   renderMealSelectorList();renderSpesa();
 }
@@ -828,10 +871,13 @@ function aggregateSel(){
     });
   };
   DAYS.forEach((day,di)=>day.meals.forEach((m,mi)=>{
-    const key=`${di}_${mi}`;
-    if(!selectedMeals.has(key))return;
-    const ua=!!altShowing[key];
-    add(ua?m.aing:m.ing,ua);
+    const keyMain=`${di}_${mi}`;
+    const keyAlt=`${di}_${mi}_alt`;
+    if(selectedMeals.has(keyMain)){
+      add(m.ing,false);
+    } else if(selectedMeals.has(keyAlt)){
+      add(m.aing,true);
+    }
   }));
   const dolciMap=[
     [i('Cioccolato fondente >=85%',200,0,'g',CAT.DOLCI)],
