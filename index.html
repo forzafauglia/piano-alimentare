@@ -7,33 +7,33 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Piano Alimentare">
 <meta name="mobile-web-app-capable" content="yes">
-<title>Piano Alimentare Estivo 2026</title>
+<title>Piano Alimentare Autunno 2026</title>
 <style>
 :root{
-  --g:#2d6a4f;--gl:#52b788;--gll:#b7e4c7;
-  --o:#e07a2f;--y:#f4c842;--cr:#fdf6ec;
-  --br:#5c3d2e;--gr:#6b7280;--lui:#2d6a4f;--lei:#c05299;
+  --g:#8a5a2b;--gl:#c98a4b;--gll:#f0dcc0;
+  --o:#c1440e;--y:#e8a33d;--cr:#fdf8f2;
+  --br:#4a3526;--gr:#6b7280;--lui:#8a5a2b;--lei:#a03e6f;
   --w:white;--sh:0 2px 10px rgba(0,0,0,0.07);
   --font-body:-apple-system,'Helvetica Neue',Arial,sans-serif;
   --font-serif:Georgia,'Times New Roman',serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:var(--font-body);background:var(--cr);color:var(--br);min-height:100vh;padding-bottom:72px}
-header{background:linear-gradient(135deg,#2d6a4f,#1b4332);color:white;padding:2rem 1.2rem 1.6rem;text-align:center;position:relative;overflow:hidden}
-header::before{content:'';position:absolute;top:-40%;left:-10%;width:50%;height:180%;background:radial-gradient(ellipse,rgba(82,183,136,.18) 0%,transparent 70%)}
+header{background:linear-gradient(135deg,#8a5a2b,#5c3a18);color:white;padding:2rem 1.2rem 1.6rem;text-align:center;position:relative;overflow:hidden}
+header::before{content:'';position:absolute;top:-40%;left:-10%;width:50%;height:180%;background:radial-gradient(ellipse,rgba(232,163,61,.2) 0%,transparent 70%)}
 .badge{display:inline-block;background:var(--y);color:var(--br);font-size:.68rem;font-weight:600;padding:.18rem .75rem;border-radius:20px;margin-bottom:.6rem;letter-spacing:.04em}
 header h1{font-family:var(--font-serif);font-size:clamp(1.4rem,5vw,2rem);margin-bottom:.25rem;position:relative}
-header p{font-size:.82rem;opacity:.8;position:relative}
+header p{font-size:.82rem;opacity:.85;position:relative}
 .nav{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #e5e7eb;display:flex;padding:.35rem .2rem;z-index:100;box-shadow:0 -2px 12px rgba(0,0,0,.06)}
 .nav-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:.1rem;padding:.4rem .2rem;border:none;background:transparent;cursor:pointer;border-radius:10px;font-family:var(--font-body);transition:all .15s}
-.nav-btn:hover,.nav-btn.active{background:#f0fdf4}
+.nav-btn:hover,.nav-btn.active{background:#fdf1e3}
 .nav-btn .ni{font-size:1.1rem}
 .nav-btn .nl{font-size:.6rem;color:var(--gr);font-weight:500}
 .nav-btn.active .nl{color:var(--g);font-weight:600}
 .page{display:none}.page.active{display:block}
 .section{max-width:700px;margin:0 auto;padding:.8rem 1rem 1.5rem}
 .card{background:white;border-radius:14px;margin-bottom:.75rem;overflow:hidden;box-shadow:var(--sh)}
-.card-hd{display:flex;align-items:center;gap:.6rem;padding:.7rem .9rem;border-bottom:1px solid #f0f0f0;background:#fafafa}
+.card-hd{display:flex;align-items:center;gap:.6rem;padding:.7rem .9rem;border-bottom:1px solid #f0f0f0;background:#faf7f3}
 .card-hd .ci{font-size:1.1rem}
 .card-hd .cn{font-weight:500;font-size:.87rem;flex:1}
 .card-hd .ck{font-size:.72rem;color:var(--gr)}
@@ -43,12 +43,12 @@ header p{font-size:.82rem;opacity:.8;position:relative}
 .por-lbl{font-size:.66rem;font-weight:600;letter-spacing:.04em;margin-bottom:.28rem;display:flex;align-items:center;gap:.25rem}
 .por-lbl.lui{color:var(--lui)}.por-lbl.lei{color:var(--lei)}
 .dot{width:7px;height:7px;border-radius:50%;display:inline-block}
-.alt-btn{display:flex;align-items:center;gap:.35rem;margin:.4rem .9rem .6rem;background:#f0fdf4;border:1.5px dashed var(--gl);color:var(--g);border-radius:8px;padding:.36rem .75rem;font-size:.74rem;font-weight:500;cursor:pointer;width:calc(100% - 1.8rem);font-family:var(--font-body);transition:all .15s}
-.alt-btn.on{background:#fff3cd;border-color:var(--o);color:var(--o)}
-.alt-panel{display:none;background:#fffbeb;border-top:1px solid #fde68a;padding:.6rem .9rem .7rem}
+.alt-btn{display:flex;align-items:center;gap:.35rem;margin:.4rem .9rem .6rem;background:#fdf1e3;border:1.5px dashed var(--gl);color:var(--g);border-radius:8px;padding:.36rem .75rem;font-size:.74rem;font-weight:500;cursor:pointer;width:calc(100% - 1.8rem);font-family:var(--font-body);transition:all .15s}
+.alt-btn.on{background:#fde8d8;border-color:var(--o);color:var(--o)}
+.alt-panel{display:none;background:#fffaf4;border-top:1px solid #f5d9b8;padding:.6rem .9rem .7rem}
 .alt-panel.visible{display:block}
 .alt-lbl{font-size:.66rem;font-weight:600;color:var(--o);letter-spacing:.04em;margin-bottom:.28rem}
-.alt-panel .por{border-right:1px solid #fde68a}
+.alt-panel .por{border-right:1px solid #f5d9b8}
 .tab-bar{display:flex;max-width:700px;margin:0 auto;padding:0 1rem;overflow-x:auto;scrollbar-width:none}
 .tab-bar::-webkit-scrollbar{display:none}
 .tab{flex:0 0 auto;padding:.6rem .85rem;font-size:.8rem;font-weight:500;border:none;background:transparent;color:var(--gr);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;font-family:var(--font-body);transition:all .2s}
@@ -56,15 +56,15 @@ header p{font-size:.82rem;opacity:.8;position:relative}
 .tip-box{background:white;border-radius:14px;padding:1rem;box-shadow:var(--sh);margin-bottom:.75rem}
 .tip-box h4{font-weight:500;margin-bottom:.55rem;font-size:.85rem;color:var(--g)}
 .tip-item{display:flex;gap:.5rem;margin-bottom:.4rem;font-size:.79rem;line-height:1.5}
-.smoke-card{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-radius:14px;padding:1rem;border-left:4px solid var(--gl);margin-bottom:.75rem}
+.smoke-card{background:linear-gradient(135deg,#fdf1e3,#f7e2c8);border-radius:14px;padding:1rem;border-left:4px solid var(--gl);margin-bottom:.75rem}
 .smoke-card h3{font-family:var(--font-serif);color:var(--g);margin-bottom:.35rem;font-size:1rem}
 .smoke-card p{font-size:.81rem;color:#374151;line-height:1.6}
 .warn-box{background:#fff8e1;border-radius:12px;padding:.8rem .9rem;font-size:.75rem;color:#78550a;line-height:1.5;border-left:3px solid var(--y);margin-bottom:.75rem}
 .info-card{border-radius:14px;padding:1rem;margin-bottom:.75rem}
 .profiles{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;padding:.9rem 1rem .5rem;max-width:700px;margin:0 auto}
 .prof{border-radius:14px;padding:1rem;color:white}
-.prof.lui{background:linear-gradient(135deg,#2d6a4f,#1b4332)}
-.prof.lei{background:linear-gradient(135deg,#c05299,#7b2d5e)}
+.prof.lui{background:linear-gradient(135deg,#8a5a2b,#5c3a18)}
+.prof.lei{background:linear-gradient(135deg,#a03e6f,#6b2449)}
 .prof .pn{font-family:var(--font-serif);font-size:.95rem;margin-bottom:.4rem}
 .prof .ps{font-size:.75rem;opacity:.9;line-height:1.6}
 .prof .pk{font-size:1.1rem;font-weight:500;margin-top:.4rem}
@@ -74,8 +74,8 @@ header p{font-size:.82rem;opacity:.8;position:relative}
 .sweet-card h4{font-size:.84rem;font-weight:500;margin-bottom:.2rem}
 .sweet-card .sd{font-size:.74rem;color:var(--gr);line-height:1.5;margin-bottom:.38rem}
 .gbadge{display:inline-block;padding:.1rem .4rem;border-radius:20px;font-size:.68rem;font-weight:500;margin-right:.22rem;margin-top:.12rem}
-.gbadge.lui{background:#e8f5ee;color:var(--lui)}
-.gbadge.lei{background:#fce8f3;color:var(--lei)}
+.gbadge.lui{background:#f5e7d5;color:var(--lui)}
+.gbadge.lei{background:#f8e3ee;color:var(--lei)}
 .glass{font-size:1.2rem;cursor:pointer;transition:transform .15s;display:inline-block}
 .glass:hover{transform:scale(1.2)}
 .shop-cat{background:white;border-radius:14px;padding:.9rem;margin-bottom:.75rem;box-shadow:var(--sh)}
@@ -88,32 +88,31 @@ header p{font-size:.82rem;opacity:.8;position:relative}
 .shop-row .sq{font-size:.76rem;color:var(--g);font-weight:500;white-space:nowrap}
 .shop-row.done .sn{text-decoration:line-through;opacity:.45}
 .shop-row.done .sq{opacity:.45}
-.alt-tag{display:inline-block;background:#fff3cd;color:#b45309;font-size:.66rem;padding:.08rem .35rem;border-radius:10px;margin-left:.3rem;font-weight:500}
+.alt-tag{display:inline-block;background:#fde8d8;color:#b45309;font-size:.66rem;padding:.08rem .35rem;border-radius:10px;margin-left:.3rem;font-weight:500}
 .prog-box{background:white;border-radius:14px;padding:1rem;box-shadow:var(--sh);margin-bottom:.75rem}
 .prog-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem}
 .prog-bar-bg{background:#f0f0f0;border-radius:20px;height:7px;overflow:hidden;margin-bottom:.6rem}
 .prog-bar{background:var(--gl);height:100%;border-radius:20px;transition:width .3s}
 .prog-btns{display:flex;gap:.5rem}
 .prog-btn{flex:1;padding:.38rem;border:none;border-radius:8px;font-size:.74rem;font-weight:500;cursor:pointer;font-family:var(--font-body)}
-.prog-btn.ca{background:#f0fdf4;color:var(--g)}
+.prog-btn.ca{background:#fdf1e3;color:var(--g)}
 .prog-btn.ua{background:#fef2f2;color:#dc2626}
 .day-selector{background:white;border-radius:14px;padding:.9rem;margin-bottom:.75rem;box-shadow:var(--sh)}
 .day-selector h4{font-weight:500;font-size:.83rem;color:var(--g);margin-bottom:.6rem}
 .alt-chip{padding:.32rem .7rem;border-radius:20px;border:1.5px solid var(--gl);font-size:.76rem;cursor:pointer;font-family:var(--font-body);background:white;color:var(--g);transition:all .15s;margin-top:.4rem}
-.alt-chip.active{background:var(--gl);color:white}
 .meal-day-block{margin-bottom:.9rem}
 .meal-day-hd{display:flex;align-items:center;justify-content:space-between;font-weight:600;font-size:.85rem;color:var(--g);margin-bottom:.4rem;padding:.3rem 0}
 .meal-check-row{display:flex;align-items:flex-start;gap:.6rem;padding:.38rem .5rem;border-radius:8px;cursor:pointer;transition:background .12s;margin-bottom:.2rem}
-.meal-check-row:hover{background:#f0fdf4}
+.meal-check-row:hover{background:#fdf1e3}
 .meal-check-row input{accent-color:var(--g);width:16px;height:16px;flex-shrink:0;margin-top:.1rem;cursor:pointer}
 .meal-check-row .mcn{font-size:.8rem;font-weight:500;color:var(--br);flex-shrink:0;width:80px}
 .meal-check-row .mcd{font-size:.77rem;color:var(--gr);flex:1;line-height:1.5}
-.meal-check-row.on{background:#f0fdf4}
-.dolci-check-row{display:flex;align-items:center;gap:.6rem;padding:.38rem .5rem;border-radius:8px;cursor:pointer;transition:background .12s;margin-bottom:.2rem}
-.dolci-check-row:hover{background:#fffbeb}
+.meal-check-row.on{background:#fdf1e3}
+.dolci-check-row{display:flex;align-items:center;gap:.6rem;padding:.38rem .5rem;border-radius:8px;cursor:pointer;margin-bottom:.2rem}
+.dolci-check-row:hover{background:#fffaf4}
 .dolci-check-row input{accent-color:var(--lei);width:16px;height:16px;flex-shrink:0;cursor:pointer}
 .dolci-check-row .dcn{font-size:.8rem;flex:1}
-.dolci-check-row.on{background:#fffbeb}
+.dolci-check-row.on{background:#fffaf4}
 .day-sel-toggle{font-size:.72rem;color:var(--g);background:none;border:none;cursor:pointer;font-family:var(--font-body);font-weight:500}
 .free-tag{display:inline-block;background:#dcfce7;color:#166534;font-size:.63rem;padding:.05rem .3rem;border-radius:8px;margin-left:.25rem;font-weight:600}
 @media print{.nav,.no-print{display:none!important}body{padding-bottom:0;background:white}.page{display:block!important}}
@@ -124,38 +123,38 @@ header p{font-size:.82rem;opacity:.8;position:relative}
 
 <div class="page active" id="page-piano">
   <header>
-    <div class="badge">☀️ GIUGNO 2026 · TOSCANA KM 0</div>
+    <div class="badge">🍂 AUTUNNO 2026 · TOSCANA KM 0</div>
     <h1>Piano Alimentare<br><em>Effetto GLP-1</em></h1>
-    <p>7 giorni · grammature per due · aggiornato giugno</p>
+    <p>7 giorni nuovi · ripartenza settembre</p>
   </header>
   <div class="profiles">
-    <div class="prof lui"><div class="pn">👨 Lui</div><div class="ps">87kg · 179cm · BMI 27.1<br>Fianchi 105cm</div><div class="pk">1.550 kcal/die</div></div>
-    <div class="prof lei"><div class="pn">👩 Lei</div><div class="ps">75kg · 170cm · BMI 26.0<br>Linfedema · Eritritolo</div><div class="pk">1.350 kcal/die</div></div>
+    <div class="prof lui"><div class="pn">👨 Lui</div><div class="ps">78kg · 179cm · BMI 24.3<br>-9 kg da maggio 🎉</div><div class="pk">1.500 kcal/die</div></div>
+    <div class="prof lei"><div class="pn">👩 Lei</div><div class="ps">69kg · 170cm · BMI 23.9<br>-6 kg da maggio 🎉</div><div class="pk">1.350 kcal/die</div></div>
   </div>
   <div style="max-width:700px;margin:0 auto;padding:.5rem 1rem 0">
-    <div style="background:#f0fdf4;border-radius:10px;padding:.6rem .9rem;font-size:.75rem;color:#166534;border-left:3px solid var(--gl)">
-      🥬 Le verdure a foglia con <span style="background:#dcfce7;color:#166534;font-weight:600;padding:.05rem .3rem;border-radius:6px;font-size:.7rem">MIN</span> sono libere — mangiarne di piu va benissimo!
+    <div style="background:#fdf1e3;border-radius:10px;padding:.6rem .9rem;font-size:.75rem;color:#7c4a12;border-left:3px solid var(--gl)">
+      🍂 <strong>Tutto nuovo:</strong> zucca, funghi, broccoli, cavolo nero, uva, fichi, castagne.<br>🔄 <strong>Le colazioni sono intercambiabili</strong> — scegliete quella che vi va, in qualsiasi giorno.
     </div>
   </div>
   <div class="tab-bar" id="day-tabs"></div>
-  <div id="day-container"><div style="padding:1rem;text-align:center;color:#888;font-size:.85rem">Caricamento in corso...</div></div>
+  <div id="day-container"><div style="padding:1rem;text-align:center;color:#888;font-size:.85rem">Caricamento...</div></div>
 </div>
 
 <div class="page" id="page-dolci">
   <header>
     <div class="badge">🌙 SERALE</div>
-    <h1>Dolci Serali<br><em>Senza Sensi di Colpa</em></h1>
-    <p>Alternative che non alzano la glicemia notturna</p>
+    <h1>Dolci Serali<br><em>Versione Autunno</em></h1>
+    <p>Nuove opzioni di stagione</p>
   </header>
   <div class="section">
-    <div class="info-card" style="background:linear-gradient(135deg,#fff8e7,#fff3cd);border-left:4px solid var(--y)">
-      <div style="font-family:var(--font-serif);margin-bottom:.3rem">🍫 La strategia giusta</div>
-      <p style="font-size:.82rem;color:var(--gr);line-height:1.6">Non eliminiamo il momento dolce - lo <strong>trasformiamo</strong>. Mangiate il dolce almeno 30 min prima di coricarvi, dopo una camminata di 10 minuti.</p>
+    <div class="info-card" style="background:linear-gradient(135deg,#fdf1e3,#f7e2c8);border-left:4px solid var(--y)">
+      <div style="font-family:var(--font-serif);margin-bottom:.3rem">🍂 Dolci d'autunno</div>
+      <p style="font-size:.82rem;color:var(--gr);line-height:1.6">Sempre almeno 30 min prima di coricarvi, dopo una camminata di 10 minuti. Cambiano gli ingredienti, resta la regola.</p>
     </div>
     <div class="sweet-grid" id="sweet-grid"></div>
-    <div class="info-card" style="background:linear-gradient(135deg,#fff5f0,#fde8d8);border-left:4px solid var(--o);margin-top:.75rem">
-      <div style="font-family:var(--font-serif);margin-bottom:.3rem">🍍 Bonus per Lei — Linfedema</div>
-      <p style="font-size:.82rem;color:var(--gr);line-height:1.6">Ananas fresca 100-150g, 2-3 volte a settimana come dolce serale o spuntino. La bromelina e il potassio drenano attivamente il liquido linfatico.</p>
+    <div class="info-card" style="background:linear-gradient(135deg,#fdf1e3,#f5d9b8);border-left:4px solid var(--o);margin-top:.75rem">
+      <div style="font-family:var(--font-serif);margin-bottom:.3rem">🦵 Per Lei — Linfedema</div>
+      <p style="font-size:.82rem;color:var(--gr);line-height:1.6">L'ananas resta valida tutto l'anno (2-3 volte a settimana). In autunno aggiungete <strong>uva nera</strong> — antocianine che rinforzano i capillari linfatici. 150g lui / 120g lei.</p>
     </div>
   </div>
 </div>
@@ -163,19 +162,39 @@ header p{font-size:.82rem;opacity:.8;position:relative}
 <div class="page" id="page-salute">
   <header>
     <div class="badge">💚 STILE DI VITA</div>
-    <h1>Idratazione, Aceto<br><em>&amp; Fumo</em></h1>
-    <p>Tre abitudini da trasformare gradualmente</p>
+    <h1>Salute &amp; Abitudini</h1>
+    <p>Idratazione, aceto, integratori, fuori casa</p>
   </header>
   <div class="section">
-    <div style="font-family:var(--font-serif);font-size:1.1rem;color:var(--g);margin-bottom:.6rem">💧 Piano Idratazione</div>
+
+    <div style="font-family:var(--font-serif);font-size:1.1rem;color:var(--g);margin-bottom:.6rem">👃 Rinosinusite — protocollo otorino</div>
+    <div class="smoke-card" style="background:linear-gradient(135deg,#eff6ff,#dbeafe);border-left-color:#3b82f6">
+      <h3 style="color:#1d4ed8">🌊 Il percorso in tre fasi</h3>
+      <p>Diagnosi confermata dall'otorino. Il muco che non drena scende in gola e causa le bronchiti ricorrenti.</p>
+    </div>
     <div class="tip-box">
-      <h4>Schema mattutino — ogni giorno</h4>
-      <div class="tip-item"><span>🌅</span><span><strong>7:30</strong>: Vitreolisina Plus in 200ml acqua (lui e lei)</span></div>
-      <div class="tip-item"><span>☕</span><span><strong>Subito dopo</strong>: caffè (lui senza zucchero, lei con eritritolo)</span></div>
-      <div class="tip-item"><span>🌿</span><span><strong>Lei aggiunge</strong>: 3 mandorle dopo il caffe prima di uscire</span></div>
-      <div class="tip-item"><span>🥗</span><span><strong>10 min prima pranzo</strong>: 1 bicchiere acqua</span></div>
-      <div class="tip-item"><span>🍽️</span><span><strong>10 min prima cena</strong>: 1 bicchiere acqua</span></div>
-      <div class="tip-item"><span>🌙</span><span><strong>Sera</strong>: tisana fredda non zuccherata</span></div>
+      <h4>📋 Protocollo</h4>
+      <div class="tip-item"><span>1️⃣</span><span><strong>Sterimar Prevenzione</strong> — lavaggi nasali 4-5 volte al giorno, sempre. Non crea dipendenza, usalo quanto vuoi</span></div>
+      <div class="tip-item"><span>2️⃣</span><span><strong>Brusonex</strong> — mucolitico (bromelina + NAC) nelle fasi acute</span></div>
+      <div class="tip-item"><span>3️⃣</span><span><strong>Terme in autunno</strong> — inalazioni sulfuree. Saturnia, Montecatini, Chianciano. È il momento giusto, ora!</span></div>
+      <div class="tip-item"><span>💰</span><span><strong>Chiedi la prescrizione SSN</strong> al medico — le terme per rinosinusite sono spesso rimborsabili</span></div>
+    </div>
+    <div class="warn-box">⚠️ <strong>Non prendere Brusonex e Vitreolisina lo stesso giorno</strong> senza chiedere al medico — contengono entrambi NAC e bromelina, rischi la dose doppia.</div>
+    <div class="tip-box">
+      <h4>💡 Cosa aiuta davvero</h4>
+      <div class="tip-item"><span>💧</span><span>Bere molto fluidifica il muco — è metà del lavoro</span></div>
+      <div class="tip-item"><span>🌊</span><span>Lavaggio nasale appena sveglio, prima ancora della Vitreolisina</span></div>
+      <div class="tip-item"><span>🚬</span><span>Il fumo re-infiamma ogni volta quello che i farmaci stanno calmando</span></div>
+    </div>
+
+    <div style="font-family:var(--font-serif);font-size:1.1rem;color:var(--g);margin-bottom:.6rem">💧 Idratazione &amp; mattino</div>
+    <div class="tip-box">
+      <h4>Schema mattutino</h4>
+      <div class="tip-item"><span>🌊</span><span><strong>Appena sveglio</strong>: lavaggio nasale Sterimar</span></div>
+      <div class="tip-item"><span>🌅</span><span><strong>7:30</strong>: Vitreolisina Plus in 200ml acqua</span></div>
+      <div class="tip-item"><span>☕</span><span><strong>10-15 min dopo</strong>: caffè (lei con eritritolo + 3 mandorle)</span></div>
+      <div class="tip-item"><span>🌿</span><span><strong>Lei</strong>: Linfonorm 2 capsule a stomaco vuoto</span></div>
+      <div class="tip-item"><span>🥗</span><span><strong>10 min prima di pranzo e cena</strong>: aceto di mele 1 cucchiaino in 200ml acqua</span></div>
     </div>
     <div class="tip-box">
       <h4>Obiettivo quotidiano — clicca i bicchieri!</h4>
@@ -188,301 +207,175 @@ header p{font-size:.82rem;opacity:.8;position:relative}
         <div id="glasses-lei" style="display:flex;gap:.3rem;flex-wrap:wrap"></div>
       </div>
     </div>
-
-    <div style="font-family:var(--font-serif);font-size:1.1rem;color:var(--g);margin-bottom:.6rem">🍎 Aceto di Mele</div>
-    <div class="smoke-card">
-      <h3>🍶 Protocollo quotidiano</h3>
-      <p>Riduce il picco glicemico del 20-30% e stimola GLP-1 naturale.</p>
-    </div>
-    <div class="tip-box">
-      <h4>📋 Come e quando</h4>
-      <div class="tip-item"><span>🥗</span><span><strong>10 min prima pranzo</strong>: 1 cucchiaino in 200ml acqua — obbligatorio</span></div>
-      <div class="tip-item"><span>🍽️</span><span><strong>10 min prima cena</strong>: 1 cucchiaino in 200ml acqua — obbligatorio</span></div>
-      <div class="tip-item"><span>🍕</span><span><strong>Prima di uscite/pizzeria</strong>: dose doppia (2 cucchiaini)</span></div>
-    </div>
-    <div class="warn-box">⚠️ Mai puro — diluire sempre. Preferire aceto non filtrato con "madre" (torbido sul fondo).</div>
-
-    <div style="font-family:var(--font-serif);font-size:1.1rem;color:var(--g);margin-bottom:.6rem">💊 Integratori</div>
-    <div class="tip-box">
-      <h4>Schema integratori</h4>
-      <div class="tip-item"><span>🌅</span><span><strong>Lui e Lei — 7:30</strong>: Vitreolisina Plus (Vit.C 1000mg + NAC 300mg + bromelina). Copre antiossidanti fumo, muco, occhio</span></div>
-      <div class="tip-item"><span>🌿</span><span><strong>Lei — mattino</strong>: Linfonorm 2 capsule a stomaco vuoto per il linfedema</span></div>
-      <div class="tip-item"><span>💊</span><span><strong>Multicentrum</strong>: opzionale — la Vitreolisina copre gia la maggior parte dei micronutrienti</span></div>
-    </div>
-
-    <div style="font-family:var(--font-serif);font-size:1.1rem;color:var(--g);margin-bottom:.6rem">🚬 Fumo &amp; Alimentazione</div>
-    <div class="smoke-card" style="background:linear-gradient(135deg,#f0f9ff,#dbeafe);border-left-color:#3b82f6">
-      <h3 style="color:#1d4ed8">🥦 Antiossidanti anti-fumo quotidiani</h3>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-top:.5rem">
-        <div style="background:white;border-radius:10px;padding:.55rem;text-align:center;font-size:.74rem"><div style="font-size:1.1rem">🍅</div><strong>Pomodori</strong><br>Licopene</div>
-        <div style="background:white;border-radius:10px;padding:.55rem;text-align:center;font-size:.74rem"><div style="font-size:1.1rem">🫑</div><strong>Peperoni</strong><br>Vit.C x3</div>
-        <div style="background:white;border-radius:10px;padding:.55rem;text-align:center;font-size:.74rem"><div style="font-size:1.1rem">🫐</div><strong>Mirtilli</strong><br>Polifenoli</div>
-        <div style="background:white;border-radius:10px;padding:.55rem;text-align:center;font-size:.74rem"><div style="font-size:1.1rem">🍍</div><strong>Ananas</strong><br>Bromelina</div>
-        <div style="background:white;border-radius:10px;padding:.55rem;text-align:center;font-size:.74rem"><div style="font-size:1.1rem">🧄</div><strong>Aglio</strong><br>Allicina</div>
-        <div style="background:white;border-radius:10px;padding:.55rem;text-align:center;font-size:.74rem"><div style="font-size:1.1rem">🥦</div><strong>Broccoli</strong><br>Sulforafano</div>
-      </div>
-    </div>
-    <div class="tip-box">
-      <h4>💡 Trick pratici</h4>
-      <div class="tip-item"><span>🍊</span><span>Dopo ogni sigaretta: 1 bicchiere acqua + 2-3 mandorle</span></div>
-      <div class="tip-item"><span>🚶</span><span>Camminata 10 min post-pasto riduce voglia sigaretta del 40%</span></div>
-      <div class="tip-item"><span>🦵</span><span>Lei: gambe sollevate 10 min prima di dormire — drenaggio linfatico</span></div>
-    </div>
-    <div class="warn-box">⚕️ Esami del sangue: reni (creatinina, eGFR), testosterone, estradiolo, colesterolo. Visita otorino da prenotare.</div>
+    <div class="warn-box">🍵 In autunno bere diventa più difficile perché non si suda. Tisane calde, tè verde, brodo vegetale contano come acqua.</div>
 
     <div style="font-family:var(--font-serif);font-size:1.1rem;color:var(--g);margin-bottom:.6rem">🍽️ Fuori Casa</div>
-
     <div class="tip-box">
-      <h4>🍷 Ristorante — prima e dopo</h4>
-      <div class="tip-item"><span>🏠</span><span><strong>Prima di uscire:</strong> aceto di mele doppio (2 cucchiaini) + 4-5 mandorle — riducono fame e picco glicemico</span></div>
-      <div class="tip-item"><span>🥗</span><span><strong>Ordine nel piatto:</strong> inizia sempre con verdure/antipasto, poi proteine, poi carboidrati</span></div>
-      <div class="tip-item"><span>🍷</span><span><strong>Vino:</strong> max 2 calici rosso secco, bevuti lentamente durante il pasto, mai prima</span></div>
-      <div class="tip-item"><span>🍞</span><span><strong>Pane:</strong> evitalo o prendi solo 1 fetta dopo aver mangiato le verdure</span></div>
-      <div class="tip-item"><span>🍮</span><span><strong>Dolce:</strong> solo un assaggio (3-4 cucchiai), oppure frutta fresca o sorbetto</span></div>
-      <div class="tip-item"><span>🚶</span><span><strong>Dopo:</strong> camminata di almeno 15 min — abbatte il picco glicemico del pasto</span></div>
-      <div class="tip-item"><span>🌅</span><span><strong>Giorno dopo:</strong> colazione leggera (Fage Total 0% + frutta) e pranzo proteico senza carboidrati — nessuna punizione, solo compensazione</span></div>
+      <h4>🍷 Ristorante</h4>
+      <div class="tip-item"><span>🏠</span><span><strong>Prima:</strong> aceto doppio (2 cucchiaini) + 4-5 mandorle</span></div>
+      <div class="tip-item"><span>🥗</span><span><strong>Ordine:</strong> verdure → proteine → carboidrati</span></div>
+      <div class="tip-item"><span>🍷</span><span><strong>Vino:</strong> max 2 calici, durante il pasto mai prima</span></div>
+      <div class="tip-item"><span>🍮</span><span><strong>Dolce:</strong> assaggio (3-4 cucchiai) o frutta</span></div>
+      <div class="tip-item"><span>🚶</span><span><strong>Dopo:</strong> camminata 15 min</span></div>
+      <div class="tip-item"><span>🌅</span><span><strong>Giorno dopo:</strong> leggero, non punitivo</span></div>
     </div>
-
     <div class="tip-box">
       <h4>🍕 Pizzeria</h4>
-      <div class="tip-item"><span>🏠</span><span><strong>Prima:</strong> aceto di mele doppio + mandorle a casa</span></div>
-      <div class="tip-item"><span>🍕</span><span><strong>Pizza:</strong> napoletana margherita o verdure — mangia 3/4 e lascia un pezzo</span></div>
-      <div class="tip-item"><span>🍺</span><span><strong>Birra:</strong> una sola piccola (33cl) durante la pizza, mai prima. Meglio vino rosso se disponibile</span></div>
-      <div class="tip-item"><span>🥗</span><span><strong>Aggiungi:</strong> insalata mista come contorno se possibile — fibra che rallenta l assorbimento</span></div>
+      <div class="tip-item"><span>🍕</span><span>Margherita o verdure, mangia 3/4</span></div>
+      <div class="tip-item"><span>🍺</span><span>Una birra piccola durante, mai prima. Meglio vino rosso</span></div>
+      <div class="tip-item"><span>🥗</span><span>Insalata come contorno se possibile</span></div>
     </div>
-
     <div class="tip-box">
-      <h4>🥪 Pranzo al sacco (mare, zoo, gita)</h4>
-      <div class="tip-item"><span>🥚</span><span><strong>Proteine:</strong> 2 uova sode a testa — pratiche, niente da tagliare</span></div>
-      <div class="tip-item"><span>🫙</span><span><strong>Box fredda:</strong> farro precotto + tonno + pomodorini + olive in contenitore ermetico</span></div>
-      <div class="tip-item"><span>🧀</span><span><strong>Wasa + Philadelphia Lightest:</strong> comodi da portare, saziano bene</span></div>
-      <div class="tip-item"><span>🍑</span><span><strong>Frutta:</strong> pesche o albicocche intere — facili da mangiare in piedi</span></div>
-      <div class="tip-item"><span>🧊</span><span><strong>Borsa termica con ghiaccio</strong> obbligatoria in estate</span></div>
-      <div class="tip-item"><span>💧</span><span><strong>Acqua:</strong> minimo 1.5L a testa — con il caldo e la camminata ne serve di piu</span></div>
-      <div class="tip-item"><span>🍦</span><span><strong>Gelato:</strong> se volete uno sorbetto alla frutta va benissimo — godetevelo!</span></div>
+      <h4>🥪 Pranzo al sacco / gita</h4>
+      <div class="tip-item"><span>🥚</span><span>2 uova sode a testa</span></div>
+      <div class="tip-item"><span>🫙</span><span>Box: farro + tonno + pomodorini + olive</span></div>
+      <div class="tip-item"><span>🧀</span><span>Wasa + Philadelphia Lightest</span></div>
+      <div class="tip-item"><span>🍎</span><span>Mela o pera intera</span></div>
+      <div class="tip-item"><span>💧</span><span>1.5L acqua a testa minimo</span></div>
     </div>
-
     <div class="tip-box">
       <h4>🏨 3 giorni in hotel</h4>
-      <div class="tip-item"><span>🌅</span><span><strong>Colazione buffet:</strong> uova strapazzate/sode + yogurt greco + frutta fresca. Evita croissant, succhi, cereali zuccherati</span></div>
-      <div class="tip-item"><span>☕</span><span><strong>Caffe:</strong> lui senza zucchero, lei con eritritolo che ti porti da casa in una bustina</span></div>
-      <div class="tip-item"><span>🥗</span><span><strong>Pranzo fuori:</strong> insalata con proteine (tonno, pollo, uova) oppure secondo con verdure. Evita pasta ogni giorno</span></div>
-      <div class="tip-item"><span>🍽️</span><span><strong>Cena ristorante:</strong> strategia classica — verdure → proteine → se vuoi un primo piccolo</span></div>
-      <div class="tip-item"><span>🎒</span><span><strong>Porta in valigia:</strong> bustine di aceto di mele monodose, Wasa, mandorle, eritritolo, Vitreolisina, Linfonorm (lei)</span></div>
-      <div class="tip-item"><span>🚶</span><span><strong>Movimento:</strong> camminate e attivita fisica compensano molto — goditi la vacanza senza stress</span></div>
-      <div class="tip-item"><span>💧</span><span><strong>Acqua:</strong> bottiglia sempre con te — in hotel si tende a bere molto meno</span></div>
-      <div class="tip-item"><span>⚖️</span><span><strong>Bilancia:</strong> non salirti durante la vacanza — il peso fluttua per ritenzione/sale/alcol. Aspetta 2 giorni dopo il rientro</span></div>
+      <div class="tip-item"><span>🌅</span><span><strong>Colazione:</strong> uova + yogurt + frutta. No croissant, succhi, cereali</span></div>
+      <div class="tip-item"><span>🎒</span><span><strong>In valigia:</strong> aceto monodose, Wasa, mandorle, eritritolo, Vitreolisina, Linfonorm, Sterimar</span></div>
+      <div class="tip-item"><span>⚖️</span><span><strong>Bilancia:</strong> non pesarsi durante — aspetta 2 giorni dal rientro</span></div>
+      <div class="tip-item"><span>🚶</span><span>Camminate e movimento compensano molto</span></div>
     </div>
-
     <div class="tip-box">
       <h4>🥂 Aperitivo</h4>
-      <div class="tip-item"><span>🥃</span><span><strong>Cosa bere:</strong> Spritz light (Aperol + acqua frizzante, poco prosecco), vino bianco secco, acqua tonica con limone, o analcolico</span></div>
-      <div class="tip-item"><span>🫒</span><span><strong>Stuzzichini ok:</strong> olive, verdure crude, bresaola, feta, frutta secca non salata</span></div>
-      <div class="tip-item"><span>❌</span><span><strong>Evita:</strong> patatine, pizzette, tramezzini, salatini — sale e grassi nascosti che gonfiano molto</span></div>
-      <div class="tip-item"><span>🍹</span><span><strong>Durata:</strong> max 1 drink — l alcol abbassa le inibizioni e si finisce per mangiare il doppio</span></div>
-      <div class="tip-item"><span>🕐</span><span><strong>Orario:</strong> se aperitivo alle 18-19, anticipa o posticipa la cena — non mangiare doppio</span></div>
-      <div class="tip-item"><span>💧</span><span><strong>Regola 1:1</strong>: per ogni drink alcolico un bicchiere d acqua — riduce gonfiore del giorno dopo</span></div>
+      <div class="tip-item"><span>🥃</span><span><strong>Bevi:</strong> spritz light, vino bianco secco, analcolico</span></div>
+      <div class="tip-item"><span>🫒</span><span><strong>Ok:</strong> olive, verdure crude, bresaola, frutta secca non salata</span></div>
+      <div class="tip-item"><span>❌</span><span><strong>Evita:</strong> patatine, pizzette, tramezzini</span></div>
+      <div class="tip-item"><span>💧</span><span><strong>Regola 1:1</strong> — un bicchiere d'acqua per ogni drink</span></div>
     </div>
 
-    <div style="font-family:var(--font-serif);font-size:1.1rem;color:var(--g);margin-bottom:.6rem">📊 Sostituzioni & Pesi</div>
+    <div style="font-family:var(--font-serif);font-size:1.1rem;color:var(--g);margin-bottom:.6rem">📊 Sostituzioni &amp; Pesi</div>
 
     <div class="tip-box">
-      <h4>🧀 Alternative ai Formaggi</h4>
-      <div style="font-size:.75rem;color:var(--gr);margin-bottom:.5rem">Ogni porzione vale sempre <strong style="color:var(--g)">~120 kcal lui · ~80 kcal lei</strong> — cambia solo il peso. Scegli il formaggio che hai in frigo e usa il peso corrispondente.</div>
-
-      <!-- Tabella formaggi -->
+      <h4>🧀 Formaggi</h4>
+      <div style="font-size:.75rem;color:var(--gr);margin-bottom:.5rem">Ogni porzione vale <strong style="color:var(--g)">~120 kcal lui · ~80 kcal lei</strong>. Scegli quello che hai in frigo.</div>
       <div style="overflow-x:auto">
         <table style="width:100%;border-collapse:collapse;font-size:.76rem">
-          <thead>
-            <tr style="background:var(--g);color:white">
-              <th style="padding:.4rem .5rem;text-align:left;border-radius:8px 0 0 0">Formaggio</th>
-              <th style="padding:.4rem .5rem;text-align:center">kcal/100g</th>
-              <th style="padding:.4rem .5rem;text-align:center">👨 Lui<br><span style="font-weight:400;font-size:.68rem">120 kcal</span></th>
-              <th style="padding:.4rem .5rem;text-align:center;border-radius:0 8px 0 0">👩 Lei<br><span style="font-weight:400;font-size:.68rem">80 kcal</span></th>
-            </tr>
-          </thead>
+          <thead><tr style="background:var(--g);color:white">
+            <th style="padding:.4rem .5rem;text-align:left">Formaggio</th>
+            <th style="padding:.4rem .5rem;text-align:center">kcal/100g</th>
+            <th style="padding:.4rem .5rem;text-align:center">👨 Lui</th>
+            <th style="padding:.4rem .5rem;text-align:center">👩 Lei</th>
+          </tr></thead>
           <tbody>
-            <tr style="background:#f9f9f9">
-              <td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">🧀 Pecorino stagionato</td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0;color:var(--gr)">400</td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>30g</strong></td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>20g</strong></td>
-            </tr>
-            <tr>
-              <td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">🧀 Parmigiano / Grana</td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0;color:var(--gr)">380</td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>32g</strong></td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>21g</strong></td>
-            </tr>
-            <tr style="background:#f9f9f9">
-              <td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">🧀 Asiago / Fontina</td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0;color:var(--gr)">350</td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>34g</strong></td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>23g</strong></td>
-            </tr>
-            <tr>
-              <td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">🧀 Feta normale</td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0;color:var(--gr)">260</td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>46g</strong></td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>31g</strong></td>
-            </tr>
-            <tr style="background:#f0fdf4">
-              <td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">🧀 Feta <strong>light</strong></td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0;color:var(--gr)">160</td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong style="color:var(--g)">75g</strong></td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong style="color:var(--g)">50g</strong></td>
-            </tr>
-            <tr>
-              <td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">🧀 Mozzarella normale</td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0;color:var(--gr)">240</td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>50g</strong></td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>33g</strong></td>
-            </tr>
-            <tr style="background:#f0fdf4">
-              <td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">🧀 Mozzarella <strong>light</strong></td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0;color:var(--gr)">150</td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong style="color:var(--g)">80g</strong></td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong style="color:var(--g)">53g</strong></td>
-            </tr>
-            <tr style="background:#f9f9f9">
-              <td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">🧀 Stracchino / Crescenza</td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0;color:var(--gr)">175</td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>69g</strong></td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>46g</strong></td>
-            </tr>
-            <tr style="background:#f0fdf4">
-              <td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">🧀 Ricotta magra</td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0;color:var(--gr)">120</td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong style="color:var(--g)">100g</strong></td>
-              <td style="padding:.38rem .5rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong style="color:var(--g)">67g</strong></td>
-            </tr>
-            <tr style="background:#f0fdf4">
-              <td style="padding:.38rem .5rem">🧀 Philadelphia <strong>Lightest</strong></td>
-              <td style="padding:.38rem .5rem;text-align:center;color:var(--gr)">110</td>
-              <td style="padding:.38rem .5rem;text-align:center"><strong style="color:var(--g)">109g</strong> 🏆</td>
-              <td style="padding:.38rem .5rem;text-align:center"><strong style="color:var(--g)">73g</strong> 🏆</td>
-            </tr>
+            <tr style="background:#faf7f3"><td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">🧀 Pecorino</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0;color:var(--gr)">400</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>30g</strong></td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>20g</strong></td></tr>
+            <tr><td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">🧀 Parmigiano / Grana</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0;color:var(--gr)">380</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>32g</strong></td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>21g</strong></td></tr>
+            <tr style="background:#faf7f3"><td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">🧀 Asiago / Fontina</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0;color:var(--gr)">350</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>34g</strong></td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>23g</strong></td></tr>
+            <tr><td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">🧀 Feta normale</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0;color:var(--gr)">260</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>46g</strong></td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>31g</strong></td></tr>
+            <tr style="background:#f0fdf4"><td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">🧀 Feta <strong>light</strong></td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0;color:var(--gr)">160</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong style="color:#166534">75g</strong></td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong style="color:#166534">50g</strong></td></tr>
+            <tr><td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">🧀 Mozzarella normale</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0;color:var(--gr)">240</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>50g</strong></td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>33g</strong></td></tr>
+            <tr style="background:#f0fdf4"><td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">🧀 Mozzarella <strong>light</strong></td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0;color:var(--gr)">150</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong style="color:#166534">80g</strong></td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong style="color:#166534">53g</strong></td></tr>
+            <tr style="background:#faf7f3"><td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">🧀 Stracchino / Crescenza</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0;color:var(--gr)">175</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>69g</strong></td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>46g</strong></td></tr>
+            <tr style="background:#f0fdf4"><td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">🧀 Ricotta magra</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0;color:var(--gr)">120</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong style="color:#166534">100g</strong></td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong style="color:#166534">67g</strong></td></tr>
+            <tr style="background:#f0fdf4"><td style="padding:.38rem .5rem">🧀 Philadelphia <strong>Lightest</strong></td><td style="padding:.38rem;text-align:center;color:var(--gr)">110</td><td style="padding:.38rem;text-align:center"><strong style="color:#166534">109g</strong> 🏆</td><td style="padding:.38rem;text-align:center"><strong style="color:#166534">73g</strong> 🏆</td></tr>
           </tbody>
         </table>
       </div>
-      <div style="font-size:.72rem;color:var(--gr);margin-top:.4rem">🟢 Verde = versione light consigliata · 🏆 = massima quantita</div>
-      <div class="warn-box" style="margin-top:.6rem;margin-bottom:0;font-size:.72rem">🦵 Lei linfedema: preferire ricotta magra o Philadelphia Lightest — meno sale. Sciacquare sempre la feta prima di mangiarla.</div>
+      <div class="warn-box" style="margin-top:.6rem;margin-bottom:0;font-size:.72rem">🦵 Lei linfedema: preferire ricotta o Philadelphia Lightest — meno sale. Sciacquare sempre la feta.</div>
     </div>
 
     <div class="tip-box">
-      <h4>🐟 Alternative al Pesce (pesi equivalenti)</h4>
-      <div style="font-size:.75rem;color:var(--gr);margin-bottom:.6rem">Stesse quantita del piano — tutti pesci magri intercambiabili</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.4rem;font-size:.78rem">
-        <div style="background:#f0f9ff;border-radius:8px;padding:.5rem .6rem">
-          <div style="font-weight:600;color:#1d4ed8;margin-bottom:.2rem">🐟 Merluzzo/Baccala</div>
-          <div>Lui <strong>200g</strong> · Lei <strong>160g</strong></div>
-          <div style="font-size:.7rem;color:var(--gr)">Base del piano</div>
-        </div>
-        <div style="background:#f0f9ff;border-radius:8px;padding:.5rem .6rem">
-          <div style="font-weight:600;color:#1d4ed8;margin-bottom:.2rem">🐟 Orata/Branzino</div>
-          <div>Lui <strong>200g</strong> · Lei <strong>160g</strong></div>
-          <div style="font-size:.7rem;color:var(--gr)">Km 0 Toscana — ottima scelta</div>
-        </div>
-        <div style="background:#f0f9ff;border-radius:8px;padding:.5rem .6rem">
-          <div style="font-weight:600;color:#1d4ed8;margin-bottom:.2rem">🐟 Nasello/Platessa</div>
-          <div>Lui <strong>200g</strong> · Lei <strong>160g</strong></div>
-          <div style="font-size:.7rem;color:var(--gr)">Economici e leggeri</div>
-        </div>
-        <div style="background:#f0f9ff;border-radius:8px;padding:.5rem .6rem">
-          <div style="font-weight:600;color:#1d4ed8;margin-bottom:.2rem">🐟 Sogliola</div>
-          <div>Lui <strong>220g</strong> · Lei <strong>180g</strong></div>
-          <div style="font-size:.7rem;color:var(--gr)">Piu magra, leggermente piu</div>
-        </div>
-        <div style="background:#f0f9ff;border-radius:8px;padding:.5rem .6rem">
-          <div style="font-weight:600;color:#1d4ed8;margin-bottom:.2rem">🐟 Salmone</div>
-          <div>Lui <strong>160g</strong> · Lei <strong>130g</strong></div>
-          <div style="font-size:.7rem;color:var(--gr)">Piu grasso — meno quantita</div>
-        </div>
-        <div style="background:#f0f9ff;border-radius:8px;padding:.5rem .6rem">
-          <div style="font-weight:600;color:#1d4ed8;margin-bottom:.2rem">🐟 Tonno fresco</div>
-          <div>Lui <strong>170g</strong> · Lei <strong>140g</strong></div>
-          <div style="font-size:.7rem;color:var(--gr)">Ricco di proteine</div>
-        </div>
-        <div style="background:#f0f9ff;border-radius:8px;padding:.5rem .6rem">
-          <div style="font-weight:600;color:#1d4ed8;margin-bottom:.2rem">🐟 Sgombro/Sardine</div>
-          <div>Lui <strong>150g</strong> · Lei <strong>120g</strong></div>
-          <div style="font-size:.7rem;color:var(--gr)">Omega 3 altissimi</div>
-        </div>
-        <div style="background:#f0f9ff;border-radius:8px;padding:.5rem .6rem">
-          <div style="font-weight:600;color:#1d4ed8;margin-bottom:.2rem">🥚 Alternativa no-pesce</div>
-          <div>Lui <strong>3 uova</strong> · Lei <strong>3 uova</strong></div>
-          <div style="font-size:.7rem;color:var(--gr)">Frittata o uova in camicia</div>
-        </div>
-      </div>
-      <div style="background:#f0f9ff;border-radius:8px;padding:.5rem .6rem;margin-top:.5rem;font-size:.75rem;color:#1d4ed8">
-        🧊 <strong>Surgelato:</strong> aggiungi 15-20% al peso — es. merluzzo 200g cotto = ~230g surgelato. Pesa sempre dopo scongelamento per precisione.
+      <h4>🥛 Alternative allo yogurt greco</h4>
+      <div style="font-size:.75rem;color:var(--gr);margin-bottom:.5rem">Per lei che ne ha abbastanza — tutte equivalenti a 150g di Fage Total 0%</div>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:.76rem">
+          <thead><tr style="background:var(--lei);color:white">
+            <th style="padding:.4rem .5rem;text-align:left">Alternativa</th>
+            <th style="padding:.4rem .5rem;text-align:center">Proteine</th>
+            <th style="padding:.4rem .5rem;text-align:center">👨 Lui</th>
+            <th style="padding:.4rem .5rem;text-align:center">👩 Lei</th>
+          </tr></thead>
+          <tbody>
+            <tr style="background:#faf7f3"><td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">🥛 Skyr</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0;color:var(--gr)">9.3g</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>150g</strong></td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>125g</strong></td></tr>
+            <tr><td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">🧀 Fiocchi di latte</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0;color:var(--gr)">12g</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>130g</strong></td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>110g</strong></td></tr>
+            <tr style="background:#faf7f3"><td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">🧀 Ricotta magra</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0;color:var(--gr)">8g</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>110g</strong></td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>90g</strong></td></tr>
+            <tr><td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">🥚 Uova</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0;color:var(--gr)">13g</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>2 uova</strong></td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>2 uova</strong></td></tr>
+            <tr style="background:#faf7f3"><td style="padding:.38rem .5rem">🥣 Porridge avena + latte</td><td style="padding:.38rem;text-align:center;color:var(--gr)">varia</td><td style="padding:.38rem;text-align:center"><strong>50g+200ml</strong></td><td style="padding:.38rem;text-align:center"><strong>40g+160ml</strong></td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
     <div class="tip-box">
-      <h4>🥬 Alternative alle Verdure (pesi equivalenti)</h4>
-      <div style="font-size:.75rem;color:var(--gr);margin-bottom:.6rem">Le verdure a foglia sono LIBERE — le altre mantieni i pesi indicati</div>
+      <h4>🐟 Pesce</h4>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:.76rem">
+          <thead><tr style="background:#1d4ed8;color:white">
+            <th style="padding:.4rem .5rem;text-align:left">Pesce</th>
+            <th style="padding:.4rem .5rem;text-align:center">👨 Lui</th>
+            <th style="padding:.4rem .5rem;text-align:center">👩 Lei</th>
+          </tr></thead>
+          <tbody>
+            <tr style="background:#faf7f3"><td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">Merluzzo / Baccalà</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>200g</strong></td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>160g</strong></td></tr>
+            <tr><td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">Orata / Branzino</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>200g</strong></td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>160g</strong></td></tr>
+            <tr style="background:#faf7f3"><td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">Nasello / Platessa</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>200g</strong></td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>160g</strong></td></tr>
+            <tr><td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">Sogliola</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>220g</strong></td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>180g</strong></td></tr>
+            <tr style="background:#faf7f3"><td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">Salmone</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>160g</strong></td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>130g</strong></td></tr>
+            <tr><td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">Tonno fresco</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>170g</strong></td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>140g</strong></td></tr>
+            <tr style="background:#faf7f3"><td style="padding:.38rem .5rem;border-bottom:1px solid #f0f0f0">Sgombro / Sardine</td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>150g</strong></td><td style="padding:.38rem;text-align:center;border-bottom:1px solid #f0f0f0"><strong>120g</strong></td></tr>
+            <tr><td style="padding:.38rem .5rem">🥚 Alternativa no-pesce</td><td style="padding:.38rem;text-align:center"><strong>3 uova</strong></td><td style="padding:.38rem;text-align:center"><strong>3 uova</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="background:#eff6ff;border-radius:8px;padding:.5rem .6rem;margin-top:.5rem;font-size:.75rem;color:#1d4ed8">🧊 <strong>Surgelato:</strong> +15-20% al peso. Verificato: 400g surgelato = 346g cotto.</div>
+    </div>
 
-      <div style="font-size:.8rem;font-weight:600;color:var(--g);margin:.5rem 0 .3rem">🟢 LIBERE — mangia quanto vuoi</div>
+    <div class="tip-box">
+      <h4>🥬 Verdure d'autunno</h4>
+      <div style="font-size:.8rem;font-weight:600;color:#166534;margin:.3rem 0 .3rem">🟢 LIBERE — mangia quanto vuoi</div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.3rem;margin-bottom:.6rem;font-size:.75rem">
-        <div style="background:#dcfce7;border-radius:8px;padding:.4rem;text-align:center">🥬 Insalata mista</div>
+        <div style="background:#dcfce7;border-radius:8px;padding:.4rem;text-align:center">🥬 Insalata</div>
         <div style="background:#dcfce7;border-radius:8px;padding:.4rem;text-align:center">🌿 Songino</div>
+        <div style="background:#dcfce7;border-radius:8px;padding:.4rem;text-align:center">🥬 Cavolo nero</div>
         <div style="background:#dcfce7;border-radius:8px;padding:.4rem;text-align:center">🥬 Cicoria</div>
-        <div style="background:#dcfce7;border-radius:8px;padding:.4rem;text-align:center">🥬 Spinaci crudi</div>
-        <div style="background:#dcfce7;border-radius:8px;padding:.4rem;text-align:center">🥒 Cetrioli</div>
         <div style="background:#dcfce7;border-radius:8px;padding:.4rem;text-align:center">🌿 Radicchio</div>
-        <div style="background:#dcfce7;border-radius:8px;padding:.4rem;text-align:center">🌿 Rucola</div>
-        <div style="background:#dcfce7;border-radius:8px;padding:.4rem;text-align:center">🥬 Lattuga</div>
-        <div style="background:#dcfce7;border-radius:8px;padding:.4rem;text-align:center">🌿 Finocchio</div>
+        <div style="background:#dcfce7;border-radius:8px;padding:.4rem;text-align:center">🥬 Spinaci</div>
+        <div style="background:#dcfce7;border-radius:8px;padding:.4rem;text-align:center">🌿 Finocchi</div>
+        <div style="background:#dcfce7;border-radius:8px;padding:.4rem;text-align:center">🥬 Verza</div>
+        <div style="background:#dcfce7;border-radius:8px;padding:.4rem;text-align:center">🍄 Funghi</div>
       </div>
-
-      <div style="font-size:.8rem;font-weight:600;color:var(--g);margin:.5rem 0 .3rem">🟡 DA PESARE — intercambiabili tra loro a parita di peso</div>
+      <div style="font-size:.8rem;font-weight:600;color:var(--g);margin:.5rem 0 .3rem">🟡 DA PESARE — intercambiabili tra loro</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:.4rem;font-size:.78rem">
-        <div style="background:#f9f9f9;border-radius:8px;padding:.5rem .6rem">
-          <div style="font-weight:600;margin-bottom:.15rem">🍆 Melanzane</div>
-          <div>= Zucchine · Peperoni · Pomodori</div>
-          <div style="font-size:.7rem;color:var(--gr)">Stesso peso, stesse calorie</div>
-        </div>
-        <div style="background:#f9f9f9;border-radius:8px;padding:.5rem .6rem">
-          <div style="font-weight:600;margin-bottom:.15rem">🫑 Peperoni</div>
-          <div>= Melanzane · Zucchine · Pomodori</div>
-          <div style="font-size:.7rem;color:var(--gr)">Ottimi km 0 giugno</div>
-        </div>
-        <div style="background:#f9f9f9;border-radius:8px;padding:.5rem .6rem">
-          <div style="font-weight:600;margin-bottom:.15rem">🥦 Broccoli/Cavolfiore</div>
-          <div>Stesso peso delle verdure dense</div>
-          <div style="font-size:.7rem;color:var(--gr)">Arrivano da settembre</div>
-        </div>
-        <div style="background:#f9f9f9;border-radius:8px;padding:.5rem .6rem">
-          <div style="font-weight:600;margin-bottom:.15rem">🥕 Carote</div>
-          <div>-20% rispetto ad altre verdure</div>
-          <div style="font-size:.7rem;color:var(--gr)">Piu zuccheri, non esagerare</div>
-        </div>
-        <div style="background:#fff3cd;border-radius:8px;padding:.5rem .6rem">
-          <div style="font-weight:600;margin-bottom:.15rem">🌽 Mais · Piselli · Fave</div>
-          <div>Pesa sempre — sono legumi</div>
-          <div style="font-size:.7rem;color:var(--gr)">Piu calorie delle verdure</div>
-        </div>
-        <div style="background:#fff3cd;border-radius:8px;padding:.5rem .6rem">
-          <div style="font-weight:600;margin-bottom:.15rem">🥔 Patate/Patate dolci</div>
-          <div>Max 120g lui · 100g lei</div>
-          <div style="font-size:.7rem;color:var(--gr)">Solo occasionalmente</div>
-        </div>
+        <div style="background:#faf7f3;border-radius:8px;padding:.5rem .6rem"><div style="font-weight:600">🎃 Zucca</div><div>= Broccoli · Cavolfiore</div><div style="font-size:.7rem;color:var(--gr)">Stesso peso</div></div>
+        <div style="background:#faf7f3;border-radius:8px;padding:.5rem .6rem"><div style="font-weight:600">🥦 Broccoli / Cavolfiore</div><div>= Zucca · Verza cotta</div><div style="font-size:.7rem;color:var(--gr)">Anti-aromatasi!</div></div>
+        <div style="background:#faf7f3;border-radius:8px;padding:.5rem .6rem"><div style="font-weight:600">🥕 Carote</div><div>-20% rispetto alle altre</div><div style="font-size:.7rem;color:var(--gr)">Più zuccheri</div></div>
+        <div style="background:#fde8d8;border-radius:8px;padding:.5rem .6rem"><div style="font-weight:600">🌰 Castagne</div><div>Max 50g lui · 40g lei</div><div style="font-size:.7rem;color:var(--gr)">Molto caloriche</div></div>
+        <div style="background:#fde8d8;border-radius:8px;padding:.5rem .6rem"><div style="font-weight:600">🫘 Legumi secchi</div><div>Pesa sempre</div><div style="font-size:.7rem;color:var(--gr)">60g secco = 150g cotto</div></div>
+        <div style="background:#fde8d8;border-radius:8px;padding:.5rem .6rem"><div style="font-weight:600">🥔 Patate</div><div>Max 120g lui · 100g lei</div><div style="font-size:.7rem;color:var(--gr)">Occasionalmente</div></div>
       </div>
     </div>
+
+    <div class="tip-box">
+      <h4>🍅 Pomodori secchi</h4>
+      <div style="font-size:.78rem;line-height:1.6">258 kcal/100g contro 18 del fresco — <strong>14 volte più calorici</strong>. Usali come condimento: <strong>20g a testa</strong>, ammollati 30 min. Se la ricetta dice 120g di pomodori freschi: 20g secchi + 100g freschi.</div>
+    </div>
+
+    <div style="font-family:var(--font-serif);font-size:1.1rem;color:var(--g);margin-bottom:.6rem">🔄 Strategia a lungo termine</div>
+    <div class="tip-box">
+      <h4>Come evitare il plateau</h4>
+      <div class="tip-item"><span>📅</span><span><strong>Ogni 3-4 settimane di deficit</strong>: una settimana di ricarica a +200 kcal — riattiva leptina e metabolismo</span></div>
+      <div class="tip-item"><span>🔀</span><span><strong>Ogni 4-6 settimane</strong>: cambiare i piatti, non solo per noia ma per non far adattare il corpo</span></div>
+      <div class="tip-item"><span>⚖️</span><span><strong>Pesarsi</strong> sempre lo stesso giorno, stessa ora, a digiuno. Una volta a settimana basta</span></div>
+      <div class="tip-item"><span>🎯</span><span><strong>Se la bilancia si ferma 10+ giorni</strong>: è il momento della settimana di ricarica, non di tagliare di più</span></div>
+    </div>
+    <div class="warn-box">⚕️ Esami del sangue e controllo con il medico: reni (creatinina, eGFR), testosterone, estradiolo, colesterolo.</div>
   </div>
 </div>
 
 <div class="page" id="page-spesa">
   <header>
-    <div class="badge">🛒 MERCATO KM 0 · GIUGNO</div>
+    <div class="badge">🛒 MERCATO KM 0 · AUTUNNO</div>
     <h1>Lista della Spesa<br><em>Personalizzata</em></h1>
-    <p>Seleziona i pasti · la lista si aggiorna in tempo reale</p>
+    <p>Seleziona i pasti · la lista si aggiorna</p>
   </header>
   <div class="section">
     <div id="meal-selector-panel">
       <div class="day-selector">
-        <h4>🍽️ Seleziona i pasti da includere nella spesa</h4>
+        <h4>🍽️ Seleziona i pasti da includere</h4>
         <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.7rem">
           <button class="alt-chip" onclick="selectAllMeals()">✅ Tutti</button>
           <button class="alt-chip" onclick="clearAllMeals()">✖ Nessuno</button>
@@ -504,7 +397,7 @@ header p{font-size:.82rem;opacity:.8;position:relative}
       </div>
     </div>
     <div id="shop-lists"></div>
-    <div class="warn-box">🌿 Olio EVO, aglio, basilico, sale, pepe gia in dispensa. Caffe non incluso.</div>
+    <div class="warn-box">🌿 Olio EVO, aglio, rosmarino, salvia, sale, pepe già in dispensa.</div>
   </div>
 </div>
 
@@ -516,7 +409,7 @@ header p{font-size:.82rem;opacity:.8;position:relative}
   </header>
   <div class="section">
     <button class="print-btn no-print" onclick="doPrint()">🖨️ Stampa / Salva PDF</button>
-    <div class="warn-box no-print">💡 Si apre una nuova finestra - scegliete "Salva come PDF".</div>
+    <div class="warn-box no-print">💡 Si apre una nuova finestra — scegliete "Salva come PDF".</div>
     <div id="print-preview"></div>
   </div>
 </div>
@@ -533,7 +426,7 @@ header p{font-size:.82rem;opacity:.8;position:relative}
 const CAT={
   CARNE:'🥩 Carni & Pesce',LATT:'🥚 Uova & Latticini',
   V1:'🥬 Verdure fresche (Lun-Mer)',V2:'🥬 Verdure fresche (Gio-Dom)',
-  FRUTTA:'🍓 Frutta di stagione',CER:'🌾 Cereali & Legumi',
+  FRUTTA:'🍇 Frutta di stagione',CER:'🌾 Cereali & Legumi',
   DISP:'🫙 Dispensa & Secchi',DISP2:'🫙 Gia in dispensa',DOLCI:'🍫 Dolci Serali'
 };
 const CW={
@@ -546,258 +439,250 @@ const CO=[CAT.CARNE,CAT.LATT,CAT.V1,CAT.V2,CAT.FRUTTA,CAT.CER,CAT.DOLCI,CAT.DISP
 function i(n,ql,ll,u,c){return{n,ql,ll,u,c}}
 
 const DOLCI_DATA=[
-  {e:'🍫',t:'Cioccolato fondente >=85%',d:'Basso IG, magnesio, antiossidanti. Il migliore per fumatori.',l:'25g',le:'20g'},
-  {e:'🍓',t:'Fage Total 0% + frutti rossi',d:'Proteine che stabilizzano la glicemia notturna.',l:'150g+80g',le:'120g+60g'},
-  {e:'🥜',t:'Mandorle + 1 dattero',d:'Il dattero soddisfa il dolce, le mandorle rallentano l assorbimento.',l:'15g+1',le:'10g+1'},
-  {e:'🍑',t:'Frutta estiva + cannella',d:'Pesca, albicocca, melone. La cannella riduce il picco del 20%.',l:'200g',le:'150g'},
-  {e:'🍍',t:'Ananas fresca (lei: linfedema)',d:'Bromelina drenante, ottima per lei 2-3 volte/sett. Lui puo mangiarne.',l:'150g',le:'100-150g'},
-  {e:'🍦',t:'Gelato artigianale frutta',d:'Max 2x/settimana. Sorbetto preferibile.',l:'80g',le:'60g'},
+  {e:'🍫',t:'Cioccolato fondente >=85%',d:'Basso IG, magnesio. Il migliore per fumatori.',l:'25g',le:'20g'},
+  {e:'🍇',t:'Uva nera + noci',d:'Antocianine per i capillari. Ottima per lei.',l:'150g+10g',le:'120g+8g'},
+  {e:'🍐',t:'Pera cotta alla cannella',d:'Calda, confortante. Forno 20 min, zero zucchero aggiunto.',l:'1 grande',le:'1 media'},
+  {e:'🌰',t:'Castagne arrosto',d:'Solo nel weekend. Sazianti e di stagione.',l:'50g',le:'40g'},
+  {e:'🍎',t:'Mela al forno + skyr',d:'Il dolce d autunno per eccellenza.',l:'1+80g',le:'1+60g'},
+  {e:'🍍',t:'Ananas (lei: linfedema)',d:'Bromelina drenante, 2-3 volte a settimana.',l:'150g',le:'100-150g'},
 ];
 
-// FREE = verdure a foglia libere (solo quantita minima)
-const FREE=' <span class="free-tag">MIN</span>';
-
 const DAYS=[
- {name:'Lunedi',e:'🌱',meals:[
-  {icon:'☀️',name:'Colazione',kl:'~320',kle:'~280',
-   dl:'Fage Total 0% 150g + semi di chia 10g + 2 kiwi a pezzi',
-   dle:'Fage Total 0% 125g + semi di chia 8g + 2 kiwi a pezzi',
-   ing:[i('Fage Total 0%',150,125,'g',CAT.LATT),i('Semi di chia',10,8,'g',CAT.DISP),i('Kiwi',200,200,'g',CAT.FRUTTA)],
-   adl:'Ricotta magra 120g + miele 8g + pesche a fette 120g + noci 10g',
-   adle:'Ricotta magra 100g + miele 6g + pesche 100g + noci 8g',
-   aing:[i('Ricotta magra',120,100,'g',CAT.LATT),i('Pesche',120,100,'g',CAT.FRUTTA),i('Noci',10,8,'g',CAT.DISP)]},
-  {icon:'🍑',name:'Spuntino',kl:'~110',kle:'~90',
-   dl:'Mandorle 20g + 1 pesca 150g',
-   dle:'Mandorle 15g + 1 pesca 120g',
-   ing:[i('Mandorle',20,15,'g',CAT.DISP),i('Pesche',150,120,'g',CAT.FRUTTA)],
-   adl:'Cetriolo libero + Philadelphia Lightest 60g + 2 Wasa',
-   adle:'Cetriolo libero + Philadelphia Lightest 45g + 2 Wasa',
-   aing:[i('Cetrioli',150,120,'g',CAT.V1),i('Philadelphia Lightest',60,45,'g',CAT.LATT),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)]},
-  {icon:'🥗',name:'Pranzo',kl:'~520',kle:'~440',
-   dl:'Petto di pollo 180g + peperoni grigliati 200g + farro 60g secco',
-   dle:'Petto di pollo 150g + peperoni grigliati 180g + farro 50g secco',
-   ing:[i('Petto di pollo',180,150,'g',CAT.CARNE),i('Peperoni',200,180,'g',CAT.V1),i('Farro perlato',60,50,'g',CAT.CER)],
-   adl:'Tonno 130g + melanzane grigliate 200g + farro 60g',
-   adle:'Tonno 100g + melanzane 170g + farro 50g',
-   aing:[i('Tonno al naturale',130,100,'g',CAT.CARNE),i('Melanzane',200,170,'g',CAT.V1),i('Farro perlato',60,50,'g',CAT.CER)]},
-  {icon:'🌙',name:'Cena',kl:'~420',kle:'~360',
-   dl:'Orata al forno 200g + pomodori gratinati 150g + insalata mista 80g min',
-   dle:'Orata al forno 160g + pomodori gratinati 120g + insalata mista 80g min',
-   ing:[i('Orata o branzino',200,160,'g',CAT.CARNE),i('Pomodori',150,120,'g',CAT.V1),i('Insalata mista/songino',80,80,'g',CAT.V1)],
-   adl:'Insalata caprese: pomodori 200g + mozzarella light 80g + basilico + 2 Wasa',
-   adle:'Pomodori 160g + mozzarella light 60g + basilico + 2 Wasa',
-   aing:[i('Pomodori',200,160,'g',CAT.V1),i('Mozzarella light',80,60,'g',CAT.LATT),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)]}
- ]},
- {name:'Martedi',e:'🐟',meals:[
+ {name:'Lunedi',e:'🎃',meals:[
   {icon:'☀️',name:'Colazione',kl:'~310',kle:'~270',
-   dl:'2 uova sode + pomodorini 100g + 2 Wasa + Philadelphia Lightest 40g',
-   dle:'2 uova sode + pomodorini 80g + 2 Wasa + Philadelphia Lightest 30g',
-   ing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Pomodorini',100,80,'g',CAT.V1),i('Fette croccanti Wasa',2,2,'pz',CAT.CER),i('Philadelphia Lightest',40,30,'g',CAT.LATT)],
-   adl:'Overnight oats: avena 50g + Fage Total 0% 100g + mirtilli 80g',
-   adle:'Avena 40g + Fage Total 0% 80g + mirtilli 60g',
-   aing:[i('Fiocchi di avena',50,40,'g',CAT.CER),i('Fage Total 0%',100,80,'g',CAT.LATT),i('Mirtilli',80,60,'g',CAT.FRUTTA)]},
-  {icon:'🍅',name:'Spuntino',kl:'~90',kle:'~70',
-   dl:'Cetrioli libero + hummus 40g',
-   dle:'Cetrioli libero + hummus 30g',
-   ing:[i('Cetrioli',150,120,'g',CAT.V1),i('Ceci (hummus)',40,30,'g',CAT.CER)],
-   adl:'1 pesca + noci 10g',
-   adle:'1 pesca + noci 8g',
-   aing:[i('Pesche',180,150,'g',CAT.FRUTTA),i('Noci',10,8,'g',CAT.DISP)]},
-  {icon:'🥗',name:'Pranzo',kl:'~530',kle:'~450',
-   dl:'Salmone al forno 160g + melanzane grigliate 200g + riso integrale 60g',
-   dle:'Salmone 130g + melanzane 180g + riso 50g',
-   ing:[i('Salmone',160,130,'g',CAT.CARNE),i('Melanzane',200,180,'g',CAT.V1),i('Riso integrale',60,50,'g',CAT.CER)],
-   adl:'Petto di tacchino 170g + peperoni arrostiti 200g + riso 60g',
-   adle:'Tacchino 140g + peperoni 170g + riso 50g',
-   aing:[i('Petto di tacchino',170,140,'g',CAT.CARNE),i('Peperoni',200,170,'g',CAT.V2),i('Riso integrale',60,50,'g',CAT.CER)]},
+   dl:'Porridge: avena 50g + latte p.s. 200ml + mela a cubetti + cannella',
+   dle:'Porridge: avena 40g + latte 160ml + mela + cannella',
+   ing:[i('Fiocchi di avena',50,40,'g',CAT.CER),i('Latte p.s.',200,160,'ml',CAT.LATT),i('Mele',120,100,'g',CAT.FRUTTA)],
+   adl:'Fiocchi di latte 130g + uva nera 120g + noci 10g',
+   adle:'Fiocchi di latte 110g + uva 100g + noci 8g',
+   aing:[i('Fiocchi di latte',130,110,'g',CAT.LATT),i('Uva nera',120,100,'g',CAT.FRUTTA),i('Noci',10,8,'g',CAT.DISP)]},
+  {icon:'🍇',name:'Spuntino',kl:'~110',kle:'~90',
+   dl:'Uva nera 120g + mandorle 15g',
+   dle:'Uva nera 100g + mandorle 12g',
+   ing:[i('Uva nera',120,100,'g',CAT.FRUTTA),i('Mandorle',15,12,'g',CAT.DISP)],
+   adl:'Finocchio crudo a spicchi + hummus 40g',
+   adle:'Finocchio crudo + hummus 30g',
+   aing:[i('Finocchi',150,120,'g',CAT.V1),i('Ceci (hummus)',40,30,'g',CAT.CER)]},
+  {icon:'🥗',name:'Pranzo',kl:'~510',kle:'~430',
+   dl:'Risotto zucca e rosmarino: riso 65g + zucca 200g + parmigiano 15g',
+   dle:'Risotto zucca: riso 55g + zucca 170g + parmigiano 12g',
+   ing:[i('Riso integrale',65,55,'g',CAT.CER),i('Zucca',200,170,'g',CAT.V1),i('Parmigiano',15,12,'g',CAT.LATT)],
+   adl:'Petto di pollo alle erbe 180g + broccoli al vapore 250g + patate 100g',
+   adle:'Pollo 150g + broccoli 200g + patate 80g',
+   aing:[i('Petto di pollo',180,150,'g',CAT.CARNE),i('Broccoli',250,200,'g',CAT.V1),i('Patate',100,80,'g',CAT.V1)]},
   {icon:'🌙',name:'Cena',kl:'~400',kle:'~340',
-   dl:'Peperoni grigliati 150g + Philadelphia Lightest 90g + insalata mista 80g min + 2 Wasa',
-   dle:'Peperoni grigliati 120g + Philadelphia Lightest 65g + insalata mista 80g min + 2 Wasa',
-   ing:[i('Peperoni',150,120,'g',CAT.V2),i('Philadelphia Lightest',90,65,'g',CAT.LATT),i('Insalata mista/songino',80,80,'g',CAT.V1),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)],
-   adl:'Feta light 55g + pomodori 150g + cetrioli libero + insalata mista 80g min + 2 Wasa',
-   adle:'Feta light 40g + pomodori 120g + cetrioli + insalata 80g min + 2 Wasa',
-   aing:[i('Feta light',55,40,'g',CAT.LATT),i('Pomodori',150,120,'g',CAT.V2),i('Cetrioli',100,80,'g',CAT.V2),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)]}
+   dl:'Nasello al forno 200g + cavolo nero saltato 150g min + limone',
+   dle:'Nasello 160g + cavolo nero 150g min + limone',
+   ing:[i('Nasello o platessa',200,160,'g',CAT.CARNE),i('Cavolo nero',150,150,'g',CAT.V1)],
+   adl:'Vellutata di zucca 350g + ricotta 70g + 2 Wasa',
+   adle:'Vellutata zucca 300g + ricotta 55g + 2 Wasa',
+   aing:[i('Zucca',350,300,'g',CAT.V1),i('Ricotta magra',70,55,'g',CAT.LATT),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)]}
  ]},
- {name:'Mercoledi',e:'🌿',meals:[
+ {name:'Martedi',e:'🍄',meals:[
+  {icon:'☀️',name:'Colazione',kl:'~320',kle:'~275',
+   dl:'2 uova strapazzate + funghi trifolati 100g + 2 Wasa',
+   dle:'2 uova + funghi 80g + 2 Wasa',
+   ing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Funghi champignon',100,80,'g',CAT.V1),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)],
+   adl:'Skyr 150g + fichi freschi 2 + semi di zucca 10g',
+   adle:'Skyr 125g + fichi 2 + semi di zucca 8g',
+   aing:[i('Skyr o Fage Total 0%',150,125,'g',CAT.LATT),i('Fichi freschi',120,120,'g',CAT.FRUTTA),i('Semi di zucca',10,8,'g',CAT.DISP)]},
+  {icon:'🥕',name:'Spuntino',kl:'~95',kle:'~75',
+   dl:'Carote a bastoncini 120g + Philadelphia Lightest 50g',
+   dle:'Carote 100g + Philadelphia Lightest 38g',
+   ing:[i('Carote',120,100,'g',CAT.V1),i('Philadelphia Lightest',50,38,'g',CAT.LATT)],
+   adl:'1 pera + noci 10g',
+   adle:'1 pera + noci 8g',
+   aing:[i('Pere',180,150,'g',CAT.FRUTTA),i('Noci',10,8,'g',CAT.DISP)]},
+  {icon:'🥗',name:'Pranzo',kl:'~520',kle:'~440',
+   dl:'Farro ai funghi: farro 60g + funghi misti 200g + prezzemolo + parmigiano 12g',
+   dle:'Farro 50g + funghi 170g + parmigiano 10g',
+   ing:[i('Farro perlato',60,50,'g',CAT.CER),i('Funghi champignon',200,170,'g',CAT.V1),i('Parmigiano',12,10,'g',CAT.LATT)],
+   adl:'Tacchino alla salvia 180g + cavolfiore gratinato 250g',
+   adle:'Tacchino 150g + cavolfiore 200g',
+   aing:[i('Petto di tacchino',180,150,'g',CAT.CARNE),i('Cavolfiore',250,200,'g',CAT.V1)]},
+  {icon:'🌙',name:'Cena',kl:'~390',kle:'~330',
+   dl:'Frittata con verza (2 uova + verza 150g) + insalata mista 80g min',
+   dle:'Frittata verza (2 uova + verza 120g) + insalata 80g min',
+   ing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Verza',150,120,'g',CAT.V1),i('Insalata mista/songino',80,80,'g',CAT.V1)],
+   adl:'Zuppa di lenticchie 350g (lenticchie 60g secche) + 2 Wasa',
+   adle:'Zuppa lenticchie 300g (50g secche) + 2 Wasa',
+   aing:[i('Lenticchie secche',60,50,'g',CAT.CER),i('Carote',80,60,'g',CAT.V1),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)]}
+ ]},
+ {name:'Mercoledi',e:'🥦',meals:[
   {icon:'☀️',name:'Colazione',kl:'~300',kle:'~260',
-   dl:'Overnight oats: avena 50g + latte p.s. 150ml + mirtilli 80g + cannella',
-   dle:'Avena 40g + latte 120ml + mirtilli 60g + cannella',
-   ing:[i('Fiocchi di avena',50,40,'g',CAT.CER),i('Latte p.s.',150,120,'ml',CAT.LATT),i('Mirtilli',80,60,'g',CAT.FRUTTA)],
-   adl:'Frullato verde: spinaci 50g min + cetriolo + Fage Total 0% 150g + limone',
-   adle:'Spinaci 50g min + cetriolo + Fage Total 0% 120g + limone',
-   aing:[i('Spinaci freschi',50,50,'g',CAT.V1),i('Cetrioli',100,80,'g',CAT.V1),i('Fage Total 0%',150,120,'g',CAT.LATT)]},
-  {icon:'🍑',name:'Spuntino',kl:'~110',kle:'~90',
-   dl:'1 albicocca + noci 15g',
-   dle:'1 albicocca + noci 12g',
-   ing:[i('Albicocche',120,100,'g',CAT.FRUTTA),i('Noci',15,12,'g',CAT.DISP)],
-   adl:'Mandorle 20g + 1 pesca a fette',
-   adle:'Mandorle 15g + 1 pesca',
-   aing:[i('Mandorle',20,15,'g',CAT.DISP),i('Pesche',150,120,'g',CAT.FRUTTA)]},
+   dl:'Ricotta 110g + miele 8g + pera a fette + cannella',
+   dle:'Ricotta 90g + miele 6g + pera + cannella',
+   ing:[i('Ricotta magra',110,90,'g',CAT.LATT),i('Pere',150,120,'g',CAT.FRUTTA)],
+   adl:'Porridge salato: avena 50g + brodo + uovo in camicia + spinaci',
+   adle:'Porridge salato: avena 40g + brodo + uovo + spinaci',
+   aing:[i('Fiocchi di avena',50,40,'g',CAT.CER),i('Uova fresche',1,1,'pz',CAT.LATT),i('Spinaci freschi',80,80,'g',CAT.V1)]},
+  {icon:'🌰',name:'Spuntino',kl:'~110',kle:'~90',
+   dl:'Castagne arrosto 50g',
+   dle:'Castagne arrosto 40g',
+   ing:[i('Castagne',50,40,'g',CAT.FRUTTA)],
+   adl:'1 mela + mandorle 15g',
+   adle:'1 mela + mandorle 12g',
+   aing:[i('Mele',160,140,'g',CAT.FRUTTA),i('Mandorle',15,12,'g',CAT.DISP)]},
   {icon:'🥗',name:'Pranzo',kl:'~500',kle:'~420',
-   dl:'Pasta integrale 70g + pesto songino (songino 40g min + pinoli 10g) + pomodorini 100g',
-   dle:'Pasta 60g + pesto songino + pomodorini 80g',
-   ing:[i('Pasta integrale',70,60,'g',CAT.CER),i('Insalata mista/songino',40,40,'g',CAT.V1),i('Pomodorini',100,80,'g',CAT.V1)],
-   adl:'Farro 70g + melanzane trifolate 200g + pollo a pezzetti 120g',
-   adle:'Farro 60g + melanzane 170g + pollo 100g',
-   aing:[i('Farro perlato',70,60,'g',CAT.CER),i('Melanzane',200,170,'g',CAT.V1),i('Petto di pollo',120,100,'g',CAT.CARNE)]},
-  {icon:'🌙',name:'Cena',kl:'~430',kle:'~360',
-   dl:'Merluzzo al vapore 200g + peperonata 250g + cicoria 80g min',
-   dle:'Merluzzo 160g + peperonata 200g + cicoria 80g min',
-   ing:[i('Merluzzo',200,160,'g',CAT.CARNE),i('Peperoni',250,200,'g',CAT.V2),i('Cicoria/radicchio',80,80,'g',CAT.V1)],
-   adl:'Frittata peperoni (2 uova + peperoni 200g) + insalata mista 80g min',
-   adle:'Frittata (2 uova + peperoni 160g) + insalata 80g min',
-   aing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Peperoni',200,160,'g',CAT.V2),i('Insalata mista/songino',80,80,'g',CAT.V1)]}
+   dl:'Pasta integrale 70g + broccoli + acciughe 20g + peperoncino',
+   dle:'Pasta 60g + broccoli + acciughe 15g',
+   ing:[i('Pasta integrale',70,60,'g',CAT.CER),i('Broccoli',200,170,'g',CAT.V2),i('Acciughe sott olio',20,15,'g',CAT.DISP)],
+   adl:'Orata al forno 200g + finocchi gratinati 200g + patate 80g',
+   adle:'Orata 160g + finocchi 170g + patate 70g',
+   aing:[i('Orata o branzino',200,160,'g',CAT.CARNE),i('Finocchi',200,170,'g',CAT.V2),i('Patate',80,70,'g',CAT.V2)]},
+  {icon:'🌙',name:'Cena',kl:'~410',kle:'~350',
+   dl:'Zuppa di ceci e rosmarino 350g (ceci 70g secchi) + cavolo nero',
+   dle:'Zuppa ceci 300g (60g secchi) + cavolo nero',
+   ing:[i('Ceci secchi',70,60,'g',CAT.CER),i('Cavolo nero',100,100,'g',CAT.V2)],
+   adl:'Sgombro al forno 150g + radicchio grigliato 150g min + limone',
+   adle:'Sgombro 120g + radicchio 150g min',
+   aing:[i('Sgombro o sardine',150,120,'g',CAT.CARNE),i('Radicchio',150,150,'g',CAT.V2)]}
  ]},
  {name:'Giovedi',e:'🥚',meals:[
-  {icon:'☀️',name:'Colazione',kl:'~290',kle:'~250',
-   dl:'Fage Total 0% 150g + albicocche fresche 150g + semi di lino 10g',
-   dle:'Fage Total 0% 120g + albicocche 120g + semi lino 8g',
-   ing:[i('Fage Total 0%',150,120,'g',CAT.LATT),i('Albicocche',150,120,'g',CAT.FRUTTA),i('Semi di lino',10,8,'g',CAT.DISP)],
-   adl:'2 uova strapazzate + spinaci saltati 80g min + pomodorini 80g + 2 Wasa',
-   adle:'2 uova + spinaci 80g min + pomodorini 60g + 2 Wasa',
-   aing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Spinaci freschi',80,80,'g',CAT.V2),i('Pomodorini',80,60,'g',CAT.V2),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)]},
-  {icon:'🥚',name:'Spuntino',kl:'~80',kle:'~70',
-   dl:'1 uovo sodo + cetriolo libero',
-   dle:'1 uovo sodo + cetriolo libero',
-   ing:[i('Uova fresche',1,1,'pz',CAT.LATT),i('Cetrioli',100,80,'g',CAT.V2)],
-   adl:'Pesche fresche 150g + noci 12g',
-   adle:'Pesche 120g + noci 10g',
-   aing:[i('Pesche',150,120,'g',CAT.FRUTTA),i('Noci',12,10,'g',CAT.DISP)]},
-  {icon:'🥗',name:'Pranzo',kl:'~510',kle:'~430',
-   dl:'Bowl: riso integrale 60g + tonno 120g + pomodori 120g + olive 20g',
-   dle:'Riso 50g + tonno 100g + pomodori 100g + olive 15g',
-   ing:[i('Riso integrale',60,50,'g',CAT.CER),i('Tonno al naturale',120,100,'g',CAT.CARNE),i('Pomodori',120,100,'g',CAT.V2),i('Olive in salamoia',20,15,'g',CAT.DISP)],
-   adl:'Farro 60g + ceci 100g cotti + cetriolo libero + pomodorini 100g',
-   adle:'Farro 50g + ceci 80g + cetriolo + pomodorini 80g',
-   aing:[i('Farro perlato',60,50,'g',CAT.CER),i('Ceci (hummus)',100,80,'g',CAT.CER),i('Cetrioli',100,80,'g',CAT.V2),i('Pomodorini',100,80,'g',CAT.V2)]},
+  {icon:'☀️',name:'Colazione',kl:'~300',kle:'~260',
+   dl:'Skyr 150g + uva nera 120g + semi di lino 10g',
+   dle:'Skyr 125g + uva 100g + semi di lino 8g',
+   ing:[i('Skyr o Fage Total 0%',150,125,'g',CAT.LATT),i('Uva nera',120,100,'g',CAT.FRUTTA),i('Semi di lino',10,8,'g',CAT.DISP)],
+   adl:'2 uova sode + avocado 50g + 2 Wasa',
+   adle:'2 uova sode + avocado 40g + 2 Wasa',
+   aing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Avocado',50,40,'g',CAT.FRUTTA),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)]},
+  {icon:'🍎',name:'Spuntino',kl:'~100',kle:'~80',
+   dl:'1 mela + noci 12g',
+   dle:'1 mela + noci 10g',
+   ing:[i('Mele',160,140,'g',CAT.FRUTTA),i('Noci',12,10,'g',CAT.DISP)],
+   adl:'Skyr 100g + cannella',
+   adle:'Skyr 80g + cannella',
+   aing:[i('Skyr o Fage Total 0%',100,80,'g',CAT.LATT)]},
+  {icon:'🥗',name:'Pranzo',kl:'~520',kle:'~440',
+   dl:'Bowl: orzo 60g + ceci 100g cotti + zucca arrosto 150g + feta light 40g',
+   dle:'Orzo 50g + ceci 80g + zucca 120g + feta light 30g',
+   ing:[i('Orzo perlato',60,50,'g',CAT.CER),i('Ceci secchi',40,32,'g',CAT.CER),i('Zucca',150,120,'g',CAT.V2),i('Feta light',40,30,'g',CAT.LATT)],
+   adl:'Coniglio o pollo in umido 180g + verza stufata 200g + 2 Wasa',
+   adle:'Pollo in umido 150g + verza 170g + 2 Wasa',
+   aing:[i('Petto di pollo',180,150,'g',CAT.CARNE),i('Verza',200,170,'g',CAT.V2),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)]},
   {icon:'🌙',name:'Cena',kl:'~380',kle:'~320',
-   dl:'Branzino al forno 200g + pomodori e basilico 150g + insalata mista 80g min',
-   dle:'Branzino 160g + pomodori 120g + insalata mista 80g min',
-   ing:[i('Branzino o orata',200,160,'g',CAT.CARNE),i('Pomodori',150,120,'g',CAT.V2),i('Insalata mista/songino',80,80,'g',CAT.V2)],
-   adl:'Salmone al vapore 150g + bietole saltate 200g min + limone',
-   adle:'Salmone 120g + bietole 200g min + limone',
-   aing:[i('Salmone',150,120,'g',CAT.CARNE),i('Bietole',200,200,'g',CAT.V2)]}
+   dl:'Merluzzo in guazzetto 200g + spinaci saltati 200g min',
+   dle:'Merluzzo 160g + spinaci 200g min',
+   ing:[i('Merluzzo',200,160,'g',CAT.CARNE),i('Spinaci freschi',200,200,'g',CAT.V2)],
+   adl:'Crema di cavolfiore 350g + uovo in camicia + parmigiano 10g',
+   adle:'Crema cavolfiore 300g + uovo + parmigiano 8g',
+   aing:[i('Cavolfiore',350,300,'g',CAT.V2),i('Uova fresche',1,1,'pz',CAT.LATT),i('Parmigiano',10,8,'g',CAT.LATT)]}
  ]},
- {name:'Venerdi',e:'🥑',meals:[
-  {icon:'☀️',name:'Colazione',kl:'~350',kle:'~300',
-   dl:'Frullato verde: spinaci 50g min + cetriolo + Fage Total 0% 150g + limone',
-   dle:'Spinaci 50g min + cetriolo + Fage Total 0% 120g + limone',
-   ing:[i('Spinaci freschi',50,50,'g',CAT.V2),i('Cetrioli',100,80,'g',CAT.V2),i('Fage Total 0%',150,120,'g',CAT.LATT)],
-   adl:'Pancake avena (avena 45g + 1 uovo + latte 80ml) + pesche a fette 100g',
-   adle:'Pancake (avena 35g + 1 uovo + latte 60ml) + pesche 80g',
-   aing:[i('Fiocchi di avena',45,35,'g',CAT.CER),i('Uova fresche',1,1,'pz',CAT.LATT),i('Latte p.s.',80,60,'ml',CAT.LATT),i('Pesche',100,80,'g',CAT.FRUTTA)]},
-  {icon:'🍑',name:'Spuntino',kl:'~70',kle:'~60',
-   dl:'1 albicocca + 5 mandorle',
-   dle:'1 albicocca + 5 mandorle',
-   ing:[i('Albicocche',120,100,'g',CAT.FRUTTA),i('Mandorle',15,15,'g',CAT.DISP)],
-   adl:'Melone 200g + Fage Total 0% 80g',
-   adle:'Melone 150g + Fage Total 0% 60g',
-   aing:[i('Melone',200,150,'g',CAT.FRUTTA),i('Fage Total 0%',80,60,'g',CAT.LATT)]},
-  {icon:'🥗',name:'Pranzo',kl:'~490',kle:'~410',
-   dl:'Frittata zucchine (2 uova + zucchine 150g) + ceci 120g + insalata 80g min',
-   dle:'Frittata (2 uova + zucchine 120g) + ceci 100g + insalata 80g min',
-   ing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Zucchine',150,120,'g',CAT.V2),i('Ceci (hummus)',120,100,'g',CAT.CER),i('Insalata mista/songino',80,80,'g',CAT.V2)],
-   adl:'Pasta integrale 70g + tonno 100g + pomodorini 150g + capperi',
-   adle:'Pasta 60g + tonno 80g + pomodorini 120g',
-   aing:[i('Pasta integrale',70,60,'g',CAT.CER),i('Tonno al naturale',100,80,'g',CAT.CARNE),i('Pomodorini',150,120,'g',CAT.V2)]},
-  {icon:'🌙',name:'Cena',kl:'~440',kle:'~380',
-   dl:'Petto di tacchino al forno 180g + melanzane 200g + pomodori gratinati 150g',
-   dle:'Tacchino 150g + melanzane 170g + pomodori 120g',
-   ing:[i('Petto di tacchino',180,150,'g',CAT.CARNE),i('Melanzane',200,170,'g',CAT.V2),i('Pomodori',150,120,'g',CAT.V2)],
-   adl:'Merluzzo al cartoccio 200g + zucchine 180g + pomodorini + prezzemolo',
-   adle:'Merluzzo 160g + zucchine 150g + pomodorini',
-   aing:[i('Merluzzo',200,160,'g',CAT.CARNE),i('Zucchine',180,150,'g',CAT.V2),i('Pomodorini',80,60,'g',CAT.V2)]}
+ {name:'Venerdi',e:'🐟',meals:[
+  {icon:'☀️',name:'Colazione',kl:'~330',kle:'~285',
+   dl:'Pancake avena-zucca: avena 45g + zucca 80g + 1 uovo + cannella',
+   dle:'Pancake: avena 35g + zucca 70g + 1 uovo + cannella',
+   ing:[i('Fiocchi di avena',45,35,'g',CAT.CER),i('Zucca',80,70,'g',CAT.V2),i('Uova fresche',1,1,'pz',CAT.LATT)],
+   adl:'Fiocchi di latte 130g + fichi 2 + noci 10g',
+   adle:'Fiocchi di latte 110g + fichi 2 + noci 8g',
+   aing:[i('Fiocchi di latte',130,110,'g',CAT.LATT),i('Fichi freschi',120,120,'g',CAT.FRUTTA),i('Noci',10,8,'g',CAT.DISP)]},
+  {icon:'🥜',name:'Spuntino',kl:'~105',kle:'~85',
+   dl:'1 pera + mandorle 12g',
+   dle:'1 pera + mandorle 10g',
+   ing:[i('Pere',180,150,'g',CAT.FRUTTA),i('Mandorle',12,10,'g',CAT.DISP)],
+   adl:'Finocchio crudo + Philadelphia Lightest 55g',
+   adle:'Finocchio crudo + Philadelphia Lightest 40g',
+   aing:[i('Finocchi',150,120,'g',CAT.V2),i('Philadelphia Lightest',55,40,'g',CAT.LATT)]},
+  {icon:'🥗',name:'Pranzo',kl:'~510',kle:'~430',
+   dl:'Salmone al forno 160g + cavolfiore arrosto 200g + orzo 55g',
+   dle:'Salmone 130g + cavolfiore 170g + orzo 45g',
+   ing:[i('Salmone',160,130,'g',CAT.CARNE),i('Cavolfiore',200,170,'g',CAT.V2),i('Orzo perlato',55,45,'g',CAT.CER)],
+   adl:'Pasta e fagioli: pasta 50g + fagioli borlotti 60g secchi + rosmarino',
+   adle:'Pasta 40g + borlotti 50g secchi',
+   aing:[i('Pasta integrale',50,40,'g',CAT.CER),i('Fagioli borlotti secchi',60,50,'g',CAT.CER),i('Carote',60,50,'g',CAT.V2)]},
+  {icon:'🌙',name:'Cena',kl:'~400',kle:'~340',
+   dl:'Frittata funghi e cavolo nero (2 uova) + insalata 80g min',
+   dle:'Frittata funghi (2 uova) + insalata 80g min',
+   ing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Funghi champignon',120,100,'g',CAT.V2),i('Cavolo nero',80,80,'g',CAT.V2),i('Insalata mista/songino',80,80,'g',CAT.V2)],
+   adl:'Platessa al limone 200g + broccoli 200g + 2 Wasa',
+   adle:'Platessa 160g + broccoli 170g + 2 Wasa',
+   aing:[i('Nasello o platessa',200,160,'g',CAT.CARNE),i('Broccoli',200,170,'g',CAT.V2),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)]}
  ]},
  {name:'Sabato',e:'🥩',meals:[
-  {icon:'☀️',name:'Colazione',kl:'~370',kle:'~320',
-   dl:'2 uova strapazzate + avocado 50g + pomodorini 100g + 2 Wasa',
-   dle:'2 uova + avocado 40g + pomodorini 80g + 2 Wasa',
-   ing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Avocado',50,40,'g',CAT.FRUTTA),i('Pomodorini',100,80,'g',CAT.V2),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)],
-   adl:'Fage Total 0% 150g + granola integrale 30g + pesche fresche 120g',
-   adle:'Fage Total 0% 120g + granola 25g + pesche 100g',
-   aing:[i('Fage Total 0%',150,120,'g',CAT.LATT),i('Granola integrale artigianale',30,25,'g',CAT.DISP),i('Pesche',120,100,'g',CAT.FRUTTA)]},
-  {icon:'🍑',name:'Spuntino',kl:'~130',kle:'~105',
-   dl:'1 pesca + mandorle 15g',
-   dle:'1 pesca + mandorle 12g',
-   ing:[i('Pesche',180,150,'g',CAT.FRUTTA),i('Mandorle',15,12,'g',CAT.DISP)],
-   adl:'Melone 200g + noci 15g',
-   adle:'Melone 160g + noci 12g',
-   aing:[i('Melone',200,160,'g',CAT.FRUTTA),i('Noci',15,12,'g',CAT.DISP)]},
+  {icon:'☀️',name:'Colazione',kl:'~360',kle:'~310',
+   dl:'Uova strapazzate 2 + funghi 100g + avocado 40g + 2 Wasa',
+   dle:'Uova 2 + funghi 80g + avocado 35g + 2 Wasa',
+   ing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Funghi champignon',100,80,'g',CAT.V2),i('Avocado',40,35,'g',CAT.FRUTTA),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)],
+   adl:'Skyr 150g + granola 30g + mela a cubetti',
+   adle:'Skyr 125g + granola 25g + mela',
+   aing:[i('Skyr o Fage Total 0%',150,125,'g',CAT.LATT),i('Granola integrale',30,25,'g',CAT.DISP),i('Mele',120,100,'g',CAT.FRUTTA)]},
+  {icon:'🍇',name:'Spuntino',kl:'~120',kle:'~95',
+   dl:'Uva nera 150g + noci 10g',
+   dle:'Uva nera 120g + noci 8g',
+   ing:[i('Uva nera',150,120,'g',CAT.FRUTTA),i('Noci',10,8,'g',CAT.DISP)],
+   adl:'Castagne arrosto 50g',
+   adle:'Castagne arrosto 40g',
+   aing:[i('Castagne',50,40,'g',CAT.FRUTTA)]},
   {icon:'🥗',name:'Pranzo',kl:'~540',kle:'~450',
-   dl:'Bistecca magra 180g + peperoni arrostiti 200g + insalata mista 80g min',
-   dle:'Bistecca 150g + peperoni 180g + insalata 80g min',
-   ing:[i('Bistecca magra (fesa/girello)',180,150,'g',CAT.CARNE),i('Peperoni',200,180,'g',CAT.V2),i('Insalata mista/songino',80,80,'g',CAT.V2)],
-   adl:'Pollo alla griglia 180g + caprese: pomodori 150g + mozzarella light 60g',
-   adle:'Pollo 150g + pomodori 120g + mozzarella light 50g',
-   aing:[i('Petto di pollo',180,150,'g',CAT.CARNE),i('Pomodori',150,120,'g',CAT.V2),i('Mozzarella light',60,50,'g',CAT.LATT)]},
-  {icon:'🌙',name:'Cena',kl:'~380',kle:'~320',
-   dl:'Gazpacho toscano: pomodori 300g + cetriolo libero + pane raffermo 30g + ricotta 60g',
-   dle:'Pomodori 250g + cetriolo + pane 20g + ricotta 50g',
-   ing:[i('Pomodori',300,250,'g',CAT.V2),i('Cetrioli',100,80,'g',CAT.V2),i('Fette croccanti Wasa',2,2,'pz',CAT.CER),i('Ricotta magra',60,50,'g',CAT.LATT)],
-   adl:'Uova in purgatorio (2 uova + sugo pomodoro 200g) + 2 Wasa',
-   adle:'2 uova + sugo pomodoro 160g + 2 Wasa',
-   aing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Pomodori',200,160,'g',CAT.V2),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)]}
+   dl:'Bistecca magra 180g + funghi trifolati 200g + insalata 80g min',
+   dle:'Bistecca 150g + funghi 170g + insalata 80g min',
+   ing:[i('Bistecca magra (fesa/girello)',180,150,'g',CAT.CARNE),i('Funghi champignon',200,170,'g',CAT.V2),i('Insalata mista/songino',80,80,'g',CAT.V2)],
+   adl:'Tagliata di tacchino 180g + radicchio grigliato + grana 15g',
+   adle:'Tacchino 150g + radicchio + grana 12g',
+   aing:[i('Petto di tacchino',180,150,'g',CAT.CARNE),i('Radicchio',150,150,'g',CAT.V2),i('Parmigiano',15,12,'g',CAT.LATT)]},
+  {icon:'🌙',name:'Cena',kl:'~370',kle:'~315',
+   dl:'Zuppa di verza e fagioli 350g (fagioli 50g secchi) + 1 Wasa',
+   dle:'Zuppa verza e fagioli 300g (40g secchi) + 1 Wasa',
+   ing:[i('Verza',200,170,'g',CAT.V2),i('Fagioli borlotti secchi',50,40,'g',CAT.CER),i('Fette croccanti Wasa',1,1,'pz',CAT.CER)],
+   adl:'Caprese autunnale: mozzarella light 80g + zucca arrosto 150g + rucola',
+   adle:'Mozzarella light 60g + zucca 120g + rucola',
+   aing:[i('Mozzarella light',80,60,'g',CAT.LATT),i('Zucca',150,120,'g',CAT.V2)]}
  ]},
- {name:'Domenica',e:'🍳',meals:[
-  {icon:'☀️',name:'Colazione',kl:'~380',kle:'~320',
-   dl:'Pancake avena (avena 50g + 1 uovo + banana 60g) + Fage Total 0% 100g + pesche 100g',
-   dle:'Avena 40g + 1 uovo + banana 50g + Fage Total 0% 80g + pesche 80g',
-   ing:[i('Fiocchi di avena',50,40,'g',CAT.CER),i('Uova fresche',1,1,'pz',CAT.LATT),i('Banane',60,50,'g',CAT.FRUTTA),i('Fage Total 0%',100,80,'g',CAT.LATT),i('Pesche',100,80,'g',CAT.FRUTTA)],
-   adl:'Frittata dolce: 2 uova + ricotta 60g + miele 8g + mirtilli 80g',
-   adle:'2 uova + ricotta 50g + miele 6g + mirtilli 60g',
-   aing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Ricotta magra',60,50,'g',CAT.LATT),i('Mirtilli',80,60,'g',CAT.FRUTTA)]},
+ {name:'Domenica',e:'🍲',meals:[
+  {icon:'☀️',name:'Colazione',kl:'~370',kle:'~315',
+   dl:'Porridge: avena 50g + latte 200ml + pera cotta + noci 10g',
+   dle:'Porridge: avena 40g + latte 160ml + pera + noci 8g',
+   ing:[i('Fiocchi di avena',50,40,'g',CAT.CER),i('Latte p.s.',200,160,'ml',CAT.LATT),i('Pere',150,120,'g',CAT.FRUTTA),i('Noci',10,8,'g',CAT.DISP)],
+   adl:'Uova in camicia 2 + spinaci 100g + 2 Wasa + parmigiano 10g',
+   adle:'Uova 2 + spinaci 80g + 2 Wasa + parmigiano 8g',
+   aing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Spinaci freschi',100,80,'g',CAT.V2),i('Fette croccanti Wasa',2,2,'pz',CAT.CER),i('Parmigiano',10,8,'g',CAT.LATT)]},
   {icon:'🥕',name:'Spuntino',kl:'~90',kle:'~70',
-   dl:'Carote 120g + cetrioli libero + hummus 40g',
-   dle:'Carote 100g + cetrioli libero + hummus 30g',
-   ing:[i('Carote',120,100,'g',CAT.V2),i('Cetrioli',80,60,'g',CAT.V2),i('Ceci (hummus)',40,30,'g',CAT.CER)],
-   adl:'1 uovo sodo + 1 pesca',
-   adle:'1 uovo sodo + 1 pesca',
-   aing:[i('Uova fresche',1,1,'pz',CAT.LATT),i('Pesche',150,130,'g',CAT.FRUTTA)]},
-  {icon:'🥗',name:'Pranzo',kl:'~510',kle:'~430',
-   dl:'Orata al pomodoro 180g + zucchine 150g + farro 60g secco',
-   dle:'Orata 150g + zucchine 120g + farro 50g',
-   ing:[i('Orata o branzino',180,150,'g',CAT.CARNE),i('Zucchine',150,120,'g',CAT.V2),i('Farro perlato',60,50,'g',CAT.CER),i('Pomodori',120,100,'g',CAT.V2)],
-   adl:'Ribollita estiva: fagioli cannellini 100g + verdure miste 200g + 2 Wasa',
-   adle:'Fagioli 80g + verdure 170g + 2 Wasa',
-   aing:[i('Fagioli cannellini',100,80,'g',CAT.CER),i('Zucchine',100,80,'g',CAT.V2),i('Pomodori',100,80,'g',CAT.V2),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)]},
-  {icon:'🌙',name:'Cena',kl:'~390',kle:'~330',
-   dl:'Minestrone estivo freddo (zucchine 100g + mais 80g + pomodori 100g + farro 30g) + uovo in camicia',
-   dle:'Zucchine 80g + mais 60g + pomodori 80g + farro 25g + uovo',
-   ing:[i('Zucchine',100,80,'g',CAT.V2),i('Mais (latta)',80,60,'g',CAT.CER),i('Pomodori',100,80,'g',CAT.V2),i('Farro perlato',30,25,'g',CAT.CER),i('Uova fresche',1,1,'pz',CAT.LATT)],
-   adl:'Vellutata di melanzane 400g + ricotta 60g + 2 Wasa',
-   adle:'Vellutata melanzane 350g + ricotta 50g + 2 Wasa',
-   aing:[i('Melanzane',400,350,'g',CAT.V2),i('Ricotta magra',60,50,'g',CAT.LATT),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)]}
+   dl:'Carote e finocchi crudi + hummus 40g',
+   dle:'Carote e finocchi + hummus 30g',
+   ing:[i('Carote',100,80,'g',CAT.V2),i('Finocchi',100,80,'g',CAT.V2),i('Ceci secchi',20,15,'g',CAT.CER)],
+   adl:'1 mela al forno + cannella',
+   adle:'1 mela al forno + cannella',
+   aing:[i('Mele',180,150,'g',CAT.FRUTTA)]},
+  {icon:'🥗',name:'Pranzo',kl:'~530',kle:'~445',
+   dl:'Ribollita autunnale: cavolo nero + verza + fagioli 70g secchi + pane 30g',
+   dle:'Ribollita: cavolo nero + verza + fagioli 55g + pane 25g',
+   ing:[i('Cavolo nero',150,120,'g',CAT.V2),i('Verza',100,80,'g',CAT.V2),i('Fagioli borlotti secchi',70,55,'g',CAT.CER),i('Pane integrale',30,25,'g',CAT.CER)],
+   adl:'Arista di maiale magra 170g + zucca arrosto 200g + insalata 80g min',
+   adle:'Arista 140g + zucca 170g + insalata 80g min',
+   aing:[i('Arista di maiale magra',170,140,'g',CAT.CARNE),i('Zucca',200,170,'g',CAT.V2),i('Insalata mista/songino',80,80,'g',CAT.V2)]},
+  {icon:'🌙',name:'Cena',kl:'~370',kle:'~315',
+   dl:'Crema di broccoli 350g + uovo sodo + parmigiano 12g',
+   dle:'Crema broccoli 300g + uovo sodo + parmigiano 10g',
+   ing:[i('Broccoli',350,300,'g',CAT.V2),i('Uova fresche',1,1,'pz',CAT.LATT),i('Parmigiano',12,10,'g',CAT.LATT)],
+   adl:'Insalatona: songino + finocchi + noci 12g + feta light 50g + melograno',
+   adle:'Songino + finocchi + noci 10g + feta light 38g + melograno',
+   aing:[i('Insalata mista/songino',100,100,'g',CAT.V2),i('Finocchi',100,80,'g',CAT.V2),i('Noci',12,10,'g',CAT.DISP),i('Feta light',50,38,'g',CAT.LATT),i('Melograno',80,60,'g',CAT.FRUTTA)]}
  ]}
 ];
 
 const FIXED=[
-  i('Aceto di mele (bottiglia 500ml)',1,0,'bottiglia',CAT.DISP),
+  i('Aceto di mele (bottiglia)',1,0,'bottiglia',CAT.DISP),
   i('Cannella in polvere',1,0,'barattolino',CAT.DISP),
-  i('Tahini (pasta sesamo per hummus)',1,0,'barattolo',CAT.DISP),
-  i('Granola integrale artigianale',100,0,'g',CAT.DISP),
+  i('Tahini (per hummus)',1,0,'barattolo',CAT.DISP),
+  i('Granola integrale',100,0,'g',CAT.DISP),
   i('Miele',50,0,'g',CAT.DISP),
-  i('Pinoli',20,0,'g',CAT.DISP),
+  i('Semi di zucca',50,0,'g',CAT.DISP),
   i('Olive in salamoia',80,0,'g',CAT.DISP),
-  i('Capperi sotto sale',40,0,'g',CAT.DISP),
-  i('Avocado',1,0,'pz',CAT.FRUTTA),
+  i('Pomodori secchi',60,0,'g',CAT.DISP),
+  i('Melograno',2,0,'pz',CAT.FRUTTA),
   i('Limoni',8,0,'pz',CAT.FRUTTA),
-  i('Banane verdi/gialle',3,0,'pz',CAT.FRUTTA),
-  i('Ananas fresca (lei: linfedema)',1,0,'pz',CAT.FRUTTA),
-  i('Melone',2,0,'pz',CAT.FRUTTA),
-  i('Kiwi (extra)',4,0,'pz',CAT.FRUTTA),
-  i('Fagioli cannellini (latta)',2,0,'latte',CAT.CER),
-  i('Mais (latta)',2,0,'latte',CAT.CER),
-  i('Latte p.s. (extra)',300,0,'ml',CAT.LATT),
+  i('Ananas fresca (lei)',1,0,'pz',CAT.FRUTTA),
+  i('Brodo vegetale',1,0,'litro',CAT.DISP),
   i('Fette croccanti Wasa (extra)',1,0,'confezione',CAT.CER),
   i('Philadelphia Lightest',1,0,'vaschetta',CAT.LATT),
   i('Olio EVO',0,0,'abbondante',CAT.DISP2),
   i('Sale, pepe, peperoncino',0,0,'-',CAT.DISP2),
   i('Aglio',0,0,'1 testa',CAT.DISP2),
-  i('Basilico fresco',0,0,'1 pianta',CAT.DISP2),
-  i('Menta fresca',0,0,'rametti',CAT.DISP2),
+  i('Rosmarino, salvia, alloro',0,0,'freschi',CAT.DISP2),
   i('Eritritolo (per lei)',0,0,'gia in casa',CAT.DISP2),
-  i('Vitreolisina Plus (entrambi)',0,0,'in farmacia',CAT.DISP2),
-  i('Linfonorm (lei)',0,0,'in farmacia',CAT.DISP2),
+  i('Vitreolisina Plus (entrambi)',0,0,'farmacia',CAT.DISP2),
+  i('Linfonorm (lei)',0,0,'farmacia',CAT.DISP2),
+  i('Sterimar Prevenzione (lui)',0,0,'farmacia',CAT.DISP2),
 ];
 
 let altShowing={};
@@ -811,9 +696,9 @@ function showPage(name,btn){
   btn.classList.add('active');
   if(name==='spesa')renderSpesa();
   if(name==='stampa')renderPrint();
+  window.scrollTo(0,0);
 }
 
-let currentDay=0;
 function initPiano(){
   const tb=document.getElementById('day-tabs');
   DAYS.forEach((d,i)=>{
@@ -826,14 +711,11 @@ function initPiano(){
   renderDay(0);
 }
 function showDay(idx){
-  currentDay=idx;
   document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',i===idx));
   renderDay(idx);
 }
 function renderDay(idx){
   const day=DAYS[idx];
-  // Add FREE tag to display text where applicable
-  const addFree=(txt)=>txt.replace(/(\d+g min)/g,'<span class="free-tag">MIN</span> $1').replace(' min','');
   let h=`<div class="section"><div style="font-family:var(--font-serif);font-size:1.2rem;color:var(--g);margin-bottom:.8rem">${day.e} ${day.name}</div>`;
   day.meals.forEach((m,mi)=>{
     const key=`${idx}_${mi}`;
@@ -844,9 +726,7 @@ function renderDay(idx){
         <div class="por"><div class="por-lbl lui"><span class="dot" style="background:var(--lui)"></span>LUI</div>${m.dl}</div>
         <div class="por"><div class="por-lbl lei"><span class="dot" style="background:var(--lei)"></span>LEI</div>${m.dle}</div>
       </div>
-      <button class="alt-btn${on?' on':''}" onclick="toggleAlt('${key}',${idx},${mi})">
-        ${on?'<< Torna al piatto principale':'🔄 Vedi alternativa'}
-      </button>
+      <button class="alt-btn${on?' on':''}" onclick="toggleAlt('${key}',${idx})">${on?'<< Torna al piatto principale':'🔄 Vedi alternativa'}</button>
       <div class="alt-panel${on?' visible':''}">
         <div class="alt-lbl">✨ ALTERNATIVA</div>
         <div class="portions">
@@ -859,10 +739,7 @@ function renderDay(idx){
   h+=`</div>`;
   document.getElementById('day-container').innerHTML=h;
 }
-function toggleAlt(key,di,mi){
-  altShowing[key]=!altShowing[key];
-  renderDay(di);
-}
+function toggleAlt(key,di){altShowing[key]=!altShowing[key];renderDay(di);}
 
 function initDolci(){
   const g=document.getElementById('sweet-grid');
@@ -878,8 +755,7 @@ function initWater(){
       const s=document.createElement('span');
       s.className='glass';s.textContent='🥛';s.dataset.i=i;s.dataset.w=who;
       s.onclick=function(){
-        const idx=parseInt(this.dataset.i);
-        const w=this.dataset.w;
+        const idx=parseInt(this.dataset.i),w=this.dataset.w;
         document.querySelectorAll(`.glass[data-w="${w}"]`).forEach((el,j)=>{el.textContent=j<=idx?'💧':'🥛';});
       };
       c.appendChild(s);
@@ -892,7 +768,6 @@ function initMealSelector(){
   DOLCI_DATA.forEach((_,idx)=>selectedMeals.add(`dolci_${idx}`));
   renderMealSelectorList();
 }
-
 function renderMealSelectorList(){
   const el=document.getElementById('meal-selector-list');
   if(!el)return;
@@ -901,34 +776,28 @@ function renderMealSelectorList(){
     const dayAllOn=day.meals.every((_,mi)=>selectedMeals.has(`${di}_${mi}`)||selectedMeals.has(`${di}_${mi}_alt`));
     h+=`<div class="meal-day-block"><div class="meal-day-hd"><span>${day.e} ${day.name}</span><button class="day-sel-toggle" onclick="toggleDayMeals(${di})">${dayAllOn?'✖ Deseleziona':'✅ Seleziona'} tutti</button></div>`;
     day.meals.forEach((m,mi)=>{
-      const keyMain=`${di}_${mi}`;
-      const keyAlt=`${di}_${mi}_alt`;
-      const onMain=selectedMeals.has(keyMain);
-      const onAlt=selectedMeals.has(keyAlt);
+      const kM=`${di}_${mi}`,kA=`${di}_${mi}_alt`;
+      const oM=selectedMeals.has(kM),oA=selectedMeals.has(kA);
       h+=`<div style="font-size:.78rem;font-weight:600;color:var(--br);margin:.5rem 0 .2rem;padding-left:.3rem">${m.icon} ${m.name}</div>`;
-      h+=`<label class="meal-check-row${onMain?' on':''}"><input type="checkbox" ${onMain?'checked':''} onchange="toggleMealOpt('${keyMain}','${keyAlt}','main',this.checked)"><span class="mcn" style="color:var(--g)">PRINCIPALE</span><span class="mcd">${m.dl}</span></label>`;
-      h+=`<label class="meal-check-row${onAlt?' on':''}" style="${onAlt?'background:#fff3cd;':''}border-left:3px solid var(--o);padding-left:.5rem"><input type="checkbox" ${onAlt?'checked':''} onchange="toggleMealOpt('${keyMain}','${keyAlt}','alt',this.checked)"><span class="mcn" style="color:var(--o)">ALTERNATIVA</span><span class="mcd">${m.adl}</span></label>`;
+      h+=`<label class="meal-check-row${oM?' on':''}"><input type="checkbox" ${oM?'checked':''} onchange="toggleMealOpt('${kM}','${kA}','main',this.checked)"><span class="mcn" style="color:var(--g)">PRINCIPALE</span><span class="mcd">${m.dl}</span></label>`;
+      h+=`<label class="meal-check-row${oA?' on':''}" style="${oA?'background:#fde8d8;':''}border-left:3px solid var(--o);padding-left:.5rem"><input type="checkbox" ${oA?'checked':''} onchange="toggleMealOpt('${kM}','${kA}','alt',this.checked)"><span class="mcn" style="color:var(--o)">ALTERNATIVA</span><span class="mcd">${m.adl}</span></label>`;
     });
     h+=`</div>`;
   });
-  const dolciAllOn=DOLCI_DATA.every((_,idx)=>selectedMeals.has(`dolci_${idx}`));
-  h+=`<div class="meal-day-block"><div class="meal-day-hd"><span>🍫 Dolci Serali</span><button class="day-sel-toggle" onclick="toggleDolciAll()">${dolciAllOn?'✖ Deseleziona':'✅ Seleziona'} tutti</button></div>`;
+  const dAll=DOLCI_DATA.every((_,idx)=>selectedMeals.has(`dolci_${idx}`));
+  h+=`<div class="meal-day-block"><div class="meal-day-hd"><span>🍫 Dolci Serali</span><button class="day-sel-toggle" onclick="toggleDolciAll()">${dAll?'✖ Deseleziona':'✅ Seleziona'} tutti</button></div>`;
   DOLCI_DATA.forEach((d,idx)=>{
-    const key=`dolci_${idx}`;
-    const on=selectedMeals.has(key);
+    const key=`dolci_${idx}`,on=selectedMeals.has(key);
     h+=`<label class="dolci-check-row${on?' on':''}"><input type="checkbox" ${on?'checked':''} onchange="toggleMeal('${key}',this.checked)"><span class="dcn">${d.e} ${d.t} <span style="font-size:.72rem;color:var(--gr)">· lui ${d.l} · lei ${d.le}</span></span></label>`;
   });
   h+=`</div>`;
   el.innerHTML=h;
 }
-
-function toggleMealOpt(keyMain,keyAlt,which,val){
+function toggleMealOpt(kM,kA,which,val){
   if(which==='main'){
-    if(val){selectedMeals.add(keyMain);selectedMeals.delete(keyAlt);altShowing[keyMain]=false;}
-    else selectedMeals.delete(keyMain);
-  } else {
-    if(val){selectedMeals.add(keyAlt);selectedMeals.delete(keyMain);altShowing[keyMain]=true;}
-    else selectedMeals.delete(keyAlt);
+    if(val){selectedMeals.add(kM);selectedMeals.delete(kA);altShowing[kM]=false;}else selectedMeals.delete(kM);
+  }else{
+    if(val){selectedMeals.add(kA);selectedMeals.delete(kM);altShowing[kM]=true;}else selectedMeals.delete(kA);
   }
   renderMealSelectorList();renderSpesa();
 }
@@ -978,18 +847,17 @@ function aggregateSel(){
     });
   };
   DAYS.forEach((day,di)=>day.meals.forEach((m,mi)=>{
-    const keyMain=`${di}_${mi}`;
-    const keyAlt=`${di}_${mi}_alt`;
-    if(selectedMeals.has(keyMain))add(m.ing,false);
-    else if(selectedMeals.has(keyAlt))add(m.aing,true);
+    const kM=`${di}_${mi}`,kA=`${di}_${mi}_alt`;
+    if(selectedMeals.has(kM))add(m.ing,false);
+    else if(selectedMeals.has(kA))add(m.aing,true);
   }));
   const dolciMap=[
     [i('Cioccolato fondente >=85%',200,0,'g',CAT.DOLCI)],
-    [i('Fage Total 0% (dolce serale)',300,0,'g',CAT.DOLCI),i('Frutti rossi/pesche (dolce serale)',200,0,'g',CAT.DOLCI)],
-    [i('Mandorle (dolci serali)',70,0,'g',CAT.DOLCI),i('Datteri (dolce serale)',4,0,'pz',CAT.DOLCI)],
-    [i('Frutta estiva (dolce serale)',700,0,'g',CAT.DOLCI)],
+    [i('Uva nera (dolce serale)',400,0,'g',CAT.DOLCI),i('Noci (dolce serale)',40,0,'g',CAT.DOLCI)],
+    [i('Pere (dolce serale)',4,0,'pz',CAT.DOLCI)],
+    [i('Castagne (dolce serale)',200,0,'g',CAT.DOLCI)],
+    [i('Mele (dolce serale)',4,0,'pz',CAT.DOLCI),i('Skyr (dolce serale)',200,0,'g',CAT.DOLCI)],
     [i('Ananas fresca (dolce serale)',300,0,'g',CAT.DOLCI)],
-    [i('Gelato artigianale alla frutta',0,0,'al bar',CAT.DOLCI)],
   ];
   DOLCI_DATA.forEach((d,idx)=>{
     if(!selectedMeals.has(`dolci_${idx}`))return;
@@ -998,7 +866,6 @@ function aggregateSel(){
       if(typeof x.ql==='number')t[x.n].ql+=x.ql;
     });
   });
-  // Add fixed pantry items
   FIXED.forEach(x=>{
     if(!t[x.n])t[x.n]={ql:0,ll:0,u:x.u,c:x.c,alt:false};
     if(typeof x.ql==='number')t[x.n].ql+=x.ql;
@@ -1033,7 +900,6 @@ function renderSpesa(){
   document.getElementById('shop-lists').innerHTML=html;
   updateProgress();
 }
-
 function toggleCheck(el,name,val){checked[name]=val;el.closest('.shop-row').classList.toggle('done',val);updateProgress();}
 function updateProgress(){
   const all=document.querySelectorAll('.shop-row input');
@@ -1048,49 +914,48 @@ function uncheckAll(){checked={};document.querySelectorAll('.shop-row input').fo
 function renderPrint(){
   const el=document.getElementById('print-preview');
   let h=`<div style="font-family:Arial,sans-serif;font-size:13px;color:#333">
-  <h2 style="color:#2d6a4f;margin-bottom:.3rem">☀️ Piano Alimentare Giugno 2026 - Effetto GLP-1</h2>
-  <p style="color:#666;margin-bottom:.8rem;font-size:12px">Toscana · Giugno 2026 · Per 2 persone · Verdure a foglia con MIN = quantita minima, mangiarne di piu va benissimo!</p>
+  <h2 style="color:#8a5a2b;margin-bottom:.3rem">🍂 Piano Alimentare Autunno 2026 - Effetto GLP-1</h2>
+  <p style="color:#666;margin-bottom:.8rem;font-size:12px">Toscana · Settembre 2026 · Per 2 persone · Verdure con "min" = quantita minima, potete abbondare</p>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:.8rem">
-    <div style="background:#e8f5ee;border-radius:8px;padding:.6rem;font-size:12px"><strong style="color:#2d6a4f">👨 Lui</strong><br>87kg · 179cm · 1.550 kcal/die</div>
-    <div style="background:#fce8f3;border-radius:8px;padding:.6rem;font-size:12px"><strong style="color:#c05299">👩 Lei</strong><br>75kg · 170cm · 1.350 kcal/die · Linfedema</div>
+    <div style="background:#f5e7d5;border-radius:8px;padding:.6rem;font-size:12px"><strong style="color:#8a5a2b">👨 Lui</strong><br>78kg · 179cm · BMI 24.3 · 1.500 kcal/die</div>
+    <div style="background:#f8e3ee;border-radius:8px;padding:.6rem;font-size:12px"><strong style="color:#a03e6f">👩 Lei</strong><br>69kg · 170cm · BMI 23.9 · 1.350 kcal/die · Linfedema</div>
   </div>
-  <div style="background:#f0fdf4;border-left:3px solid #52b788;padding:.5rem .8rem;margin-bottom:.8rem;font-size:11px;line-height:1.8">
-    <strong>Schema mattutino:</strong> 7:30 Vitreolisina Plus → caffe (lei +3 mandorle) · Colazione 10:00 · Pranzo 13:00 · Spuntino 17:30 · Cena 20:00<br>
-    <strong>Aceto di mele:</strong> 1 cucchiaino diluito 10 min prima pranzo e cena · Doppio prima di uscite<br>
-    <strong>Regola piatto:</strong> verdure → proteine → carboidrati · Camminata 10 min post-pasto<br>
-    <strong>Lei - Linfedema:</strong> Linfonorm mattino + ananas 2-3x/sett + gambe sollevate sera + camminata 30 min/die
+  <div style="background:#fdf1e3;border-left:3px solid #c98a4b;padding:.5rem .8rem;margin-bottom:.8rem;font-size:11px;line-height:1.8">
+    <strong>Mattino:</strong> lavaggio nasale Sterimar → 7:30 Vitreolisina Plus → caffe (lei +3 mandorle + Linfonorm) · Colazione 10:00 · Pranzo 13:00 · Spuntino 17:30 · Cena 20:00<br>
+    <strong>Aceto di mele:</strong> 1 cucchiaino diluito 10 min prima di pranzo e cena · Doppio prima delle uscite<br>
+    <strong>Regola piatto:</strong> verdure → proteine → carboidrati · Camminata 10 min dopo i pasti<br>
+    <strong>Lei - Linfedema:</strong> Linfonorm + ananas 2-3x/sett + uva nera + gambe sollevate la sera + camminata 30 min
   </div>`;
   DAYS.forEach((day,di)=>{
-    h+=`<h3 style="color:#2d6a4f;margin:.8rem 0 .3rem;font-size:13px">${day.e} ${day.name}</h3>
+    h+=`<h3 style="color:#8a5a2b;margin:.8rem 0 .3rem;font-size:13px">${day.e} ${day.name}</h3>
     <table style="width:100%;border-collapse:collapse;margin-bottom:.5rem;font-size:11px">
       <thead><tr>
-        <th style="background:#2d6a4f;color:white;padding:.3rem .4rem;text-align:left;width:12%">Pasto</th>
-        <th style="background:#2d6a4f;color:white;padding:.3rem .4rem;text-align:left;width:44%">👨 Lui</th>
-        <th style="background:#2d6a4f;color:white;padding:.3rem .4rem;text-align:left;width:44%">👩 Lei</th>
+        <th style="background:#8a5a2b;color:white;padding:.3rem .4rem;text-align:left;width:12%">Pasto</th>
+        <th style="background:#8a5a2b;color:white;padding:.3rem .4rem;text-align:left;width:44%">👨 Lui</th>
+        <th style="background:#8a5a2b;color:white;padding:.3rem .4rem;text-align:left;width:44%">👩 Lei</th>
       </tr></thead><tbody>`;
     day.meals.forEach((m,mi)=>{
-      const key=`${di}_${mi}`;
-      const ua=!!altShowing[key];
-      h+=`<tr><td style="padding:.28rem .4rem;border-bottom:1px solid #e5e7eb;font-weight:600;color:#2d6a4f">${m.icon} ${m.name}</td>
-        <td style="padding:.28rem .4rem;border-bottom:1px solid #e5e7eb">${ua?m.adl:m.dl} <span style="color:#999">(${m.kl} kcal)</span></td>
-        <td style="padding:.28rem .4rem;border-bottom:1px solid #e5e7eb">${ua?m.adle:m.dle} <span style="color:#999">(${m.kle} kcal)</span></td></tr>`;
+      const ua=!!altShowing[`${di}_${mi}`];
+      h+=`<tr><td style="padding:.28rem .4rem;border-bottom:1px solid #e5e7eb;font-weight:600;color:#8a5a2b">${m.icon} ${m.name}</td>
+        <td style="padding:.28rem .4rem;border-bottom:1px solid #e5e7eb">${ua?m.adl:m.dl} <span style="color:#999">(${m.kl})</span></td>
+        <td style="padding:.28rem .4rem;border-bottom:1px solid #e5e7eb">${ua?m.adle:m.dle} <span style="color:#999">(${m.kle})</span></td></tr>`;
       if(!ua){
         h+=`<tr><td style="padding:.2rem .4rem;border-bottom:1px solid #e5e7eb;font-size:.9em;color:#b45309">ALT.</td>
-          <td style="padding:.2rem .4rem;border-bottom:1px solid #e5e7eb;font-size:.9em;color:#b45309;background:#fffbeb">${m.adl}</td>
-          <td style="padding:.2rem .4rem;border-bottom:1px solid #e5e7eb;font-size:.9em;color:#b45309;background:#fffbeb">${m.adle}</td></tr>`;
+          <td style="padding:.2rem .4rem;border-bottom:1px solid #e5e7eb;font-size:.9em;color:#b45309;background:#fffaf4">${m.adl}</td>
+          <td style="padding:.2rem .4rem;border-bottom:1px solid #e5e7eb;font-size:.9em;color:#b45309;background:#fffaf4">${m.adle}</td></tr>`;
       }
     });
     h+=`</tbody></table>`;
   });
-  h+=`<h3 style="color:#2d6a4f;margin:.8rem 0 .3rem;font-size:13px">🍫 Dolci Serali</h3>
+  h+=`<h3 style="color:#8a5a2b;margin:.8rem 0 .3rem;font-size:13px">🍫 Dolci Serali</h3>
   <table style="width:100%;border-collapse:collapse;margin-bottom:.8rem;font-size:11px">
-    <thead><tr><th style="background:#2d6a4f;color:white;padding:.3rem .4rem;text-align:left">Opzione</th><th style="background:#2d6a4f;color:white;padding:.3rem .4rem;text-align:left">👨 Lui</th><th style="background:#2d6a4f;color:white;padding:.3rem .4rem;text-align:left">👩 Lei</th></tr></thead><tbody>
+    <thead><tr><th style="background:#8a5a2b;color:white;padding:.3rem .4rem;text-align:left">Opzione</th><th style="background:#8a5a2b;color:white;padding:.3rem .4rem;text-align:left">👨 Lui</th><th style="background:#8a5a2b;color:white;padding:.3rem .4rem;text-align:left">👩 Lei</th></tr></thead><tbody>
     ${DOLCI_DATA.map(d=>`<tr><td style="padding:.25rem .4rem;border-bottom:1px solid #e5e7eb">${d.e} ${d.t}</td><td style="padding:.25rem .4rem;border-bottom:1px solid #e5e7eb">${d.l}</td><td style="padding:.25rem .4rem;border-bottom:1px solid #e5e7eb">${d.le}</td></tr>`).join('')}
     </tbody></table>
-  <div style="background:#fff8e1;border-left:3px solid #f4c842;padding:.5rem .8rem;font-size:11px;line-height:1.6">
+  <div style="background:#fff8e1;border-left:3px solid #e8a33d;padding:.5rem .8rem;font-size:11px;line-height:1.6">
     ⚕️ Piano informativo - non sostituisce il parere medico.<br>
-    📊 Risultati attesi: Lui ~2-4 kg/mese · Lei ~1.7-3 kg/mese<br>
-    💊 Integratori: Vitreolisina Plus (entrambi) · Linfonorm (lei) · Aceto di mele prima dei pasti
+    👃 Rinosinusite: Sterimar quotidiano · Brusonex nelle fasi acute (mai insieme a Vitreolisina) · Terme in autunno, chiedere prescrizione SSN<br>
+    🔄 Ogni 3-4 settimane di deficit: una settimana di ricarica a +200 kcal
   </div></div>`;
   el.innerHTML=h;
 }
@@ -1098,8 +963,8 @@ function renderPrint(){
 function doPrint(){
   const w=window.open('','_blank');
   const content=document.getElementById('print-preview').innerHTML;
-  w.document.write(`<!DOCTYPE html><html><head><title>Piano Alimentare Giugno 2026</title>
-  <style>body{font-family:Arial,sans-serif;color:#333;padding:1.5rem;font-size:13px}h2,h3{color:#2d6a4f}table{width:100%;border-collapse:collapse}th{background:#2d6a4f;color:white;padding:.3rem .4rem;text-align:left}td{padding:.28rem .4rem;border-bottom:1px solid #e5e7eb;font-size:12px}@media print{body{padding:.5rem}}</style>
+  w.document.write(`<!DOCTYPE html><html><head><title>Piano Alimentare Autunno 2026</title>
+  <style>body{font-family:Arial,sans-serif;color:#333;padding:1.5rem;font-size:13px}h2,h3{color:#8a5a2b}table{width:100%;border-collapse:collapse}th{background:#8a5a2b;color:white;padding:.3rem .4rem;text-align:left}td{padding:.28rem .4rem;border-bottom:1px solid #e5e7eb;font-size:12px}@media print{body{padding:.5rem}}</style>
   </head><body>${content}</body></html>`);
   w.document.close();w.focus();setTimeout(()=>w.print(),500);
 }
