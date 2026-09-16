@@ -133,7 +133,7 @@ header p{font-size:.82rem;opacity:.85;position:relative}
   </div>
   <div style="max-width:700px;margin:0 auto;padding:.5rem 1rem 0">
     <div style="background:#fdf1e3;border-radius:10px;padding:.6rem .9rem;font-size:.75rem;color:#7c4a12;border-left:3px solid var(--gl)">
-      🍂 <strong>Tutto nuovo:</strong> zucca, funghi, broccoli, cavolo nero, uva, fichi, castagne.<br>🔄 <strong>Le colazioni sono intercambiabili</strong> — scegliete quella che vi va, in qualsiasi giorno.
+      🍂 <strong>Tutto nuovo:</strong> zucca, funghi, broccoli, cavolo nero, uva, fichi, castagne.<br>🔄 <strong>Colazioni, spuntini e dolci</strong> sono nel tab <strong>A scelta</strong>: sono tutti intercambiabili, si scelgono giorno per giorno.
     </div>
   </div>
   <div class="tab-bar" id="day-tabs"></div>
@@ -142,15 +142,20 @@ header p{font-size:.82rem;opacity:.85;position:relative}
 
 <div class="page" id="page-dolci">
   <header>
-    <div class="badge">🌙 SERALE</div>
-    <h1>Dolci Serali<br><em>Versione Autunno</em></h1>
-    <p>Nuove opzioni di stagione</p>
+    <div class="badge">🔄 TUTTE INTERCAMBIABILI</div>
+    <h1>A Scelta Libera<br><em>Colazioni · Spuntini · Dolci</em></h1>
+    <p>Scegliete ogni giorno quella che vi va</p>
   </header>
   <div class="section">
     <div class="info-card" style="background:linear-gradient(135deg,#fdf1e3,#f7e2c8);border-left:4px solid var(--y)">
-      <div style="font-family:var(--font-serif);margin-bottom:.3rem">🍂 Dolci d'autunno</div>
-      <p style="font-size:.82rem;color:var(--gr);line-height:1.6">Sempre almeno 30 min prima di coricarvi, dopo una camminata di 10 minuti. Cambiano gli ingredienti, resta la regola.</p>
+      <div style="font-family:var(--font-serif);margin-bottom:.3rem">🔄 Come funziona</div>
+      <p style="font-size:.82rem;color:var(--gr);line-height:1.6">Colazioni, spuntini e dolci serali non sono legati a un giorno: sono tutti equivalenti, scegliete la mattina stessa. Nel <strong>Piano</strong> restano solo pranzo e cena, giorno per giorno.</p>
     </div>
+    <div style="font-family:var(--font-serif);font-size:1.1rem;color:var(--g);margin:1rem 0 .5rem">☀️ Colazioni <span style="font-size:.75rem;color:var(--gr);font-family:var(--font-body)">· ore 10:00</span></div>
+    <div class="sweet-grid" id="colazioni-grid"></div>
+    <div style="font-family:var(--font-serif);font-size:1.1rem;color:var(--g);margin:1.2rem 0 .5rem">🥕 Spuntini <span style="font-size:.75rem;color:var(--gr);font-family:var(--font-body)">· ore 17:30</span></div>
+    <div class="sweet-grid" id="spuntini-grid"></div>
+    <div style="font-family:var(--font-serif);font-size:1.1rem;color:var(--g);margin:1.2rem 0 .5rem">🍫 Dolci serali <span style="font-size:.75rem;color:var(--gr);font-family:var(--font-body)">· 30 min prima di coricarsi</span></div>
     <div class="sweet-grid" id="sweet-grid"></div>
     <div class="info-card" style="background:linear-gradient(135deg,#fdf1e3,#f5d9b8);border-left:4px solid var(--o);margin-top:.75rem">
       <div style="font-family:var(--font-serif);margin-bottom:.3rem">🦵 Per Lei — Linfedema</div>
@@ -376,6 +381,7 @@ header p{font-size:.82rem;opacity:.85;position:relative}
     <div id="meal-selector-panel">
       <div class="day-selector">
         <h4>🍽️ Seleziona i pasti da includere</h4>
+        <div style="font-size:.74rem;color:var(--gr);margin:-.3rem 0 .6rem">Pranzi, cene e dolci sono gia spuntati. Colazioni e spuntini sono piu in basso: spuntate solo quelli che volete fare.</div>
         <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.7rem">
           <button class="alt-chip" onclick="selectAllMeals()">✅ Tutti</button>
           <button class="alt-chip" onclick="clearAllMeals()">✖ Nessuno</button>
@@ -416,7 +422,7 @@ header p{font-size:.82rem;opacity:.85;position:relative}
 
 <div class="nav">
   <button class="nav-btn active" onclick="showPage('piano',this)"><span class="ni">🥗</span><span class="nl">Piano</span></button>
-  <button class="nav-btn" onclick="showPage('dolci',this)"><span class="ni">🍫</span><span class="nl">Dolci</span></button>
+  <button class="nav-btn" onclick="showPage('dolci',this)"><span class="ni">🔄</span><span class="nl">A scelta</span></button>
   <button class="nav-btn" onclick="showPage('salute',this)"><span class="ni">💧</span><span class="nl">Salute</span></button>
   <button class="nav-btn" onclick="showPage('spesa',this)"><span class="ni">🛒</span><span class="nl">Spesa</span></button>
   <button class="nav-btn" onclick="showPage('stampa',this)"><span class="ni">🖨️</span><span class="nl">Stampa</span></button>
@@ -447,22 +453,125 @@ const DOLCI_DATA=[
   {e:'🍍',t:'Ananas (lei: linfedema)',d:'Bromelina drenante, 2-3 volte a settimana.',l:'150g',le:'100-150g'},
 ];
 
+const COLAZIONI=[
+  {e:'🥜',t:'Wasa, burro di arachidi e banana',d:'Nuova. Proteine e grassi buoni, sazia fino a pranzo.',kl:'~300',kle:'~260',
+   dl:'3 Wasa + burro di arachidi 100% 20g + banana 100g + cannella',
+   dle:'3 Wasa + burro di arachidi 15g + banana 90g + cannella',
+   ing:[i('Fette croccanti Wasa',3,3,'pz',CAT.CER),i('Burro di arachidi 100%',20,15,'g',CAT.DISP),i('Banane',100,90,'g',CAT.FRUTTA)]},
+  {e:'🥜',t:'Porridge al burro di arachidi',d:'Nuova. Versione calda, ottima nelle mattine fredde.',kl:'~330',kle:'~260',
+   dl:'Avena 45g + latte p.s. 200ml + burro di arachidi 15g + cannella',
+   dle:'Avena 35g + latte 160ml + burro di arachidi 12g + cannella',
+   ing:[i('Fiocchi di avena',45,35,'g',CAT.CER),i('Latte p.s.',200,160,'ml',CAT.LATT),i('Burro di arachidi 100%',15,12,'g',CAT.DISP)]},
+  {e:'🥣',t:'Porridge mela e cannella',d:'Avena: abbassa il colesterolo, sazia a lungo.',kl:'~310',kle:'~270',
+   dl:'Avena 50g + latte p.s. 200ml + mela a cubetti + cannella',
+   dle:'Avena 40g + latte 160ml + mela + cannella',
+   ing:[i('Fiocchi di avena',50,40,'g',CAT.CER),i('Latte p.s.',200,160,'ml',CAT.LATT),i('Mele',120,100,'g',CAT.FRUTTA)]},
+  {e:'🍐',t:'Porridge pera e noci',d:'Versione autunnale con la pera cotta.',kl:'~370',kle:'~315',
+   dl:'Avena 50g + latte 200ml + pera cotta + noci 10g',
+   dle:'Avena 40g + latte 160ml + pera + noci 8g',
+   ing:[i('Fiocchi di avena',50,40,'g',CAT.CER),i('Latte p.s.',200,160,'ml',CAT.LATT),i('Pere',150,120,'g',CAT.FRUTTA),i('Noci',10,8,'g',CAT.DISP)]},
+  {e:'🥛',t:'Fiocchi di latte, uva e noci',d:'Fredda e veloce, tante proteine.',kl:'~310',kle:'~270',
+   dl:'Fiocchi di latte 130g + uva nera 120g + noci 10g',
+   dle:'Fiocchi di latte 110g + uva 100g + noci 8g',
+   ing:[i('Fiocchi di latte',130,110,'g',CAT.LATT),i('Uva nera',120,100,'g',CAT.FRUTTA),i('Noci',10,8,'g',CAT.DISP)]},
+  {e:'🍯',t:'Fiocchi di latte, fichi e noci',d:'Finche ci sono i fichi freschi.',kl:'~330',kle:'~285',
+   dl:'Fiocchi di latte 130g + fichi 2 + noci 10g',
+   dle:'Fiocchi di latte 110g + fichi 2 + noci 8g',
+   ing:[i('Fiocchi di latte',130,110,'g',CAT.LATT),i('Fichi freschi',120,120,'g',CAT.FRUTTA),i('Noci',10,8,'g',CAT.DISP)]},
+  {e:'🍇',t:'Skyr, uva e semi di lino',d:'I semi di lino aiutano la regolarita.',kl:'~300',kle:'~260',
+   dl:'Skyr 150g + uva nera 120g + semi di lino 10g',
+   dle:'Skyr 125g + uva 100g + semi di lino 8g',
+   ing:[i('Skyr o Fage Total 0%',150,125,'g',CAT.LATT),i('Uva nera',120,100,'g',CAT.FRUTTA),i('Semi di lino',10,8,'g',CAT.DISP)]},
+  {e:'🌰',t:'Skyr, fichi e semi di zucca',d:'Dolce senza zuccheri aggiunti.',kl:'~320',kle:'~275',
+   dl:'Skyr 150g + fichi freschi 2 + semi di zucca 10g',
+   dle:'Skyr 125g + fichi 2 + semi di zucca 8g',
+   ing:[i('Skyr o Fage Total 0%',150,125,'g',CAT.LATT),i('Fichi freschi',120,120,'g',CAT.FRUTTA),i('Semi di zucca',10,8,'g',CAT.DISP)]},
+  {e:'🥣',t:'Skyr, granola e mela',d:'La piu golosa. Meglio nel weekend.',kl:'~360',kle:'~310',
+   dl:'Skyr 150g + granola 30g + mela a cubetti',
+   dle:'Skyr 125g + granola 25g + mela',
+   ing:[i('Skyr o Fage Total 0%',150,125,'g',CAT.LATT),i('Granola integrale',30,25,'g',CAT.DISP),i('Mele',120,100,'g',CAT.FRUTTA)]},
+  {e:'🧀',t:'Ricotta, miele e pera',d:'Cremosa, proteica, si prepara in 2 minuti.',kl:'~300',kle:'~260',
+   dl:'Ricotta 110g + miele 8g + pera a fette + cannella',
+   dle:'Ricotta 90g + miele 6g + pera + cannella',
+   ing:[i('Ricotta magra',110,90,'g',CAT.LATT),i('Pere',150,120,'g',CAT.FRUTTA)]},
+  {e:'🍳',t:'Uova strapazzate e funghi',d:'Salata. Zero zuccheri, glicemia piatta.',kl:'~320',kle:'~275',
+   dl:'2 uova strapazzate + funghi trifolati 100g + 2 Wasa',
+   dle:'2 uova + funghi 80g + 2 Wasa',
+   ing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Funghi champignon',100,80,'g',CAT.V1),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)]},
+  {e:'🥑',t:'Uova sode e avocado',d:'Grassi buoni, sazia moltissimo.',kl:'~300',kle:'~260',
+   dl:'2 uova sode + avocado 50g + 2 Wasa',
+   dle:'2 uova sode + avocado 40g + 2 Wasa',
+   ing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Avocado',50,40,'g',CAT.FRUTTA),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)]},
+  {e:'🍄',t:'Uova, funghi e avocado',d:'La piu ricca delle salate.',kl:'~360',kle:'~310',
+   dl:'2 uova strapazzate + funghi 100g + avocado 40g + 2 Wasa',
+   dle:'2 uova + funghi 80g + avocado 35g + 2 Wasa',
+   ing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Funghi champignon',100,80,'g',CAT.V1),i('Avocado',40,35,'g',CAT.FRUTTA),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)]},
+  {e:'🥬',t:'Uova in camicia e spinaci',d:'Ferro e proteine, leggera.',kl:'~370',kle:'~315',
+   dl:'2 uova in camicia + spinaci 100g + 2 Wasa + parmigiano 10g',
+   dle:'2 uova + spinaci 80g + 2 Wasa + parmigiano 8g',
+   ing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Spinaci freschi',100,80,'g',CAT.V1),i('Fette croccanti Wasa',2,2,'pz',CAT.CER),i('Parmigiano',10,8,'g',CAT.LATT)]},
+  {e:'🍲',t:'Porridge salato con uovo',d:'Avena in versione salata, sorprendente.',kl:'~300',kle:'~260',
+   dl:'Avena 50g + brodo + uovo in camicia + spinaci',
+   dle:'Avena 40g + brodo + uovo + spinaci',
+   ing:[i('Fiocchi di avena',50,40,'g',CAT.CER),i('Uova fresche',1,1,'pz',CAT.LATT),i('Spinaci freschi',80,80,'g',CAT.V1)]},
+  {e:'🥞',t:'Pancake avena e zucca',d:'Da fare con calma, weekend.',kl:'~330',kle:'~285',
+   dl:'Avena 45g + zucca 80g + 1 uovo + cannella',
+   dle:'Avena 35g + zucca 70g + 1 uovo + cannella',
+   ing:[i('Fiocchi di avena',45,35,'g',CAT.CER),i('Zucca',80,70,'g',CAT.V1),i('Uova fresche',1,1,'pz',CAT.LATT)]},
+];
+
+const SPUNTINI=[
+  {e:'🍇',t:'Uva nera e mandorle',d:'',kl:'~110',kle:'~90',
+   dl:'Uva nera 120g + mandorle 15g',dle:'Uva nera 100g + mandorle 12g',
+   ing:[i('Uva nera',120,100,'g',CAT.FRUTTA),i('Mandorle',15,12,'g',CAT.DISP)]},
+  {e:'🍇',t:'Uva nera e noci',d:'',kl:'~120',kle:'~95',
+   dl:'Uva nera 150g + noci 10g',dle:'Uva nera 120g + noci 8g',
+   ing:[i('Uva nera',150,120,'g',CAT.FRUTTA),i('Noci',10,8,'g',CAT.DISP)]},
+  {e:'🍎',t:'Mela e noci',d:'',kl:'~100',kle:'~80',
+   dl:'1 mela + noci 12g',dle:'1 mela + noci 10g',
+   ing:[i('Mele',160,140,'g',CAT.FRUTTA),i('Noci',12,10,'g',CAT.DISP)]},
+  {e:'🍏',t:'Mela e mandorle',d:'',kl:'~105',kle:'~85',
+   dl:'1 mela + mandorle 15g',dle:'1 mela + mandorle 12g',
+   ing:[i('Mele',160,140,'g',CAT.FRUTTA),i('Mandorle',15,12,'g',CAT.DISP)]},
+  {e:'🍐',t:'Pera e mandorle',d:'',kl:'~105',kle:'~85',
+   dl:'1 pera + mandorle 12g',dle:'1 pera + mandorle 10g',
+   ing:[i('Pere',180,150,'g',CAT.FRUTTA),i('Mandorle',12,10,'g',CAT.DISP)]},
+  {e:'🍐',t:'Pera e noci',d:'',kl:'~110',kle:'~90',
+   dl:'1 pera + noci 10g',dle:'1 pera + noci 8g',
+   ing:[i('Pere',180,150,'g',CAT.FRUTTA),i('Noci',10,8,'g',CAT.DISP)]},
+  {e:'🌰',t:'Castagne arrosto',d:'Di stagione, sazianti.',kl:'~110',kle:'~90',
+   dl:'Castagne arrosto 50g',dle:'Castagne arrosto 40g',
+   ing:[i('Castagne',50,40,'g',CAT.FRUTTA)]},
+  {e:'🥕',t:'Carote e Philadelphia Lightest',d:'',kl:'~95',kle:'~75',
+   dl:'Carote a bastoncini 120g + Philadelphia Lightest 50g',
+   dle:'Carote 100g + Philadelphia Lightest 38g',
+   ing:[i('Carote',120,100,'g',CAT.V1),i('Philadelphia Lightest',50,38,'g',CAT.LATT)]},
+  {e:'🥒',t:'Finocchio e Philadelphia Lightest',d:'',kl:'~100',kle:'~80',
+   dl:'Finocchio crudo + Philadelphia Lightest 55g',
+   dle:'Finocchio crudo + Philadelphia Lightest 40g',
+   ing:[i('Finocchi',150,120,'g',CAT.V1),i('Philadelphia Lightest',55,40,'g',CAT.LATT)]},
+  {e:'🫓',t:'Finocchio e hummus',d:'',kl:'~110',kle:'~90',
+   dl:'Finocchio crudo a spicchi + hummus 40g',
+   dle:'Finocchio crudo + hummus 30g',
+   ing:[i('Finocchi',150,120,'g',CAT.V1),i('Ceci (hummus)',40,30,'g',CAT.CER)]},
+  {e:'🥕',t:'Carote, finocchi e hummus',d:'',kl:'~90',kle:'~70',
+   dl:'Carote e finocchi crudi + hummus 40g',
+   dle:'Carote e finocchi + hummus 30g',
+   ing:[i('Carote',100,80,'g',CAT.V1),i('Finocchi',100,80,'g',CAT.V1),i('Ceci secchi',20,15,'g',CAT.CER)]},
+  {e:'🥛',t:'Skyr alla cannella',d:'Proteico, se la cena tarda.',kl:'~100',kle:'~80',
+   dl:'Skyr 100g + cannella',dle:'Skyr 80g + cannella',
+   ing:[i('Skyr o Fage Total 0%',100,80,'g',CAT.LATT)]},
+  {e:'🍎',t:'Mela al forno alla cannella',d:'Calda, ottima nel pomeriggio.',kl:'~90',kle:'~90',
+   dl:'1 mela al forno + cannella',dle:'1 mela al forno + cannella',
+   ing:[i('Mele',180,150,'g',CAT.FRUTTA)]},
+  {e:'🥜',t:'Wasa e burro di arachidi',d:'Nuova. Sazia molto fino a cena.',kl:'~120',kle:'~95',
+   dl:'1 Wasa + burro di arachidi 100% 15g',
+   dle:'1 Wasa + burro di arachidi 12g',
+   ing:[i('Fette croccanti Wasa',1,1,'pz',CAT.CER),i('Burro di arachidi 100%',15,12,'g',CAT.DISP)]},
+];
+
 const DAYS=[
  {name:'Lunedi',e:'🎃',meals:[
-  {icon:'☀️',name:'Colazione',kl:'~310',kle:'~270',
-   dl:'Porridge: avena 50g + latte p.s. 200ml + mela a cubetti + cannella',
-   dle:'Porridge: avena 40g + latte 160ml + mela + cannella',
-   ing:[i('Fiocchi di avena',50,40,'g',CAT.CER),i('Latte p.s.',200,160,'ml',CAT.LATT),i('Mele',120,100,'g',CAT.FRUTTA)],
-   adl:'Fiocchi di latte 130g + uva nera 120g + noci 10g',
-   adle:'Fiocchi di latte 110g + uva 100g + noci 8g',
-   aing:[i('Fiocchi di latte',130,110,'g',CAT.LATT),i('Uva nera',120,100,'g',CAT.FRUTTA),i('Noci',10,8,'g',CAT.DISP)]},
-  {icon:'🍇',name:'Spuntino',kl:'~110',kle:'~90',
-   dl:'Uva nera 120g + mandorle 15g',
-   dle:'Uva nera 100g + mandorle 12g',
-   ing:[i('Uva nera',120,100,'g',CAT.FRUTTA),i('Mandorle',15,12,'g',CAT.DISP)],
-   adl:'Finocchio crudo a spicchi + hummus 40g',
-   adle:'Finocchio crudo + hummus 30g',
-   aing:[i('Finocchi',150,120,'g',CAT.V1),i('Ceci (hummus)',40,30,'g',CAT.CER)]},
   {icon:'🥗',name:'Pranzo',kl:'~510',kle:'~430',
    dl:'Risotto zucca e rosmarino: riso 65g + zucca 200g + parmigiano 15g',
    dle:'Risotto zucca: riso 55g + zucca 170g + parmigiano 12g',
@@ -479,20 +588,6 @@ const DAYS=[
    aing:[i('Zucca',350,300,'g',CAT.V1),i('Ricotta magra',70,55,'g',CAT.LATT),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)]}
  ]},
  {name:'Martedi',e:'🍄',meals:[
-  {icon:'☀️',name:'Colazione',kl:'~320',kle:'~275',
-   dl:'2 uova strapazzate + funghi trifolati 100g + 2 Wasa',
-   dle:'2 uova + funghi 80g + 2 Wasa',
-   ing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Funghi champignon',100,80,'g',CAT.V1),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)],
-   adl:'Skyr 150g + fichi freschi 2 + semi di zucca 10g',
-   adle:'Skyr 125g + fichi 2 + semi di zucca 8g',
-   aing:[i('Skyr o Fage Total 0%',150,125,'g',CAT.LATT),i('Fichi freschi',120,120,'g',CAT.FRUTTA),i('Semi di zucca',10,8,'g',CAT.DISP)]},
-  {icon:'🥕',name:'Spuntino',kl:'~95',kle:'~75',
-   dl:'Carote a bastoncini 120g + Philadelphia Lightest 50g',
-   dle:'Carote 100g + Philadelphia Lightest 38g',
-   ing:[i('Carote',120,100,'g',CAT.V1),i('Philadelphia Lightest',50,38,'g',CAT.LATT)],
-   adl:'1 pera + noci 10g',
-   adle:'1 pera + noci 8g',
-   aing:[i('Pere',180,150,'g',CAT.FRUTTA),i('Noci',10,8,'g',CAT.DISP)]},
   {icon:'🥗',name:'Pranzo',kl:'~520',kle:'~440',
    dl:'Farro ai funghi: farro 60g + funghi misti 200g + prezzemolo + parmigiano 12g',
    dle:'Farro 50g + funghi 170g + parmigiano 10g',
@@ -509,20 +604,6 @@ const DAYS=[
    aing:[i('Lenticchie secche',60,50,'g',CAT.CER),i('Carote',80,60,'g',CAT.V1),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)]}
  ]},
  {name:'Mercoledi',e:'🥦',meals:[
-  {icon:'☀️',name:'Colazione',kl:'~300',kle:'~260',
-   dl:'Ricotta 110g + miele 8g + pera a fette + cannella',
-   dle:'Ricotta 90g + miele 6g + pera + cannella',
-   ing:[i('Ricotta magra',110,90,'g',CAT.LATT),i('Pere',150,120,'g',CAT.FRUTTA)],
-   adl:'Porridge salato: avena 50g + brodo + uovo in camicia + spinaci',
-   adle:'Porridge salato: avena 40g + brodo + uovo + spinaci',
-   aing:[i('Fiocchi di avena',50,40,'g',CAT.CER),i('Uova fresche',1,1,'pz',CAT.LATT),i('Spinaci freschi',80,80,'g',CAT.V1)]},
-  {icon:'🌰',name:'Spuntino',kl:'~110',kle:'~90',
-   dl:'Castagne arrosto 50g',
-   dle:'Castagne arrosto 40g',
-   ing:[i('Castagne',50,40,'g',CAT.FRUTTA)],
-   adl:'1 mela + mandorle 15g',
-   adle:'1 mela + mandorle 12g',
-   aing:[i('Mele',160,140,'g',CAT.FRUTTA),i('Mandorle',15,12,'g',CAT.DISP)]},
   {icon:'🥗',name:'Pranzo',kl:'~500',kle:'~420',
    dl:'Pasta integrale 70g + broccoli + acciughe 20g + peperoncino',
    dle:'Pasta 60g + broccoli + acciughe 15g',
@@ -539,20 +620,6 @@ const DAYS=[
    aing:[i('Sgombro o sardine',150,120,'g',CAT.CARNE),i('Radicchio',150,150,'g',CAT.V2)]}
  ]},
  {name:'Giovedi',e:'🥚',meals:[
-  {icon:'☀️',name:'Colazione',kl:'~300',kle:'~260',
-   dl:'Skyr 150g + uva nera 120g + semi di lino 10g',
-   dle:'Skyr 125g + uva 100g + semi di lino 8g',
-   ing:[i('Skyr o Fage Total 0%',150,125,'g',CAT.LATT),i('Uva nera',120,100,'g',CAT.FRUTTA),i('Semi di lino',10,8,'g',CAT.DISP)],
-   adl:'2 uova sode + avocado 50g + 2 Wasa',
-   adle:'2 uova sode + avocado 40g + 2 Wasa',
-   aing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Avocado',50,40,'g',CAT.FRUTTA),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)]},
-  {icon:'🍎',name:'Spuntino',kl:'~100',kle:'~80',
-   dl:'1 mela + noci 12g',
-   dle:'1 mela + noci 10g',
-   ing:[i('Mele',160,140,'g',CAT.FRUTTA),i('Noci',12,10,'g',CAT.DISP)],
-   adl:'Skyr 100g + cannella',
-   adle:'Skyr 80g + cannella',
-   aing:[i('Skyr o Fage Total 0%',100,80,'g',CAT.LATT)]},
   {icon:'🥗',name:'Pranzo',kl:'~520',kle:'~440',
    dl:'Bowl: orzo 60g + ceci 100g cotti + zucca arrosto 150g + feta light 40g',
    dle:'Orzo 50g + ceci 80g + zucca 120g + feta light 30g',
@@ -569,20 +636,6 @@ const DAYS=[
    aing:[i('Cavolfiore',350,300,'g',CAT.V2),i('Uova fresche',1,1,'pz',CAT.LATT),i('Parmigiano',10,8,'g',CAT.LATT)]}
  ]},
  {name:'Venerdi',e:'🐟',meals:[
-  {icon:'☀️',name:'Colazione',kl:'~330',kle:'~285',
-   dl:'Pancake avena-zucca: avena 45g + zucca 80g + 1 uovo + cannella',
-   dle:'Pancake: avena 35g + zucca 70g + 1 uovo + cannella',
-   ing:[i('Fiocchi di avena',45,35,'g',CAT.CER),i('Zucca',80,70,'g',CAT.V2),i('Uova fresche',1,1,'pz',CAT.LATT)],
-   adl:'Fiocchi di latte 130g + fichi 2 + noci 10g',
-   adle:'Fiocchi di latte 110g + fichi 2 + noci 8g',
-   aing:[i('Fiocchi di latte',130,110,'g',CAT.LATT),i('Fichi freschi',120,120,'g',CAT.FRUTTA),i('Noci',10,8,'g',CAT.DISP)]},
-  {icon:'🥜',name:'Spuntino',kl:'~105',kle:'~85',
-   dl:'1 pera + mandorle 12g',
-   dle:'1 pera + mandorle 10g',
-   ing:[i('Pere',180,150,'g',CAT.FRUTTA),i('Mandorle',12,10,'g',CAT.DISP)],
-   adl:'Finocchio crudo + Philadelphia Lightest 55g',
-   adle:'Finocchio crudo + Philadelphia Lightest 40g',
-   aing:[i('Finocchi',150,120,'g',CAT.V2),i('Philadelphia Lightest',55,40,'g',CAT.LATT)]},
   {icon:'🥗',name:'Pranzo',kl:'~510',kle:'~430',
    dl:'Salmone al forno 160g + cavolfiore arrosto 200g + orzo 55g',
    dle:'Salmone 130g + cavolfiore 170g + orzo 45g',
@@ -599,20 +652,6 @@ const DAYS=[
    aing:[i('Nasello o platessa',200,160,'g',CAT.CARNE),i('Broccoli',200,170,'g',CAT.V2),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)]}
  ]},
  {name:'Sabato',e:'🥩',meals:[
-  {icon:'☀️',name:'Colazione',kl:'~360',kle:'~310',
-   dl:'Uova strapazzate 2 + funghi 100g + avocado 40g + 2 Wasa',
-   dle:'Uova 2 + funghi 80g + avocado 35g + 2 Wasa',
-   ing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Funghi champignon',100,80,'g',CAT.V2),i('Avocado',40,35,'g',CAT.FRUTTA),i('Fette croccanti Wasa',2,2,'pz',CAT.CER)],
-   adl:'Skyr 150g + granola 30g + mela a cubetti',
-   adle:'Skyr 125g + granola 25g + mela',
-   aing:[i('Skyr o Fage Total 0%',150,125,'g',CAT.LATT),i('Granola integrale',30,25,'g',CAT.DISP),i('Mele',120,100,'g',CAT.FRUTTA)]},
-  {icon:'🍇',name:'Spuntino',kl:'~120',kle:'~95',
-   dl:'Uva nera 150g + noci 10g',
-   dle:'Uva nera 120g + noci 8g',
-   ing:[i('Uva nera',150,120,'g',CAT.FRUTTA),i('Noci',10,8,'g',CAT.DISP)],
-   adl:'Castagne arrosto 50g',
-   adle:'Castagne arrosto 40g',
-   aing:[i('Castagne',50,40,'g',CAT.FRUTTA)]},
   {icon:'🥗',name:'Pranzo',kl:'~540',kle:'~450',
    dl:'Bistecca magra 180g + funghi trifolati 200g + insalata 80g min',
    dle:'Bistecca 150g + funghi 170g + insalata 80g min',
@@ -629,20 +668,6 @@ const DAYS=[
    aing:[i('Mozzarella light',80,60,'g',CAT.LATT),i('Zucca',150,120,'g',CAT.V2)]}
  ]},
  {name:'Domenica',e:'🍲',meals:[
-  {icon:'☀️',name:'Colazione',kl:'~370',kle:'~315',
-   dl:'Porridge: avena 50g + latte 200ml + pera cotta + noci 10g',
-   dle:'Porridge: avena 40g + latte 160ml + pera + noci 8g',
-   ing:[i('Fiocchi di avena',50,40,'g',CAT.CER),i('Latte p.s.',200,160,'ml',CAT.LATT),i('Pere',150,120,'g',CAT.FRUTTA),i('Noci',10,8,'g',CAT.DISP)],
-   adl:'Uova in camicia 2 + spinaci 100g + 2 Wasa + parmigiano 10g',
-   adle:'Uova 2 + spinaci 80g + 2 Wasa + parmigiano 8g',
-   aing:[i('Uova fresche',2,2,'pz',CAT.LATT),i('Spinaci freschi',100,80,'g',CAT.V2),i('Fette croccanti Wasa',2,2,'pz',CAT.CER),i('Parmigiano',10,8,'g',CAT.LATT)]},
-  {icon:'🥕',name:'Spuntino',kl:'~90',kle:'~70',
-   dl:'Carote e finocchi crudi + hummus 40g',
-   dle:'Carote e finocchi + hummus 30g',
-   ing:[i('Carote',100,80,'g',CAT.V2),i('Finocchi',100,80,'g',CAT.V2),i('Ceci secchi',20,15,'g',CAT.CER)],
-   adl:'1 mela al forno + cannella',
-   adle:'1 mela al forno + cannella',
-   aing:[i('Mele',180,150,'g',CAT.FRUTTA)]},
   {icon:'🥗',name:'Pranzo',kl:'~530',kle:'~445',
    dl:'Ribollita autunnale: cavolo nero + verza + fagioli 70g secchi + pane 30g',
    dle:'Ribollita: cavolo nero + verza + fagioli 55g + pane 25g',
@@ -746,6 +771,17 @@ function initDolci(){
   DOLCI_DATA.forEach(d=>{
     g.innerHTML+=`<div class="sweet-card"><div class="se">${d.e}</div><h4>${d.t}</h4><div class="sd">${d.d}</div><span class="gbadge lui">👨 ${d.l}</span><span class="gbadge lei">👩 ${d.le}</span></div>`;
   });
+  renderFreeGrid('colazioni-grid',COLAZIONI);
+  renderFreeGrid('spuntini-grid',SPUNTINI);
+}
+function renderFreeGrid(id,list){
+  const g=document.getElementById(id);
+  if(!g)return;
+  let h='';
+  list.forEach(o=>{
+    h+=`<div class="sweet-card"><div class="se">${o.e}</div><h4>${o.t}</h4>${o.d?`<div class="sd">${o.d}</div>`:''}<div class="sd" style="margin-bottom:.4rem"><strong>👨</strong> ${o.dl}<br><strong>👩</strong> ${o.dle}</div><span class="gbadge lui">👨 ${o.kl} kcal</span><span class="gbadge lei">👩 ${o.kle} kcal</span></div>`;
+  });
+  g.innerHTML=h;
 }
 
 function initWater(){
@@ -784,6 +820,8 @@ function renderMealSelectorList(){
     });
     h+=`</div>`;
   });
+  h+=freeBlock('☀️ Colazioni','col',COLAZIONI,'Ogni spunta = 1 colazione per due');
+  h+=freeBlock('🥕 Spuntini','spu',SPUNTINI,'Ogni spunta = 1 spuntino per due');
   const dAll=DOLCI_DATA.every((_,idx)=>selectedMeals.has(`dolci_${idx}`));
   h+=`<div class="meal-day-block"><div class="meal-day-hd"><span>🍫 Dolci Serali</span><button class="day-sel-toggle" onclick="toggleDolciAll()">${dAll?'✖ Deseleziona':'✅ Seleziona'} tutti</button></div>`;
   DOLCI_DATA.forEach((d,idx)=>{
@@ -792,6 +830,23 @@ function renderMealSelectorList(){
   });
   h+=`</div>`;
   el.innerHTML=h;
+}
+function freeBlock(title,pre,list,hint){
+  const all=list.every((_,idx)=>selectedMeals.has(`${pre}_${idx}`));
+  let h=`<div class="meal-day-block"><div class="meal-day-hd"><span>${title}</span><button class="day-sel-toggle" onclick="toggleFreeAll('${pre}')">${all?'✖ Deseleziona':'✅ Seleziona'} tutti</button></div>`;
+  h+=`<div style="font-size:.72rem;color:var(--gr);margin:.1rem 0 .4rem;padding-left:.3rem">${hint}</div>`;
+  list.forEach((o,idx)=>{
+    const key=`${pre}_${idx}`,on=selectedMeals.has(key);
+    h+=`<label class="dolci-check-row${on?' on':''}"><input type="checkbox" ${on?'checked':''} onchange="toggleMeal('${key}',this.checked)"><span class="dcn">${o.e} ${o.t} <span style="font-size:.72rem;color:var(--gr)">· lui ${o.dl}</span></span></label>`;
+  });
+  return h+`</div>`;
+}
+function freeList(pre){return pre==='col'?COLAZIONI:SPUNTINI;}
+function toggleFreeAll(pre){
+  const list=freeList(pre);
+  const allOn=list.every((_,idx)=>selectedMeals.has(`${pre}_${idx}`));
+  list.forEach((_,idx)=>{if(allOn)selectedMeals.delete(`${pre}_${idx}`);else selectedMeals.add(`${pre}_${idx}`);});
+  renderMealSelectorList();renderSpesa();
 }
 function toggleMealOpt(kM,kA,which,val){
   if(which==='main'){
@@ -817,6 +872,8 @@ function toggleDolciAll(){
 }
 function selectAllMeals(){
   DAYS.forEach((d,di)=>d.meals.forEach((_,mi)=>{if(!selectedMeals.has(`${di}_${mi}`)&&!selectedMeals.has(`${di}_${mi}_alt`))selectedMeals.add(`${di}_${mi}`);}));
+  COLAZIONI.forEach((_,idx)=>selectedMeals.add(`col_${idx}`));
+  SPUNTINI.forEach((_,idx)=>selectedMeals.add(`spu_${idx}`));
   DOLCI_DATA.forEach((_,idx)=>selectedMeals.add(`dolci_${idx}`));
   renderMealSelectorList();renderSpesa();
 }
@@ -859,6 +916,8 @@ function aggregateSel(){
     [i('Mele (dolce serale)',4,0,'pz',CAT.DOLCI),i('Skyr (dolce serale)',200,0,'g',CAT.DOLCI)],
     [i('Ananas fresca (dolce serale)',300,0,'g',CAT.DOLCI)],
   ];
+  COLAZIONI.forEach((o,idx)=>{if(selectedMeals.has(`col_${idx}`))add(o.ing,false);});
+  SPUNTINI.forEach((o,idx)=>{if(selectedMeals.has(`spu_${idx}`))add(o.ing,false);});
   DOLCI_DATA.forEach((d,idx)=>{
     if(!selectedMeals.has(`dolci_${idx}`))return;
     (dolciMap[idx]||[]).forEach(x=>{
@@ -947,6 +1006,14 @@ function renderPrint(){
     });
     h+=`</tbody></table>`;
   });
+  const freeTable=(titolo,list)=>`<h3 style="color:#8a5a2b;margin:.8rem 0 .3rem;font-size:13px">${titolo}</h3>
+  <table style="width:100%;border-collapse:collapse;margin-bottom:.5rem;font-size:11px">
+    <thead><tr><th style="background:#8a5a2b;color:white;padding:.3rem .4rem;text-align:left;width:26%">Opzione</th><th style="background:#8a5a2b;color:white;padding:.3rem .4rem;text-align:left;width:37%">👨 Lui</th><th style="background:#8a5a2b;color:white;padding:.3rem .4rem;text-align:left;width:37%">👩 Lei</th></tr></thead><tbody>
+    ${list.map(o=>`<tr><td style="padding:.25rem .4rem;border-bottom:1px solid #e5e7eb">${o.e} ${o.t}</td><td style="padding:.25rem .4rem;border-bottom:1px solid #e5e7eb">${o.dl}</td><td style="padding:.25rem .4rem;border-bottom:1px solid #e5e7eb">${o.dle}</td></tr>`).join('')}
+    </tbody></table>`;
+  h+=`<div style="background:#fdf1e3;border-left:3px solid #c98a4b;padding:.4rem .8rem;margin:.8rem 0 .2rem;font-size:11px">🔄 Colazioni, spuntini e dolci sono <strong>tutti intercambiabili</strong>: scegliete ogni giorno quello che vi va.</div>`;
+  h+=freeTable('☀️ Colazioni (ore 10:00)',COLAZIONI);
+  h+=freeTable('🥕 Spuntini (ore 17:30)',SPUNTINI);
   h+=`<h3 style="color:#8a5a2b;margin:.8rem 0 .3rem;font-size:13px">🍫 Dolci Serali</h3>
   <table style="width:100%;border-collapse:collapse;margin-bottom:.8rem;font-size:11px">
     <thead><tr><th style="background:#8a5a2b;color:white;padding:.3rem .4rem;text-align:left">Opzione</th><th style="background:#8a5a2b;color:white;padding:.3rem .4rem;text-align:left">👨 Lui</th><th style="background:#8a5a2b;color:white;padding:.3rem .4rem;text-align:left">👩 Lei</th></tr></thead><tbody>
