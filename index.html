@@ -415,7 +415,11 @@ header p{font-size:.82rem;opacity:.85;position:relative}
   </header>
   <div class="section">
     <button class="print-btn no-print" onclick="doPrint()">🖨️ Stampa / Salva PDF</button>
-    <div class="warn-box no-print">💡 Si apre una nuova finestra — scegliete "Salva come PDF".</div>
+    <div class="no-print" style="display:flex;gap:.5rem;margin-top:.5rem">
+      <button class="print-btn" style="flex:1;background:linear-gradient(135deg,#2b579a,#1e3f6f)" onclick="doWord()">📄 Scarica Word</button>
+      <button class="print-btn" style="flex:1;background:linear-gradient(135deg,#1d6f42,#134d2d)" onclick="doExcel()">📊 Scarica Excel</button>
+    </div>
+    <div class="warn-box no-print">💡 PDF: si apre una nuova finestra — scegliete "Salva come PDF".<br>📄 Word: file .doc, si apre con Word e si puo modificare.<br>📊 Excel: piano, colazioni, spuntini, dolci e lista della spesa in tabelle. Excel puo avvisare che il formato e diverso dall estensione: rispondete "Si", si apre lo stesso.</div>
     <div id="print-preview"></div>
   </div>
 </div>
@@ -1034,6 +1038,88 @@ function doPrint(){
   <style>body{font-family:Arial,sans-serif;color:#333;padding:1.5rem;font-size:13px}h2,h3{color:#8a5a2b}table{width:100%;border-collapse:collapse}th{background:#8a5a2b;color:white;padding:.3rem .4rem;text-align:left}td{padding:.28rem .4rem;border-bottom:1px solid #e5e7eb;font-size:12px}@media print{body{padding:.5rem}}</style>
   </head><body>${content}</body></html>`);
   w.document.close();w.focus();setTimeout(()=>w.print(),500);
+}
+
+function scarica(nome,contenuto,tipo){
+  try{
+    const blob=new Blob(['﻿'+contenuto],{type:tipo});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=url;a.download=nome;a.style.display='none';
+    document.body.appendChild(a);a.click();
+    setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(url);},2000);
+  }catch(e){
+    alert('Download non riuscito su questo browser. Usate il pulsante Stampa / Salva PDF.');
+    console.error('scarica',e);
+  }
+}
+
+function doWord(){
+  renderPrint();
+  const content=document.getElementById('print-preview').innerHTML;
+  const html=`<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+  <head><meta charset="utf-8"><title>Piano Alimentare Autunno 2026</title>
+  <style>@page{size:A4;margin:1.5cm}body{font-family:Calibri,Arial,sans-serif;color:#333;font-size:11pt}h2,h3{color:#8a5a2b}table{width:100%;border-collapse:collapse}th{background:#8a5a2b;color:#fff;padding:4px 6px;text-align:left;font-size:9pt}td{padding:4px 6px;border-bottom:1px solid #e5e7eb;font-size:9pt}</style>
+  </head><body>${content}</body></html>`;
+  scarica('Piano-Alimentare-Autunno-2026.doc',html,'application/msword');
+}
+
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+function doExcel(){
+  const th=(a)=>`<tr>${a.map(x=>`<th style="background:#8a5a2b;color:#ffffff;font-weight:bold">${esc(x)}</th>`).join('')}</tr>`;
+  const tr=(a)=>`<tr>${a.map(x=>`<td>${esc(x)}</td>`).join('')}</tr>`;
+  let h=`<table><tr><td colspan="4" style="font-size:16pt;font-weight:bold;color:#8a5a2b">Piano Alimentare Autunno 2026 - Effetto GLP-1</td></tr>`;
+  h+=tr(['Lui','78kg · 179cm · 1.500 kcal/die','Lei','69kg · 170cm · 1.350 kcal/die · Linfedema']);
+  h+=tr(['Orari','Vitreolisina 7:30 · caffe · colazione 10:00 · pranzo 13:00 · spuntino 17:30 · cena 20:00','','']);
+  h+=`<tr><td></td></tr></table>`;
+
+  h+=`<table><tr><td colspan="4" style="font-size:13pt;font-weight:bold;color:#8a5a2b">Piano settimanale - pranzi e cene</td></tr>`;
+  h+=th(['Giorno','Pasto','Lui','Lei']);
+  DAYS.forEach(day=>{
+    day.meals.forEach(m=>{
+      h+=tr([day.name,m.name+' ('+m.kl+' / '+m.kle+' kcal)',m.dl,m.dle]);
+      h+=tr(['',m.name+' - alternativa',m.adl,m.adle]);
+    });
+  });
+  h+=`</table><table><tr><td></td></tr></table>`;
+
+  const blocco=(titolo,list)=>{
+    let s=`<table><tr><td colspan="4" style="font-size:13pt;font-weight:bold;color:#8a5a2b">${esc(titolo)}</td></tr>`;
+    s+=th(['Opzione','Lui','Lei','kcal (lui / lei)']);
+    list.forEach(o=>{s+=tr([o.t,o.dl,o.dle,o.kl+' / '+o.kle]);});
+    return s+`</table><table><tr><td></td></tr></table>`;
+  };
+  h+=blocco('Colazioni (ore 10:00) - tutte intercambiabili',COLAZIONI);
+  h+=blocco('Spuntini (ore 17:30) - tutti intercambiabili',SPUNTINI);
+
+  h+=`<table><tr><td colspan="3" style="font-size:13pt;font-weight:bold;color:#8a5a2b">Dolci serali</td></tr>`;
+  h+=th(['Opzione','Lui','Lei']);
+  DOLCI_DATA.forEach(d=>{h+=tr([d.t,d.l,d.le]);});
+  h+=`</table><table><tr><td></td></tr></table>`;
+
+  const totals=aggregateSel();
+  h+=`<table><tr><td colspan="4" style="font-size:13pt;font-weight:bold;color:#8a5a2b">Lista della spesa (pasti selezionati nel tab Spesa)</td></tr>`;
+  h+=th(['Categoria','Alimento','Quantita','Preso']);
+  if(totals){
+    const byCat={};
+    Object.entries(totals).forEach(([name,data])=>{(byCat[data.c]=byCat[data.c]||[]).push({name,...data});});
+    CO.forEach(cat=>{
+      const items=(byCat[cat]||[]).filter(it=>typeof it.ql!=='number'||(it.ql+it.ll)>0);
+      items.forEach(it=>{
+        const qty=typeof it.ql==='number'?fmtQty(it.ql,it.ll,it.u):it.u;
+        h+=tr([cat,it.name+(it.alt?' (alt)':''),qty,'']);
+      });
+    });
+  }else{
+    h+=tr(['','Nessun pasto selezionato nel tab Spesa','','']);
+  }
+  h+=`</table>`;
+
+  const xls=`<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">
+  <head><meta charset="utf-8"><style>td{border:1px solid #d9d9d9;vertical-align:top}th{border:1px solid #8a5a2b}</style></head>
+  <body>${h}</body></html>`;
+  scarica('Piano-Alimentare-Autunno-2026.xls',xls,'application/vnd.ms-excel');
 }
 
 document.addEventListener('DOMContentLoaded',function(){
